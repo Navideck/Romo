@@ -8,7 +8,6 @@
 #import "RMSynthesizer.h"
 #import <Romo/RMMath.h>
 #import <Romo/UIDevice+Romo.h>
-#import "UIDevice+Temporary.h"
 
 #ifdef SOUND_DEBUG
 #define LOG(...) DDLogWarn(__VA_ARGS__)
@@ -252,23 +251,23 @@ void generateTriangle(SInt16 *sampleBuffer, int numFrames, float sampleRate, flo
 //------------------------------------------------------------------------------
 - (float)_amplitudeForDevice
 {
-    NSUInteger device = [UIDevice currentDevice].platformType;
+    NSString *device = [UIDevice currentDevice].modelName;
     float desiredAmplitude = kAmplitudeDefault;
-    
-    if (device == UIDevice4GiPod) {
-        desiredAmplitude = kAmplitudeIpodTouch4G;
-    } else if (device == UIDevice4iPhone) {
-        desiredAmplitude = kAmplitudeIphone4;
-    } else if (device == UIDevice4SiPhone) {
+
+    if ([device rangeOfString:@"iPhone 4S"].location != NSNotFound) {
         desiredAmplitude = kAmplitudeIphone4S;
-    } else if (device == UIDevice5GiPod) {
-        desiredAmplitude = kAmplitudeIpodTouch5G;
-    } else if (device == UIDevice5iPhone) {
-        desiredAmplitude = kAmplitudeIphone5;
-    } else if (device == UIDevice5CiPhone) {
+    } else if ([device rangeOfString:@"iPhone 4"].location != NSNotFound) {
+        desiredAmplitude = kAmplitudeIphone4;
+    } else if ([device rangeOfString:@"iPhone 5C"].location != NSNotFound) {
         desiredAmplitude = kAmplitudeIphone5C;
-    } else if (device == UIDevice5SiPhone) {
+    } else if ([device rangeOfString:@"iPhone 5S"].location != NSNotFound) {
         desiredAmplitude = kAmplitudeIphone5S;
+    } else if ([device rangeOfString:@"iPhone 5"].location != NSNotFound) {
+        desiredAmplitude = kAmplitudeIphone5;
+    } else if ([device rangeOfString:@"iPod touch 4G"].location != NSNotFound) {
+        desiredAmplitude = kAmplitudeIpodTouch4G;
+    } else if ([device rangeOfString:@"iPod touch 5G"].location != NSNotFound) {
+        desiredAmplitude = kAmplitudeIpodTouch5G;
     }
     
     LOG(@"Initializing Device %@ with amplitude %f", [UIDevice currentDevice].platformString, desiredAmplitude);

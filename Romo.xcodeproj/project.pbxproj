@@ -134,8 +134,6 @@
 		ACE687D01851675D002D3436 /* Missions-Editor-Unswipe-Delete.caf in Resources */ = {isa = PBXBuildFile; fileRef = AC6536681810BE150092A0CB /* Missions-Editor-Unswipe-Delete.caf */; };
 		ACE687D118516800002D3436 /* Missions-Editor-Accept.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9400B4AF17E7ADF700B48997 /* Missions-Editor-Accept.caf */; };
 		AF23CEF8214D2ADA0030A653 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF23CEF7214D2ADA0030A653 /* Launch Screen.storyboard */; };
-		AF4E414F221844F400AAABAB /* UIDevice+Temporary.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4E414E221844F400AAABAB /* UIDevice+Temporary.m */; };
-		AF4E4150221844F400AAABAB /* UIDevice+Temporary.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4E414E221844F400AAABAB /* UIDevice+Temporary.m */; };
 		AF52E1C221CDADCC00678CF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF52E1C121CDADCC00678CF4 /* Assets.xcassets */; };
 		AF52E1C621CDAFF800678CF4 /* Launch Screen-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF52E1C521CDAFF800678CF4 /* Launch Screen-568h@2x.png */; };
 		AF8EF27421CD676D0025F16B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 948E4BFB176E88940077BBCF /* Reachability.m */; };
@@ -1293,8 +1291,6 @@
 		ACF763161811E668007C2ECD /* RomoJingle.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RomoJingle.caf; sourceTree = "<group>"; };
 		AF23CEF7214D2ADA0030A653 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		AF23CEF9214D312C0030A653 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		AF4E414D221844F400AAABAB /* UIDevice+Temporary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Temporary.h"; sourceTree = "<group>"; };
-		AF4E414E221844F400AAABAB /* UIDevice+Temporary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Temporary.m"; sourceTree = "<group>"; };
 		AF52E1C121CDADCC00678CF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF52E1C521CDAFF800678CF4 /* Launch Screen-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen-568h@2x.png"; sourceTree = "<group>"; };
 		AF65AEF221CA645E00A3F26C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -2710,8 +2706,6 @@
 		94B1EFB5176D6A3300C5BABC /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				AF4E414D221844F400AAABAB /* UIDevice+Temporary.h */,
-				AF4E414E221844F400AAABAB /* UIDevice+Temporary.m */,
 				949077E6179610AE005C885F /* Categories */,
 				948F162B1799B1DD002AF657 /* Drive */,
 				94B1EFBD176D6A3300C5BABC /* ext */,
@@ -3168,7 +3162,6 @@
 				3BAC3FE9A617986209C0D1E4 /* Pods-Romo X Control.debug.xcconfig */,
 				AC64DF5D76E2F96C803759C1 /* Pods-Romo X Control.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -3876,7 +3869,6 @@
 				71EEBFB6184E5C9500108591 /* UIAlertView+RMDismissAll.m in Sources */,
 				945C598A17E7E0C0001C3CE8 /* RMRomoteDrivePhotoButton.m in Sources */,
 				945C598E17E7E0C0001C3CE8 /* RMRomoteDriveTopBar.m in Sources */,
-				AF4E4150221844F400AAABAB /* UIDevice+Temporary.m in Sources */,
 				711FB1BD1844076B00A12550 /* RMPeerRomoCell.m in Sources */,
 				ACE687CC1851607F002D3436 /* RMSynthesizer.m in Sources */,
 				AC93EF8C1832E1EC00C4B3DB /* RMContact+Helper.m in Sources */,
@@ -4055,7 +4047,6 @@
 				AF8EF2CE21CD676D0025F16B /* RMAlarmActionIcon.m in Sources */,
 				AF8EF2CF21CD676D0025F16B /* RMMicLineView.m in Sources */,
 				AF8EF2D021CD676D0025F16B /* UIImage+Save.m in Sources */,
-				AF4E414F221844F400AAABAB /* UIDevice+Temporary.m in Sources */,
 				AF8EF2D121CD676D0025F16B /* RMEventBrowserView.m in Sources */,
 				AF8EF2D221CD676D0025F16B /* RMInteractionScriptSelectorViewController.m in Sources */,
 				AF8EF2D321CD676D0025F16B /* RMExploreActionIcon.m in Sources */,
@@ -4575,8 +4566,8 @@
 					"$(SRCROOT)/lib/ext/libav",
 					"$SRCROOT/../SDK/RMCore/**",
 					"$SRCROOT/../SDK/RMCharacter/**",
-					"$SRCROOT/../SDK/RMVision",
-					"$SRCROOT/../SDK/RMShared",
+					$SRCROOT/../SDK/RMVision,
+					$SRCROOT/../SDK/RMShared,
 					"$(PROJECT_DIR)/lib/ext/libav",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
@@ -4626,8 +4617,8 @@
 					"$(SRCROOT)/lib/ext/libav",
 					"$SRCROOT/../SDK/RMCore/**",
 					"$SRCROOT/../SDK/RMCharacter/**",
-					"$SRCROOT/../SDK/RMVision",
-					"$SRCROOT/../SDK/RMShared",
+					$SRCROOT/../SDK/RMVision,
+					$SRCROOT/../SDK/RMShared,
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoXControl;

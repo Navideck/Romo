@@ -5,7 +5,6 @@
 
 #import "RMSerializable.h"
 #import <Romo/UIDevice+Romo.h>
-#import "UIDevice+Temporary.h"
 
 @class RMAddress;
 
@@ -42,7 +41,7 @@ typedef enum {
     UIDeviceColorBlue,
 } UIDeviceColor;
 
-@property (nonatomic) UIDevicePlatform devicePlatform;
+@property (nonatomic) NSString* modelName;
 @property (nonatomic) UIDeviceColor deviceColor;
 
 #pragma mark - Creation

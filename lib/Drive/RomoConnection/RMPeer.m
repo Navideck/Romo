@@ -100,8 +100,8 @@
 
 - (NSDictionary *)serializeToDictionary
 {
-    UIDevicePlatform platform = self.devicePlatform;
-    NSData *platformData = [NSData dataWithBytes:&platform length:sizeof(platform)];
+    NSString *modelName = self.modelName;
+    NSData *platformData = [NSData dataWithBytes:&modelName length:sizeof(modelName)];
 
     UIDeviceColor color = self.deviceColor;
     NSData *colorData = [NSData dataWithBytes:&color length:sizeof(color)];
@@ -130,9 +130,9 @@
     }
 
     if (dictionary[@"devicePlatform"]) {
-        UIDevicePlatform platform;
-        [dictionary[@"devicePlatform"] getBytes:&platform length:sizeof(platform)];
-        self.devicePlatform = platform;
+        NSString* modelName;
+        [dictionary[@"devicePlatform"] getBytes:&modelName length:sizeof(modelName)];
+        self.modelName = modelName;
     }
 
     if (dictionary[@"deviceColor"]) {
@@ -151,7 +151,7 @@
         self.name = [coder decodeObjectForKey:KEY_NAME];
         self.identifier = [coder decodeObjectForKey:KEY_IDENTIFIER];
         self.appVersion = [coder decodeObjectForKey:KEY_APPVERSION];
-        self.devicePlatform = [[coder decodeObjectForKey:KEY_DEVICEPLATFORM] intValue];
+        self.modelName = [[coder decodeObjectForKey:KEY_DEVICEPLATFORM] stringValue];
         self.deviceColor = [[coder decodeObjectForKey:KEY_DEVICECOLOR] intValue];
     }
     
@@ -163,7 +163,7 @@
     [coder encodeObject:_name forKey:KEY_NAME];
     [coder encodeObject:_identifier forKey:KEY_IDENTIFIER];
     [coder encodeObject:_appVersion forKey:KEY_APPVERSION];
-    [coder encodeObject:@(self.devicePlatform) forKey:KEY_DEVICEPLATFORM];
+    [coder encodeObject:_modelName forKey:KEY_DEVICEPLATFORM];
     [coder encodeObject:@(self.deviceColor) forKey:KEY_DEVICECOLOR];
 }
 
