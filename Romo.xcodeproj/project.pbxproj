@@ -55,7 +55,6 @@
 		7130FDAF17C42F910025B605 /* RMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9490781F179611EC005C885F /* RMAlertView.m */; };
 		7130FDD717C4310A0025B605 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 948E4BFB176E88940077BBCF /* Reachability.m */; };
 		7130FDE117C433090025B605 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79C2075161E15D30022FBAF /* ExternalAccessory.framework */; };
-		7130FDED17C437260025B605 /* UIImage+Retina.m in Sources */ = {isa = PBXBuildFile; fileRef = 949077F8179610AE005C885F /* UIImage+Retina.m */; };
 		7130FDEE17C4372A0025B605 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E46F0217A3123C00BC41C8 /* UIImage+Tint.m */; };
 		7130FDEF17C4372C0025B605 /* UIImage+Save.m in Sources */ = {isa = PBXBuildFile; fileRef = 949077FA179610AE005C885F /* UIImage+Save.m */; };
 		7130FDF317C4373B0025B605 /* UIFont+RMFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 949077F6179610AE005C885F /* UIFont+RMFont.m */; };
@@ -274,7 +273,6 @@
 		AF8EF30421CD676D0025F16B /* RMFirmwareUpdatingRobotController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8BF4E31862ECE000A887D3 /* RMFirmwareUpdatingRobotController.m */; };
 		AF8EF30521CD676D0025F16B /* RAVVideoInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16741799B1DD002AF657 /* RAVVideoInput.m */; };
 		AF8EF30621CD676D0025F16B /* RMEventIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9439FB6817E5662800AE78AE /* RMEventIcon.m */; };
-		AF8EF30721CD676D0025F16B /* UIImage+Retina.m in Sources */ = {isa = PBXBuildFile; fileRef = 949077F8179610AE005C885F /* UIImage+Retina.m */; };
 		AF8EF30821CD676D0025F16B /* RMWaitActionIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 949B58D117949EE30042D062 /* RMWaitActionIcon.m */; };
 		AF8EF30921CD676D0025F16B /* RMUnlockable.m in Sources */ = {isa = PBXBuildFile; fileRef = 949B598617949FF70042D062 /* RMUnlockable.m */; };
 		AF8EF30A21CD676D0025F16B /* RMSongActionIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 949B58B417949EE30042D062 /* RMSongActionIcon.m */; };
@@ -961,8 +959,6 @@
 		949077EE179610AE005C885F /* UIColor+RMColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RMColor.m"; sourceTree = "<group>"; };
 		949077F5179610AE005C885F /* UIFont+RMFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+RMFont.h"; sourceTree = "<group>"; };
 		949077F6179610AE005C885F /* UIFont+RMFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+RMFont.m"; sourceTree = "<group>"; };
-		949077F7179610AE005C885F /* UIImage+Retina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Retina.h"; sourceTree = "<group>"; };
-		949077F8179610AE005C885F /* UIImage+Retina.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Retina.m"; sourceTree = "<group>"; };
 		949077F9179610AE005C885F /* UIImage+Save.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Save.h"; sourceTree = "<group>"; };
 		949077FA179610AE005C885F /* UIImage+Save.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Save.m"; sourceTree = "<group>"; };
 		949077FB179610AE005C885F /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
@@ -2298,8 +2294,6 @@
 				949077EE179610AE005C885F /* UIColor+RMColor.m */,
 				949077F5179610AE005C885F /* UIFont+RMFont.h */,
 				949077F6179610AE005C885F /* UIFont+RMFont.m */,
-				949077F7179610AE005C885F /* UIImage+Retina.h */,
-				949077F8179610AE005C885F /* UIImage+Retina.m */,
 				94E46F0117A3123C00BC41C8 /* UIImage+Tint.h */,
 				94E46F0217A3123C00BC41C8 /* UIImage+Tint.m */,
 				949077F9179610AE005C885F /* UIImage+Save.h */,
@@ -3782,8 +3776,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Romo X/Pods-Romo X-resources.sh",
 				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
@@ -3795,8 +3787,6 @@
 				"${PODS_CONFIGURATION_BUILD_DIR}/Romo.common-RMCharacter-RMVision/RMVision.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_amatorka.png",
@@ -3816,15 +3806,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Romo X Control-checkManifestLockResult.txt",
 			);
@@ -3838,15 +3824,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Romo X-checkManifestLockResult.txt",
 			);
@@ -3896,7 +3878,6 @@
 				7130FD8517C42DA40025B605 /* RMSessionManager.m in Sources */,
 				945C598717E7E0C0001C3CE8 /* RMRomoteDriveDriveButton.m in Sources */,
 				7130FD7517C42D770025B605 /* RMMessage.m in Sources */,
-				7130FDED17C437260025B605 /* UIImage+Retina.m in Sources */,
 				945C598617E7E0C0001C3CE8 /* RMRomoteDriveCameraButton.m in Sources */,
 				ACD780D61832E15A00BA333A /* RMContact.m in Sources */,
 				7130FDAC17C42F820025B605 /* RAVSubscriber.m in Sources */,
@@ -4096,7 +4077,6 @@
 				AF8EF30421CD676D0025F16B /* RMFirmwareUpdatingRobotController.m in Sources */,
 				AF8EF30521CD676D0025F16B /* RAVVideoInput.m in Sources */,
 				AF8EF30621CD676D0025F16B /* RMEventIcon.m in Sources */,
-				AF8EF30721CD676D0025F16B /* UIImage+Retina.m in Sources */,
 				AF8EF30821CD676D0025F16B /* RMWaitActionIcon.m in Sources */,
 				AF8EF30921CD676D0025F16B /* RMUnlockable.m in Sources */,
 				AF8EF30A21CD676D0025F16B /* RMSongActionIcon.m in Sources */,

@@ -47,9 +47,9 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - CocoaLumberjack
-  - Romo
-  - Romo/RMCharacter
-  - Romo/RMVision
+  - Romo (from `../Romo`)
+  - Romo/RMCharacter (from `../Romo`)
+  - Romo/RMVision (from `../Romo`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -57,8 +57,11 @@ SPEC REPOS:
     - CocoaLumberjack
     - GPUImage
     - OpenCV
-    - Romo
     - SocketRocket
+
+EXTERNAL SOURCES:
+  Romo:
+    :path: "../Romo"
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
@@ -68,6 +71,6 @@ SPEC CHECKSUMS:
   Romo: 21b1cd13380fc6ccf60a27ab15255539b0868cfe
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
 
-PODFILE CHECKSUM: ba0d0115a2680fffb3f7c987bb6a9eeea0fac9d4
+PODFILE CHECKSUM: bd3fdc82b12e893b920d88a6f9a1509b3060f988
 
 COCOAPODS: 1.6.0
