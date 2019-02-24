@@ -35,13 +35,13 @@
 - (void)setEmotion:(RMCharacterEmotion)emotion
 {
     _emotion = emotion;
-    self.face.image = [UIImage imageNamed:[NSString stringWithFormat:@"romoEmotion%d@1x.png", emotion]];
+    self.face.image = [UIImage imageNamed:[NSString stringWithFormat:@"romoEmotion%d.png", emotion]];
 }
 
 - (void)setExpression:(RMCharacterExpression)expression
 {
     _expression = expression;
-    self.face.image = [UIImage imageNamed:[NSString stringWithFormat:@"romoExpression%d@1x.png", expression]];
+    self.face.image = [UIImage imageNamed:[NSString stringWithFormat:@"romoExpression%d.png", expression]];
 }
 
 @end

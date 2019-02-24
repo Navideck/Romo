@@ -295,7 +295,7 @@ static const CGFloat unselectedFaceOptionTop = 8.0;
             UIImage *faceImage = [UIImage smartImageNamed:[NSString stringWithFormat:@"romo%@%d",self.showingEmotion ? @"Emotion" : @"Expression", faceNumber.intValue]];
 
             UIImageView *phone = [[UIImageView alloc] initWithFrame:CGRectMake(16 + 64 * i, unselectedFaceOptionTop, 55, 100)];
-            phone.image = [UIImage imageNamed:@"iphoneFull@1x.png"];
+            phone.image = [UIImage imageNamed:@"iphoneFull.png"];
             phone.tag = (isUnlocked ? faceOptionTagUnlocked : faceOptionTagLocked) * faceNumber.intValue;
             [phone addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleFaceOptionTap:)]];
             phone.userInteractionEnabled = YES;

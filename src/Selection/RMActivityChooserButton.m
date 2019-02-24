@@ -30,7 +30,7 @@
 {
     [super setFrame:frame];
     self.iconImageView.size = CGSizeMake(frame.size.height, frame.size.height);
-    self.iconImageView.right = self.titleLabel.left + 20;
+    self.iconImageView.left = 20;
     self.titleEdgeInsets = UIEdgeInsetsMake(0, 50, 0, 0);
 }
 

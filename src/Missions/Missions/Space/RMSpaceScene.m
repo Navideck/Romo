@@ -4,6 +4,7 @@
 #import <Romo/RMMath.h>
 #import "RMChapterPlanet.h"
 #import <Romo/UIDevice+Romo.h>
+#import <Romo/UIImage+Retina.h>
 
 static const CGFloat numberOfStarsForFastDevice = 72;
 static const CGFloat numberOfStarsForSlowDevice = 0;

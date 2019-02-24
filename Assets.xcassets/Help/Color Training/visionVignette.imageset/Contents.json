@@ -2,7 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "visionVignette.png.png"
+      "filename" : "visionVignette@1x.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "visionVignette@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "visionVignette@3x.png",
+      "scale" : "3x"
     }
   ],
   "info" : {
