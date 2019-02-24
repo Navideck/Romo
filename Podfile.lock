@@ -49,6 +49,7 @@ DEPENDENCIES:
   - CocoaLumberjack
   - Romo (from `../Romo`)
   - Romo/RMCharacter (from `../Romo`)
+  - Romo/RMShared (from `../Romo`)
   - Romo/RMVision (from `../Romo`)
 
 SPEC REPOS:
@@ -71,6 +72,6 @@ SPEC CHECKSUMS:
   Romo: 21b1cd13380fc6ccf60a27ab15255539b0868cfe
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
 
-PODFILE CHECKSUM: bd3fdc82b12e893b920d88a6f9a1509b3060f988
+PODFILE CHECKSUM: 4c2a4c8edc038f7c4a4466e3783cc8bc368694e2
 
 COCOAPODS: 1.6.0

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF8EF18621CD649D0025F16B"
-               BuildableName = "Romo X.app"
-               BlueprintName = "Romo X"
-               ReferencedContainer = "container:Romo.xcodeproj">
+               BlueprintIdentifier = "7130FD2517C42BAD0025B605"
+               BuildableName = "Romo X Control.app"
+               BlueprintName = "Romo X Control"
+               ReferencedContainer = "container:Romo X.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF8EF18621CD649D0025F16B"
-            BuildableName = "Romo X.app"
-            BlueprintName = "Romo X"
-            ReferencedContainer = "container:Romo.xcodeproj">
+            BlueprintIdentifier = "7130FD2517C42BAD0025B605"
+            BuildableName = "Romo X Control.app"
+            BlueprintName = "Romo X Control"
+            ReferencedContainer = "container:Romo X.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF8EF18621CD649D0025F16B"
-            BuildableName = "Romo X.app"
-            BlueprintName = "Romo X"
-            ReferencedContainer = "container:Romo.xcodeproj">
+            BlueprintIdentifier = "7130FD2517C42BAD0025B605"
+            BuildableName = "Romo X Control.app"
+            BlueprintName = "Romo X Control"
+            ReferencedContainer = "container:Romo X.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF8EF18621CD649D0025F16B"
-            BuildableName = "Romo X.app"
-            BlueprintName = "Romo X"
-            ReferencedContainer = "container:Romo.xcodeproj">
+            BlueprintIdentifier = "7130FD2517C42BAD0025B605"
+            BuildableName = "Romo X Control.app"
+            BlueprintName = "Romo X Control"
+            ReferencedContainer = "container:Romo X.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -6,9 +6,9 @@ target 'Romo X' do
   # use_frameworks!
 
   # Pods for Romo X
-  pod 'Romo', :path => '../Romo'
-  pod 'Romo/RMCharacter', :path => '../Romo'
-  pod 'Romo/RMVision', :path => '../Romo'
+  pod 'Romo'#, :path => '../Romo'
+  pod 'Romo/RMCharacter'#, :path => '../Romo'
+  pod 'Romo/RMVision'#, :path => '../Romo'
   pod 'CocoaLumberjack'
   pod 'AFNetworking'
 
@@ -19,6 +19,6 @@ target 'Romo X Control' do
   # use_frameworks!
 
   # Pods for Romo X Control
-  pod 'Romo', :path => '../Romo'
+  pod 'Romo/RMShared'#, :path => '../Romo'
   pod 'CocoaLumberjack'
 end
