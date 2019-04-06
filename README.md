@@ -2,11 +2,11 @@
 <a href="https://www.patreon.com/bePatron?u=5127277" target="_blank"><img alt="become a patron" src="https://c5.patreon.com/external/logo/become_a_patron_button.png" height="35px"></a>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/Navideck/Romo-X/master/Assets.xcassets/Missions/Editor/Actions/Turn/romoTurn28%401x.imageset/romoTurn28%401x.png"/>
+<img src="https://raw.githubusercontent.com/Navideck/Romo-X/master/Assets.xcassets/Missions/Editor/Actions/Turn/romoTurn28.imageset/romoTurn28%401x.png"/>
 </p>
 
 <p align="center" >
-<img src="https://img.shields.io/badge/platform-iOS%206,%207,%208,%209,%2010,%2011,%2012-blue.svg" alt="Platform: iOS 6, 7, 8, 9, 10, 11, 12" /> <img src="https://img.shields.io/gitter/room/nwjs/nw.js.svg" alt="chat on gitter" /></p>
+<img src="https://img.shields.io/badge/platform-iOS%206,%207,%208,%209,%2010,%2011,%2012-blue.svg" alt="Platform: iOS 6, 7, 8, 9, 10, 11, 12" /></p>
 
 This project is a continuation of the *Romo* app, an attempt to breathe life into the lovable but sadly discontinued, iPhone robot, **Romo**.
 
@@ -40,6 +40,7 @@ Romotive, the company behind Romo, after shutting down were kind enough to open 
 Issues and pull requests are always welcome!
 
 ## Patrons
+* Ryan Oksenhorn
 * Matt Duston
 * Suschman
 * Bruce Ownbey
