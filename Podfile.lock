@@ -28,16 +28,16 @@ PODS:
     - CocoaLumberjack/Default
   - GPUImage (0.1.7)
   - OpenCV (2.4.13.6)
-  - Romo (0.3.0):
-    - Romo/RMCore (= 0.3.0)
-  - Romo/RMCharacter (0.3.0):
+  - Romo (0.3.1):
+    - Romo/RMCore (= 0.3.1)
+  - Romo/RMCharacter (0.3.1):
     - Romo/RMShared
-  - Romo/RMCore (0.3.0):
+  - Romo/RMCore (0.3.1):
     - Romo/RMShared
-  - Romo/RMShared (0.3.0):
+  - Romo/RMShared (0.3.1):
     - CocoaLumberjack
     - SocketRocket
-  - Romo/RMVision (0.3.0):
+  - Romo/RMVision (0.3.1):
     - CocoaLumberjack
     - GPUImage
     - OpenCV (~> 2.0)
@@ -49,7 +49,6 @@ DEPENDENCIES:
   - CocoaLumberjack
   - Romo
   - Romo/RMCharacter
-  - Romo/RMShared
   - Romo/RMVision
 
 SPEC REPOS:
@@ -66,9 +65,9 @@ SPEC CHECKSUMS:
   CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   OpenCV: cd36a3467c21572d658c2640488fe0d5a93ca192
-  Romo: 6c56e8328339e4bc4f6bd81977a323dae7200773
+  Romo: 08c7f7af874f740f293b8654ef95834a9a84b817
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
 
-PODFILE CHECKSUM: 16f047b4fa51f6676babde530f3657ceb64151fb
+PODFILE CHECKSUM: a8da84ff950567e955fc7d6c58846c41ed6107b4
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.7.0.beta.3

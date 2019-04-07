@@ -185,15 +185,10 @@
 {
     // Older versions of iOS don't require permission to access the microphone    
     __block BOOL hasMicrophonePermission = NO;
-    if (@available(iOS 7.0, *)) {
-        [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
-            hasMicrophonePermission = granted;
-        }];
-        return hasMicrophonePermission;
-    } else {
-        // Fallback on earlier versions
-        return YES;
-    }
+    [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+        hasMicrophonePermission = granted;
+    }];
+    return hasMicrophonePermission;
 }
 
 - (RMGradientLabel *)titleLabel

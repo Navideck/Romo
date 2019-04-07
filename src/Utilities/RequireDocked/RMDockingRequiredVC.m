@@ -36,7 +36,7 @@ NSString *const RMRomoControlAppStoreURL = @"https://itunes.apple.com/us/app/rom
     
     CGFloat heightOffset = self.view.height <= 480 ? 40 : 0;
     
-    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dockingBackground.jpg"]];
+    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dockingBackground.png"]];
     background.contentMode = UIViewContentModeBottom;
     background.frame = self.view.bounds;
     background.height = self.view.height + heightOffset;

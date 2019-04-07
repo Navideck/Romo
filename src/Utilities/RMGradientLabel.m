@@ -37,12 +37,7 @@
         [endColor getRed:&r2 green:&g2 blue:&b2 alpha:&a2];
 
         CGSize textSize;
-        if (@available(iOS 7.0, *)) {
-            textSize = [label.text sizeWithAttributes:@{NSFontAttributeName:label.font}];
-        } else {
-            // Fallback on earlier versions
-            textSize = [label.text sizeWithFont:label.font];
-        }
+        textSize = [label.text sizeWithAttributes:@{NSFontAttributeName:label.font}];
         UIGraphicsBeginImageContext(textSize);
         CGContextRef context = UIGraphicsGetCurrentContext();
         UIGraphicsPushContext(context);

@@ -301,12 +301,10 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         }
     }
 
-    if (@available(iOS 7.0, *)) {
-        [_captureDevice lockForConfiguration:nil];
-        _captureDevice.activeVideoMinFrameDuration = CMTimeMake(1, fps);
-        _captureDevice.activeVideoMaxFrameDuration = CMTimeMake(1, fps);
-        [_captureDevice unlockForConfiguration];
-    }
+    [_captureDevice lockForConfiguration:nil];
+    _captureDevice.activeVideoMinFrameDuration = CMTimeMake(1, fps);
+    _captureDevice.activeVideoMaxFrameDuration = CMTimeMake(1, fps);
+    [_captureDevice unlockForConfiguration];
 }
 
 #pragma mark - H264HwEncoderImpl Delegate Methods --
