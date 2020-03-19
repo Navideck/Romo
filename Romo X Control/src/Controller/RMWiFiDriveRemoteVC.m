@@ -313,6 +313,7 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
     RMRomotePhotoVC *photoVC = [[RMRomotePhotoVC alloc] init];
     photoVC.photos = self.capturedPhotos;
     [photoVC.dismissButton addTarget:self action:@selector(handlePhotoVCDismissButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
+    photoVC.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:photoVC animated:YES completion:nil];
 }
 

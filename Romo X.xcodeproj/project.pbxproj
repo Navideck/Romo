@@ -539,6 +539,7 @@
 		AF8EF41321CD676D0025F16B /* Missions.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD5A618774BBC0051C0CF /* Missions.strings */; };
 		AF8EF41421CD676D0025F16B /* Missions-State Compiling-4.caf in Resources */ = {isa = PBXBuildFile; fileRef = AC5BA36F180CAEFB00119FA6 /* Missions-State Compiling-4.caf */; };
 		AF8EF41521CD676D0025F16B /* EyePoke-4.caf in Resources */ = {isa = PBXBuildFile; fileRef = ACD22EA9180E766E00464A7D /* EyePoke-4.caf */; };
+		BA50FE8A4779953D5FE9F6D7 /* libPods-Romo X.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A964BD3D0196659FD5465A /* libPods-Romo X.a */; };
 		BFCDD5C718774BBC0051C0CF /* CharacterScripts.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD59118774BBC0051C0CF /* CharacterScripts.strings */; };
 		BFCDD5CA18774BBC0051C0CF /* Extras.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD59318774BBC0051C0CF /* Extras.strings */; };
 		BFCDD5CD18774BBC0051C0CF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD59518774BBC0051C0CF /* Localizable.strings */; };
@@ -559,8 +560,7 @@
 		BFCDD60318774BBC0051C0CF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD5BC18774BBC0051C0CF /* Localizable.strings */; };
 		BFCDD60618774BBC0051C0CF /* MissionActions.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD5BE18774BBC0051C0CF /* MissionActions.strings */; };
 		BFCDD60918774BBC0051C0CF /* Missions.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD5C018774BBC0051C0CF /* Missions.strings */; };
-		C1CDF0ECA1EC39D9C30E01EB /* libPods-Romo X.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1B9D763D74E44B0DF92DB7 /* libPods-Romo X.a */; };
-		F25B026D1C2D9FC767498237 /* libPods-Romo X Control.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F63BF46936FCC626EE4504E5 /* libPods-Romo X Control.a */; };
+		E98292D768F11A1F17B58B49 /* libPods-Romo X Control.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8244400A1CA31A522D6EAAD7 /* libPods-Romo X Control.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -589,6 +589,8 @@
 		43C8901317E5033B00FE115E /* KIFUITestActor+RMInteractions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+RMInteractions.h"; sourceTree = "<group>"; };
 		43C8901417E5033B00FE115E /* KIFUITestActor+RMInteractions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+RMInteractions.m"; sourceTree = "<group>"; };
 		4D8A96AA16C3C23200E242B3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		55A2A7856B9DFA3E493DD0CF /* Pods-Romo X.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X.debug.xcconfig"; path = "Target Support Files/Pods-Romo X/Pods-Romo X.debug.xcconfig"; sourceTree = "<group>"; };
+		59620A4008AF2D504517F402 /* Pods-Romo X.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X.release.xcconfig"; path = "Target Support Files/Pods-Romo X/Pods-Romo X.release.xcconfig"; sourceTree = "<group>"; };
 		711FB1A91843E50B00A12550 /* RMControlSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMControlSelectionVC.h; sourceTree = "<group>"; };
 		711FB1AA1843E50B00A12550 /* RMControlSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMControlSelectionVC.m; sourceTree = "<group>"; };
 		711FB1B51843E85E00A12550 /* RMWifiPeerRomoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMWifiPeerRomoCell.h; sourceTree = "<group>"; };
@@ -623,6 +625,7 @@
 		71A51B3C184D67AF00CB7D36 /* RMControlDialPadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMControlDialPadCell.h; path = Views/RMControlDialPadCell.h; sourceTree = "<group>"; };
 		71A51B3D184D67AF00CB7D36 /* RMDriveTiltSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMDriveTiltSlider.m; path = Views/RMDriveTiltSlider.m; sourceTree = "<group>"; };
 		71A51B3E184D67AF00CB7D36 /* RMDriveTiltSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMDriveTiltSlider.h; path = Views/RMDriveTiltSlider.h; sourceTree = "<group>"; };
+		71A964BD3D0196659FD5465A /* libPods-Romo X.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Romo X.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A9E45317F259020041C4F7 /* RMMission_Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMission_Protected.h; sourceTree = "<group>"; };
 		71D8A2E0185007670070F928 /* planet202Sprite.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = planet202Sprite.json; sourceTree = "<group>"; };
 		71D8A32218515E6F0070F928 /* Space-Trampoline.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Space-Trampoline.caf"; sourceTree = "<group>"; };
@@ -644,6 +647,7 @@
 		71EEBFA6184D777000108591 /* Romo-Ringtone-Full-Bodied.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Romo-Ringtone-Full-Bodied.caf"; sourceTree = "<group>"; };
 		71EEBFB2184E5C9500108591 /* UIAlertView+RMDismissAll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+RMDismissAll.h"; sourceTree = "<group>"; };
 		71EEBFB3184E5C9500108591 /* UIAlertView+RMDismissAll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+RMDismissAll.m"; sourceTree = "<group>"; };
+		8244400A1CA31A522D6EAAD7 /* libPods-Romo X Control.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Romo X Control.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9400B4AB17E7ADF700B48997 /* Missions-Debriefing-Star-2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Missions-Debriefing-Star-2.caf"; sourceTree = "<group>"; };
 		9400B4AC17E7ADF700B48997 /* Missions-Debriefing-Star-3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Missions-Debriefing-Star-3.caf"; sourceTree = "<group>"; };
 		9400B4AD17E7ADF700B48997 /* Missions-Debriefing-Star.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Missions-Debriefing-Star.caf"; sourceTree = "<group>"; };
@@ -1172,6 +1176,7 @@
 		94FB3329177116630062C4A8 /* RMInfoRobotController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RMInfoRobotController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		94FE2A801816DA42002B7D10 /* RMActivityMotivation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMActivityMotivation.h; sourceTree = "<group>"; };
 		94FE2A811816DA42002B7D10 /* RMActivityMotivation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMActivityMotivation.m; sourceTree = "<group>"; };
+		A0BEEC8A3F0372AD67E745B9 /* Pods-Romo X Control.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X Control.debug.xcconfig"; path = "Target Support Files/Pods-Romo X Control/Pods-Romo X Control.debug.xcconfig"; sourceTree = "<group>"; };
 		A309E3EF1610DB3900E8730A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		A309E3F11610DB4100E8730A /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		A309E3F31610DB4800E8730A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -1180,7 +1185,6 @@
 		A3C452261611352800884D6B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		A3C452281611352E00884D6B /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		A79C2075161E15D30022FBAF /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
-		AB1B9D763D74E44B0DF92DB7 /* libPods-Romo X.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Romo X.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC21B01A17EA7ADA00DC991E /* RMJuvenileCreatureRobotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMJuvenileCreatureRobotController.h; sourceTree = "<group>"; };
 		AC21B01B17EA7ADA00DC991E /* RMJuvenileCreatureRobotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMJuvenileCreatureRobotController.m; sourceTree = "<group>"; };
 		AC21B01C17EA7ADA00DC991E /* RMMatureCreatureRobotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMatureCreatureRobotController.h; sourceTree = "<group>"; };
@@ -1386,7 +1390,7 @@
 		BFE2672318A95BCA00148BF4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ja; path = ja.lproj/ChapterInformation.plist; sourceTree = "<group>"; };
 		BFE2672418A95BE700148BF4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/UntriggeredEventPrompts.json; sourceTree = "<group>"; };
 		BFE2672618A95D3800148BF4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = CharacterScripts.strings; sourceTree = "<group>"; };
-		E391964EACCFE5E2BF0F987C /* Pods-Romo X.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X.debug.xcconfig"; path = "Target Support Files/Pods-Romo X/Pods-Romo X.debug.xcconfig"; sourceTree = "<group>"; };
+		DD6B56F19493B8AF87092E20 /* Pods-Romo X Control.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X Control.release.xcconfig"; path = "Target Support Files/Pods-Romo X Control/Pods-Romo X Control.release.xcconfig"; sourceTree = "<group>"; };
 		E792F209160D52CC0004A84E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E792F20B160D52D20004A84E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E792F20F160D52DB0004A84E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -1395,10 +1399,6 @@
 		E7E25AB0160D45E5007171E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E7E25AB2160D45E5007171E1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E7F919C916528A640084FC6C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		E8133C6557B26A5FC98611FA /* Pods-Romo X.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X.release.xcconfig"; path = "Target Support Files/Pods-Romo X/Pods-Romo X.release.xcconfig"; sourceTree = "<group>"; };
-		EC3905DE012078DFC1811AC2 /* Pods-Romo X Control.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X Control.debug.xcconfig"; path = "Target Support Files/Pods-Romo X Control/Pods-Romo X Control.debug.xcconfig"; sourceTree = "<group>"; };
-		F63BF46936FCC626EE4504E5 /* libPods-Romo X Control.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Romo X Control.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC58EC7435062F72D9FF4100 /* Pods-Romo X Control.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X Control.release.xcconfig"; path = "Target Support Files/Pods-Romo X Control/Pods-Romo X Control.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1429,7 +1429,7 @@
 				71B9365317DA86B30069A461 /* Security.framework in Frameworks */,
 				71B9365517DA86D10069A461 /* SystemConfiguration.framework in Frameworks */,
 				71B9365617DA86DF0069A461 /* AssetsLibrary.framework in Frameworks */,
-				F25B026D1C2D9FC767498237 /* libPods-Romo X Control.a in Frameworks */,
+				E98292D768F11A1F17B58B49 /* libPods-Romo X Control.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1437,7 +1437,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1CDF0ECA1EC39D9C30E01EB /* libPods-Romo X.a in Frameworks */,
+				BA50FE8A4779953D5FE9F6D7 /* libPods-Romo X.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3151,10 +3151,10 @@
 		B4362862F9296001B701F026 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E391964EACCFE5E2BF0F987C /* Pods-Romo X.debug.xcconfig */,
-				E8133C6557B26A5FC98611FA /* Pods-Romo X.release.xcconfig */,
-				EC3905DE012078DFC1811AC2 /* Pods-Romo X Control.debug.xcconfig */,
-				FC58EC7435062F72D9FF4100 /* Pods-Romo X Control.release.xcconfig */,
+				55A2A7856B9DFA3E493DD0CF /* Pods-Romo X.debug.xcconfig */,
+				59620A4008AF2D504517F402 /* Pods-Romo X.release.xcconfig */,
+				A0BEEC8A3F0372AD67E745B9 /* Pods-Romo X Control.debug.xcconfig */,
+				DD6B56F19493B8AF87092E20 /* Pods-Romo X Control.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -3406,8 +3406,8 @@
 				BF93C69A161D4B8200D0161E /* Social.framework */,
 				E792F20B160D52D20004A84E /* SystemConfiguration.framework */,
 				E7E25AAE160D45E5007171E1 /* UIKit.framework */,
-				AB1B9D763D74E44B0DF92DB7 /* libPods-Romo X.a */,
-				F63BF46936FCC626EE4504E5 /* libPods-Romo X Control.a */,
+				71A964BD3D0196659FD5465A /* libPods-Romo X.a */,
+				8244400A1CA31A522D6EAAD7 /* libPods-Romo X Control.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -3419,12 +3419,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7130FD5117C42BAE0025B605 /* Build configuration list for PBXNativeTarget "Romo X Control" */;
 			buildPhases = (
-				C6C139DFBD1C05BE4CA084AD /* [CP] Check Pods Manifest.lock */,
+				345BF2D721F354202069B09A /* [CP] Check Pods Manifest.lock */,
 				7130FD2217C42BAD0025B605 /* Sources */,
 				7130FD2317C42BAD0025B605 /* Frameworks */,
 				7130FD2417C42BAD0025B605 /* Resources */,
 				1181DD4B205C9F02000A1C96 /* Embed Frameworks */,
-				DC43873BAD4551442F5EA7F6 /* [CP] Copy Pods Resources */,
+				BAA5CF723051F141F6ACC898 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3439,11 +3439,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF8EF19C21CD649F0025F16B /* Build configuration list for PBXNativeTarget "Romo X" */;
 			buildPhases = (
-				FC40DD47C167FA52C4D17873 /* [CP] Check Pods Manifest.lock */,
+				427E2BB67906D0682CB0FD16 /* [CP] Check Pods Manifest.lock */,
 				AF8EF18321CD649D0025F16B /* Sources */,
 				AF8EF18421CD649D0025F16B /* Frameworks */,
 				AF8EF18521CD649D0025F16B /* Resources */,
-				54AF93F6FE2F7C7D43F8F444 /* [CP] Copy Pods Resources */,
+				3AC6BBCFA332E17D651DA34D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3773,7 +3773,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		54AF93F6FE2F7C7D43F8F444 /* [CP] Copy Pods Resources */ = {
+		345BF2D721F354202069B09A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Romo X Control-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AC6BBCFA332E17D651DA34D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3788,25 +3810,29 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Romo X/Pods-Romo X-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C6C139DFBD1C05BE4CA084AD /* [CP] Check Pods Manifest.lock */ = {
+		427E2BB67906D0682CB0FD16 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Romo X Control-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Romo X-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DC43873BAD4551442F5EA7F6 /* [CP] Copy Pods Resources */ = {
+		BAA5CF723051F141F6ACC898 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3819,24 +3845,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Romo X Control/Pods-Romo X Control-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC40DD47C167FA52C4D17873 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Romo X-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -4512,7 +4520,7 @@
 /* Begin XCBuildConfiguration section */
 		7130FD4B17C42BAD0025B605 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC3905DE012078DFC1811AC2 /* Pods-Romo X Control.debug.xcconfig */;
+			baseConfigurationReference = A0BEEC8A3F0372AD67E745B9 /* Pods-Romo X Control.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ControlAppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BlackLaunchImage;
@@ -4525,6 +4533,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4552,6 +4561,7 @@
 					"$SRCROOT/../SDK/RMShared",
 					"$(PROJECT_DIR)/lib/ext/libav",
 				);
+				MARKETING_VERSION = 1.4.4;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoXControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4563,7 +4573,7 @@
 		};
 		7130FD4C17C42BAD0025B605 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC58EC7435062F72D9FF4100 /* Pods-Romo X Control.release.xcconfig */;
+			baseConfigurationReference = DD6B56F19493B8AF87092E20 /* Pods-Romo X Control.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ControlAppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BlackLaunchImage;
@@ -4576,6 +4586,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -4602,6 +4613,7 @@
 					"$SRCROOT/../SDK/RMVision",
 					"$SRCROOT/../SDK/RMShared",
 				);
+				MARKETING_VERSION = 1.4.4;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoXControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4613,7 +4625,7 @@
 		};
 		AF8EF19A21CD649F0025F16B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E391964EACCFE5E2BF0F987C /* Pods-Romo X.debug.xcconfig */;
+			baseConfigurationReference = 55A2A7856B9DFA3E493DD0CF /* Pods-Romo X.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -4627,6 +4639,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4655,8 +4668,9 @@
 					"\"${PODS_ROOT}/Headers/Public/SocketRocket\"",
 				);
 				INFOPLIST_FILE = "Supporting Files/Romo X-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.4.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoX;
@@ -4667,7 +4681,7 @@
 		};
 		AF8EF19B21CD649F0025F16B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8133C6557B26A5FC98611FA /* Pods-Romo X.release.xcconfig */;
+			baseConfigurationReference = 59620A4008AF2D504517F402 /* Pods-Romo X.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -4683,6 +4697,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -4708,8 +4723,9 @@
 					"\"${PODS_ROOT}/Headers/Public/SocketRocket\"",
 				);
 				INFOPLIST_FILE = "Supporting Files/Romo X-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.4.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoX;

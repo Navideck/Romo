@@ -171,6 +171,7 @@ typedef enum {
         RMWiFiDriveRemoteVC *driveController = [[RMWiFiDriveRemoteVC alloc] init];
         driveController.delegate = self;
         driveController.remotePeer = peer;
+        driveController.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:driveController animated:YES completion:nil];
         
     } else {

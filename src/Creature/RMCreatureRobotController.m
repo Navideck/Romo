@@ -561,7 +561,7 @@ static const float rapidEyePokeCountDecrementDelay = 3.25;
                         }
                     }];
                 }];
-                
+                controller.modalPresentationStyle = UIModalPresentationFullScreen;
                 [self presentViewController:controller animated:YES completion:^{}];
             }
         } break;

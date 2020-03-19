@@ -65,6 +65,7 @@
                                                                       handler:^(UIAlertAction * action) {}];
 
                 [alert addAction:defaultAction];
+                alert.modalPresentationStyle = UIModalPresentationFullScreen;
                 [self presentViewController:alert animated:YES completion:nil];
             } else {
                 self.scriptNames = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];

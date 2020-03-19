@@ -10,7 +10,7 @@ target 'Romo X' do
   pod 'Romo/RMCharacter'#, :path => '../Romo'
   pod 'Romo/RMVision'#, :path => '../Romo'
   pod 'CocoaLumberjack'
-  pod 'AFNetworking'
+  pod 'AFNetworking', '~> 3.0'
 
 end
 

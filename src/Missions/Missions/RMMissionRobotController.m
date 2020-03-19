@@ -352,6 +352,7 @@ typedef enum {
         if (self.Romo.robot) {
             [self runMission];
         } else {
+            self.dockingRequiredVC.modalPresentationStyle = UIModalPresentationFullScreen;
             [self presentViewController:self.dockingRequiredVC animated:YES completion:nil];
         }
     }

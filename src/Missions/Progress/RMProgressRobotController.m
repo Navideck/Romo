@@ -162,6 +162,7 @@
     dockingRequiredVC.delegate = self;
     dockingRequiredVC.showsPurchaseButton = (chapter == 1);
     dockingRequiredVC.showsDismissButton = NO;
+    dockingRequiredVC.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:dockingRequiredVC animated:YES completion:nil];
 }
 

@@ -6,11 +6,12 @@
 #import "RMCutscene.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <AVKit/AVKit.h>
 
 @interface RMCutscene ()
 
 @property (nonatomic) int cutsceneNumber;
-@property (nonatomic, strong) MPMoviePlayerController *player;
+@property (nonatomic, strong) AVPlayerViewController *playerViewController;
 
 @property (nonatomic, strong) NSTimer *playbackTimer;
 @property (nonatomic, copy) void (^completion)(BOOL completion);
@@ -25,22 +26,24 @@
 - (void)playCutscene:(int)cutscene inView:(UIView *)view completion:(void (^)(BOOL))completion
 {
     NSString *cutscenePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"Cutscene-%d",cutscene] ofType:@"m4v"];
-    
-    self.player = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL fileURLWithPath:cutscenePath]];
-    [self.player prepareToPlay];
-    self.player.controlStyle = MPMovieControlStyleNone;
-    self.player.scalingMode = MPMovieScalingModeAspectFill;
-    self.player.view.frame = view.bounds;
-    self.player.view.backgroundColor = [UIColor clearColor];
-    self.player.view.accessibilityLabel = @"Cutscene";
-    self.player.view.isAccessibilityElement = YES;
-    self.player.shouldAutoplay = NO;
-    
+
+    AVPlayer *player = [AVPlayer playerWithURL:[NSURL fileURLWithPath:cutscenePath]];
+    self.playerViewController = [AVPlayerViewController new];
+    self.playerViewController.player = player;
+    self.playerViewController.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    self.playerViewController.showsPlaybackControls = false;
+    self.playerViewController.view.frame = view.bounds;
+    self.playerViewController.view.backgroundColor = [UIColor clearColor];
+    self.playerViewController.view.accessibilityLabel = @"Cutscene";
+    self.playerViewController.view.isAccessibilityElement = YES;
+
+    [self.playerViewController.player.currentItem addObserver:self forKeyPath:@"status" options:0 context:nil];
+
     // trick to prevent iOS from showing the volume alert bezel
     self.volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(0, 0, -1000, -1000)];
     self.volumeView.clipsToBounds = YES;
     [view addSubview:self.volumeView];
-    [view addSubview:self.player.view];
+    [view addSubview:self.playerViewController.view];
     
 #ifdef DEBUG
     UITapGestureRecognizer *threeFingerTripleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleThreeFingerTripleTap:)];
@@ -52,14 +55,13 @@
     threeFingerTripleTap.numberOfTapsRequired = 3;
     [view addGestureRecognizer:threeFingerTripleTap];
     view.userInteractionEnabled = YES;
-    self.player.view.userInteractionEnabled = NO;
+    self.playerViewController.view.userInteractionEnabled = NO;
     
 #endif  // DEBUG
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackDidFinish:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackStateDidChange:) name:MPMoviePlayerPlaybackStateDidChangeNotification object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackDidFinish:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.playerViewController.player.currentItem];
+
     self.boostedVolume = NO;
     
     self.cutsceneNumber = cutscene;
@@ -72,7 +74,7 @@
 
 - (UIView *)view
 {
-    return self.player.view;
+    return self.playerViewController.view;
 }
 
 - (void)dealloc
@@ -84,8 +86,9 @@
 
 - (void)playbackDidFinish:(NSNotification *)notification
 {
-    MPMoviePlayerController *player = notification.object;
-    if (player.playableDuration > 0.0 && ABS(player.currentPlaybackTime - player.playableDuration) < 0.06) {
+    AVPlayerItem  *currentItem = notification.object;
+
+    if (CMTimeGetSeconds(currentItem.duration) > 0 && ABS(CMTimeGetSeconds(currentItem.currentTime) - CMTimeGetSeconds(currentItem.duration)) < 0.06) {
         [self cleanupAfterPlaybackFinished];
     }
 }
@@ -95,7 +98,7 @@
     if (!self.playbackTimer) {
         self.playbackTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/30.0 target:self selector:@selector(playbackTimeDidChange:) userInfo:nil repeats:YES];
     }
-    [self.player play];
+    [self.playerViewController.player play];
 }
 
 - (void)cleanupAfterPlaybackFinished
@@ -110,9 +113,9 @@
         self.volumeView = nil;
     }
     
-    if (self.player) {
-        [self.player.view removeFromSuperview];
-        self.player = nil;
+    if (self.playerViewController) {
+        [self.playerViewController.view removeFromSuperview];
+        self.playerViewController = nil;
     }
     
     if (self.completion) {
@@ -123,32 +126,22 @@
     }
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.playerViewController.player.currentItem removeObserver:self forKeyPath:@"status"];
 }
 
-- (void)playbackStateDidChange:(NSNotification *)notification
-{
-    MPMoviePlayerController *player = notification.object;
-    
-//    NSString *s = nil;
-//    switch ([notification.object playbackState]) {
-//        case MPMoviePlaybackStateStopped: s = @"stopped"; break;
-//        case MPMoviePlaybackStatePlaying: s = @"playing"; break;
-//        case MPMoviePlaybackStatePaused: s = @"paused"; break;
-//        case MPMoviePlaybackStateInterrupted: s = @"interrupted"; break;
-//        default: s = @"seeking"; break;
-//    }
-//    
-    if ((player.playbackState == MPMoviePlaybackStateInterrupted ||
-         player.playbackState == MPMoviePlaybackStatePaused ||
-         player.playbackState == MPMoviePlaybackStateStopped) &&
-        ABS(player.currentPlaybackTime - player.playableDuration) > 0.05) {
-        [player play];
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"rate"]) {
+        float time = CMTimeGetSeconds(self.playerViewController.player.currentItem.currentTime) - CMTimeGetSeconds(self.playerViewController.player.currentItem.duration);
+
+        if ((self.playerViewController.player.rate == 0) && ABS(time) > 0.05) {
+            [self.playerViewController.player play];
+        }
     }
 }
 
 - (void)playbackTimeDidChange:(NSTimer *)playbackTimer
 {
-    float time = self.player.currentPlaybackTime;
+    float time = CMTimeGetSeconds(self.playerViewController.player.currentTime);
 
     if (!self.boostedVolume && time > 0.1) {
         [self boostVolume];
@@ -197,7 +190,8 @@
 
 - (void)handleThreeFingerTripleTap:(UITapGestureRecognizer *)tap
 {
-    self.player.currentPlaybackTime = self.player.playableDuration - 0.02;
+    CMTime time = CMTimeMakeWithSeconds(CMTimeGetSeconds(self.playerViewController.player.currentItem.duration) - 0.02, self.playerViewController.player.currentTime.timescale);
+    [self.playerViewController.player seekToTime:time];
     [self cleanupAfterPlaybackFinished];
 }
 
@@ -208,7 +202,7 @@
 
 - (void)applicationWillResignActive:(NSNotification *)notification
 {
-    [self.player stop];
+    [self.playerViewController.player pause];
 }
 
 - (void)boostVolume

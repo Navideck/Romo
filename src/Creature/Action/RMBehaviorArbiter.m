@@ -445,7 +445,7 @@ static const float kLineLeakMax = 5.0;
                             self.behaviorStates[behaviorValue] = @NO;
                         }
                     }
-                    
+                    self.dockingRequiredVC.modalPresentationStyle = UIModalPresentationFullScreen;
                     [self.delegate.viewController presentViewController:self.dockingRequiredVC animated:YES completion:nil];
                 }
             }

@@ -363,7 +363,8 @@ static const int kPortaitKeyboardHeight = 216;
         dockingRequiredVC.delegate = self;
         dockingRequiredVC.showsPurchaseButton = NO;
         dockingRequiredVC.showsDismissButton = NO;
-        
+        dockingRequiredVC.modalPresentationStyle = UIModalPresentationFullScreen;
+
         [self presentViewController:dockingRequiredVC animated:YES
                          completion:^{
                              if (self.robot) {
