@@ -4535,7 +4535,6 @@
 				COMPRESS_PNG_FILES = NO;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks/**",
@@ -4557,11 +4556,11 @@
 					"$(SRCROOT)/lib/ext/libav",
 					"$SRCROOT/../SDK/RMCore/**",
 					"$SRCROOT/../SDK/RMCharacter/**",
-					"$SRCROOT/../SDK/RMVision",
-					"$SRCROOT/../SDK/RMShared",
+					$SRCROOT/../SDK/RMVision,
+					$SRCROOT/../SDK/RMShared,
 					"$(PROJECT_DIR)/lib/ext/libav",
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoXControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4588,7 +4587,6 @@
 				COMPRESS_PNG_FILES = NO;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
-				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4610,10 +4608,10 @@
 					"$(SRCROOT)/lib/ext/libav",
 					"$SRCROOT/../SDK/RMCore/**",
 					"$SRCROOT/../SDK/RMCharacter/**",
-					"$SRCROOT/../SDK/RMVision",
-					"$SRCROOT/../SDK/RMShared",
+					$SRCROOT/../SDK/RMVision,
+					$SRCROOT/../SDK/RMShared,
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoXControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4670,7 +4668,7 @@
 				INFOPLIST_FILE = "Supporting Files/Romo X-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoX;
@@ -4725,7 +4723,7 @@
 				INFOPLIST_FILE = "Supporting Files/Romo X-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoX;

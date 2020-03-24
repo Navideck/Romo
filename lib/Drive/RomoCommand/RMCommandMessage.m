@@ -127,7 +127,7 @@
         _rightSlider     = [coder decodeFloatForKey:KEY_DRIVE_RIGHT];
         _distance        = [coder decodeFloatForKey:KEY_DRIVE_DISTANCE];
         _angle           = [coder decodeFloatForKey:KEY_DRIVE_ANGLE];
-        _sector          = [coder decodeIntForKey:KEY_DRIVE_SECTOR];
+        _sector          = (RMDpadSector)[coder decodeIntegerForKey:KEY_DRIVE_SECTOR];
         _expression      = (RMCharacterExpression)[coder decodeIntegerForKey:KEY_EXPRESSION];
     }
     
