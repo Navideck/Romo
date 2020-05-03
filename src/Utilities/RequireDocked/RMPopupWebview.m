@@ -13,7 +13,7 @@
 
 @interface RMPopupWebview ()
 
-@property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) UIButton *dismissButton;
 
 @end
@@ -44,12 +44,19 @@
 
 #pragma mark -- Public properties
 
-- (UIWebView *)webView
+- (WKWebView *)webView
 {
     if (!_webView) {
-        _webView = [[UIWebView alloc] init];
+        // Equivalent to scalesPageToFit = YES;
+        NSString *javascript = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);";
+        WKUserScript *wkUserScript = [[WKUserScript alloc] initWithSource:javascript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+        WKUserContentController *wkUController = [[WKUserContentController alloc] init];
+        [wkUController addUserScript:wkUserScript];
+        WKWebViewConfiguration *wkWebConfig = [[WKWebViewConfiguration alloc] init];
+        wkWebConfig.userContentController = wkUController;
+        _webView = [[WKWebView alloc] initWithFrame:self.frame configuration:wkWebConfig];
+
         _webView.scrollView.bounces = NO;
-        _webView.scalesPageToFit = YES;
     }
     
     return _webView;

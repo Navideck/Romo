@@ -1,37 +1,34 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - CocoaLumberjack (3.4.2):
-    - CocoaLumberjack/Default (= 3.4.2)
-    - CocoaLumberjack/Extensions (= 3.4.2)
-  - CocoaLumberjack/Default (3.4.2)
-  - CocoaLumberjack/Extensions (3.4.2):
-    - CocoaLumberjack/Default
+  - CocoaLumberjack (3.6.1):
+    - CocoaLumberjack/Core (= 3.6.1)
+  - CocoaLumberjack/Core (3.6.1)
   - GPUImage (0.1.7)
   - OpenCV (2.4.13.6)
-  - Romo (0.3.2):
-    - Romo/RMCore (= 0.3.2)
-  - Romo/RMCharacter (0.3.2):
+  - Romo (0.5.0):
+    - Romo/RMCore (= 0.5.0)
+  - Romo/RMCharacter (0.5.0):
     - Romo/RMShared
-  - Romo/RMCore (0.3.2):
+  - Romo/RMCore (0.5.0):
     - Romo/RMShared
-  - Romo/RMShared (0.3.2):
+  - Romo/RMShared (0.5.0):
     - CocoaLumberjack
     - SocketRocket
-  - Romo/RMVision (0.3.2):
+  - Romo/RMVision (0.5.0):
     - CocoaLumberjack
     - GPUImage
     - OpenCV (~> 2.0)
@@ -39,7 +36,7 @@ PODS:
   - SocketRocket (0.5.1)
 
 DEPENDENCIES:
-  - AFNetworking (~> 3.0)
+  - AFNetworking (~> 4.0)
   - CocoaLumberjack
   - Romo
   - Romo/RMCharacter
@@ -55,13 +52,13 @@ SPEC REPOS:
     - SocketRocket
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   OpenCV: cd36a3467c21572d658c2640488fe0d5a93ca192
-  Romo: dbcd468688a9b5f4c811c9535cb1b832d6454bf2
+  Romo: 6d05a72ef2b6dd552bc590837496d6daf83fd6d8
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
 
-PODFILE CHECKSUM: fc9a6d907b033d77af6f072660cb7b7c7ca02c8f
+PODFILE CHECKSUM: d89fedf07138f5780f79d0f11f0502eae8284f98
 
 COCOAPODS: 1.9.1

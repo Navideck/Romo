@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
 @interface RMPopupWebview : UIView
 
-@property (nonatomic, strong, readonly) UIWebView *webView;
+@property (nonatomic, strong, readonly) WKWebView *webView;
 @property (nonatomic, strong, readonly) UIButton *dismissButton;
 
 @end

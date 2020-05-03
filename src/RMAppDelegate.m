@@ -345,18 +345,7 @@ DDLOG_ENABLE_DYNAMIC_LEVELS
 
 #pragma mark - Application States
 
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-{
-
-    if (@available(iOS 9.0, *)) {
-        return [self application:application openURL:url options:@{}];
-    } else {
-        // Fallback on earlier versions
-        return [self application:application openURL:url sourceApplication:nil annotation:@{}];
-    }
-}
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
     if ([[url scheme] isEqualToString:@"romo"]) {
         return YES;
