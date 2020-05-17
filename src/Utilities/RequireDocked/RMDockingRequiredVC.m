@@ -81,7 +81,7 @@ NSString *const RMRomoControlAppStoreURL = @"https://itunes.apple.com/us/app/rom
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-#if !defined(USE_SIMULATED_ROBOT) || defined(SOUND_DEBUG)
+#if !USE_SIMULATED_ROBOT || defined(SOUND_DEBUG)
     [RMSoundEffect playForegroundEffectWithName:creaturePowerDownSound repeats:NO gain:1.0];
 #endif
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -90,7 +90,8 @@ NSString *const RMRomoControlAppStoreURL = @"https://itunes.apple.com/us/app/rom
                                                object:nil];
     
 #ifdef DEBUG
-#ifdef USE_SIMULATED_ROBOT
+#if USE_SIMULATED_ROBOT
+    NSLog(@"Using simulated robot");
     double delayInSeconds = 1.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -233,7 +234,7 @@ NSString *const RMRomoControlAppStoreURL = @"https://itunes.apple.com/us/app/rom
 
 - (void)handleRobotDidConnectNotification:(NSNotification *)notification
 {
-#if !defined(USE_SIMULATED_ROBOT) || defined(SOUND_DEBUG)
+#if !USE_SIMULATED_ROBOT || defined(SOUND_DEBUG)
     [RMSoundEffect playBackgroundEffectWithName:creaturePowerUpSound repeats:NO gain:1.0];
 #endif
     if (self.childViewControllers.count) {

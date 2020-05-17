@@ -10,6 +10,7 @@
 		116C99862064867900DAD954 /* H264HwEncoderImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 116C9983206483CE00DAD954 /* H264HwEncoderImpl.m */; };
 		1181DCCA205C932F000A1C96 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11917C57205C7A2900D69613 /* VideoToolbox.framework */; };
 		1181DD45205C9937000A1C96 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1181DD44205C9937000A1C96 /* libiconv.tbd */; };
+		5A60D6CA5CBF58C83B9E9910 /* libPods-Romo X Control.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C480A4D46215064843E0E5 /* libPods-Romo X Control.a */; };
 		711FB1AB1843E50B00A12550 /* RMControlSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 711FB1AA1843E50B00A12550 /* RMControlSelectionVC.m */; };
 		711FB1B71843E85E00A12550 /* RMWifiPeerRomoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 711FB1B61843E85E00A12550 /* RMWifiPeerRomoCell.m */; };
 		711FB1BA184403D600A12550 /* RMTelepresencePeerRomoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 711FB1B9184403D600A12550 /* RMTelepresencePeerRomoCell.m */; };
@@ -93,6 +94,7 @@
 		71EEBFB6184E5C9500108591 /* UIAlertView+RMDismissAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EEBFB3184E5C9500108591 /* UIAlertView+RMDismissAll.m */; };
 		71F29F7D17DA768B007B76B0 /* ControllerSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94B594F817D2A65700B3F534 /* ControllerSettings.plist */; };
 		71F29F7E17DA768B007B76B0 /* DriveExpressionPopover.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94B594F917D2A65700B3F534 /* DriveExpressionPopover.plist */; };
+		927A3D0657F2CC1E6D395135 /* libPods-Romo X.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E514BCE171FDC96924538E /* libPods-Romo X.a */; };
 		9407C585180DD63200FA2F4C /* RMAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = BF20381017C2AFFF00552F8D /* RMAnalytics.m */; };
 		9440FFF418185813007E157F /* RMGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9429EA8D17AC3B7F00D24441 /* RMGradientLabel.m */; };
 		945C597D17E7E0C0001C3CE8 /* RMDpad.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C595117E7E0C0001C3CE8 /* RMDpad.m */; };
@@ -538,7 +540,6 @@
 		AF8EF41321CD676D0025F16B /* Missions.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD5A618774BBC0051C0CF /* Missions.strings */; };
 		AF8EF41421CD676D0025F16B /* Missions-State Compiling-4.caf in Resources */ = {isa = PBXBuildFile; fileRef = AC5BA36F180CAEFB00119FA6 /* Missions-State Compiling-4.caf */; };
 		AF8EF41521CD676D0025F16B /* EyePoke-4.caf in Resources */ = {isa = PBXBuildFile; fileRef = ACD22EA9180E766E00464A7D /* EyePoke-4.caf */; };
-		B72950C9EAFB429C5EA06A59 /* libPods-Romo X Control.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45817E5BFFAFB2841B1614A9 /* libPods-Romo X Control.a */; };
 		BFCDD5C718774BBC0051C0CF /* CharacterScripts.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD59118774BBC0051C0CF /* CharacterScripts.strings */; };
 		BFCDD5CA18774BBC0051C0CF /* Extras.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD59318774BBC0051C0CF /* Extras.strings */; };
 		BFCDD5CD18774BBC0051C0CF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD59518774BBC0051C0CF /* Localizable.strings */; };
@@ -559,7 +560,6 @@
 		BFCDD60318774BBC0051C0CF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD5BC18774BBC0051C0CF /* Localizable.strings */; };
 		BFCDD60618774BBC0051C0CF /* MissionActions.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD5BE18774BBC0051C0CF /* MissionActions.strings */; };
 		BFCDD60918774BBC0051C0CF /* Missions.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD5C018774BBC0051C0CF /* Missions.strings */; };
-		C1D18F033A85076A8FEDA971 /* libPods-Romo X.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31458284B73DA085374757D0 /* libPods-Romo X.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -580,7 +580,8 @@
 		116C9983206483CE00DAD954 /* H264HwEncoderImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H264HwEncoderImpl.m; sourceTree = "<group>"; };
 		1181DD44205C9937000A1C96 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		11917C57205C7A2900D69613 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
-		31458284B73DA085374757D0 /* libPods-Romo X.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Romo X.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23F5BEA8D7093A26E2E371ED /* Pods-Romo X.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X.release.xcconfig"; path = "Target Support Files/Pods-Romo X/Pods-Romo X.release.xcconfig"; sourceTree = "<group>"; };
+		29E514BCE171FDC96924538E /* libPods-Romo X.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Romo X.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4384BA18182C6459005D1775 /* InfoTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoTestCase.m; sourceTree = "<group>"; };
 		43AEF19617E4FE41002B9C62 /* UI Tests (sim)-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UI Tests (sim)-Info.plist"; sourceTree = "<group>"; };
 		43AEF19817E4FE41002B9C62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -588,8 +589,8 @@
 		43C8900217E5020400FE115E /* IntroTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroTestCase.m; sourceTree = "<group>"; };
 		43C8901317E5033B00FE115E /* KIFUITestActor+RMInteractions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+RMInteractions.h"; sourceTree = "<group>"; };
 		43C8901417E5033B00FE115E /* KIFUITestActor+RMInteractions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+RMInteractions.m"; sourceTree = "<group>"; };
-		45817E5BFFAFB2841B1614A9 /* libPods-Romo X Control.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Romo X Control.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8A96AA16C3C23200E242B3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		63C480A4D46215064843E0E5 /* libPods-Romo X Control.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Romo X Control.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		711FB1A91843E50B00A12550 /* RMControlSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMControlSelectionVC.h; sourceTree = "<group>"; };
 		711FB1AA1843E50B00A12550 /* RMControlSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMControlSelectionVC.m; sourceTree = "<group>"; };
 		711FB1B51843E85E00A12550 /* RMWifiPeerRomoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMWifiPeerRomoCell.h; sourceTree = "<group>"; };
@@ -645,6 +646,8 @@
 		71EEBFA6184D777000108591 /* Romo-Ringtone-Full-Bodied.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Romo-Ringtone-Full-Bodied.caf"; sourceTree = "<group>"; };
 		71EEBFB2184E5C9500108591 /* UIAlertView+RMDismissAll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+RMDismissAll.h"; sourceTree = "<group>"; };
 		71EEBFB3184E5C9500108591 /* UIAlertView+RMDismissAll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+RMDismissAll.m"; sourceTree = "<group>"; };
+		789C039965E190FA8EAA49F0 /* Pods-Romo X.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X.debug.xcconfig"; path = "Target Support Files/Pods-Romo X/Pods-Romo X.debug.xcconfig"; sourceTree = "<group>"; };
+		7963310E0E60F9279CD7ABA0 /* Pods-Romo X Control.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X Control.release.xcconfig"; path = "Target Support Files/Pods-Romo X Control/Pods-Romo X Control.release.xcconfig"; sourceTree = "<group>"; };
 		9400B4AB17E7ADF700B48997 /* Missions-Debriefing-Star-2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Missions-Debriefing-Star-2.caf"; sourceTree = "<group>"; };
 		9400B4AC17E7ADF700B48997 /* Missions-Debriefing-Star-3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Missions-Debriefing-Star-3.caf"; sourceTree = "<group>"; };
 		9400B4AD17E7ADF700B48997 /* Missions-Debriefing-Star.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Missions-Debriefing-Star.caf"; sourceTree = "<group>"; };
@@ -1173,7 +1176,7 @@
 		94FB3329177116630062C4A8 /* RMInfoRobotController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RMInfoRobotController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		94FE2A801816DA42002B7D10 /* RMActivityMotivation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMActivityMotivation.h; sourceTree = "<group>"; };
 		94FE2A811816DA42002B7D10 /* RMActivityMotivation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMActivityMotivation.m; sourceTree = "<group>"; };
-		A26074A2FE645CD0C5395E22 /* Pods-Romo X.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X.release.xcconfig"; path = "Target Support Files/Pods-Romo X/Pods-Romo X.release.xcconfig"; sourceTree = "<group>"; };
+		972A589B9A7707F08930D1A0 /* Pods-Romo X Control.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X Control.debug.xcconfig"; path = "Target Support Files/Pods-Romo X Control/Pods-Romo X Control.debug.xcconfig"; sourceTree = "<group>"; };
 		A309E3EF1610DB3900E8730A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		A309E3F11610DB4100E8730A /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		A309E3F31610DB4800E8730A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -1181,7 +1184,6 @@
 		A3C452241611351F00884D6B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		A3C452261611352800884D6B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		A3C452281611352E00884D6B /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		A6A86536AC81BA04F5B303C3 /* Pods-Romo X Control.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X Control.release.xcconfig"; path = "Target Support Files/Pods-Romo X Control/Pods-Romo X Control.release.xcconfig"; sourceTree = "<group>"; };
 		A79C2075161E15D30022FBAF /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		AC21B01A17EA7ADA00DC991E /* RMJuvenileCreatureRobotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMJuvenileCreatureRobotController.h; sourceTree = "<group>"; };
 		AC21B01B17EA7ADA00DC991E /* RMJuvenileCreatureRobotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMJuvenileCreatureRobotController.m; sourceTree = "<group>"; };
@@ -1387,8 +1389,6 @@
 		BFE2672318A95BCA00148BF4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ja; path = ja.lproj/ChapterInformation.plist; sourceTree = "<group>"; };
 		BFE2672418A95BE700148BF4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/UntriggeredEventPrompts.json; sourceTree = "<group>"; };
 		BFE2672618A95D3800148BF4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = CharacterScripts.strings; sourceTree = "<group>"; };
-		CB2FBDB26D1F29BB92A2C490 /* Pods-Romo X Control.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X Control.debug.xcconfig"; path = "Target Support Files/Pods-Romo X Control/Pods-Romo X Control.debug.xcconfig"; sourceTree = "<group>"; };
-		DBE5AD370B7BD1E43CAF2A56 /* Pods-Romo X.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X.debug.xcconfig"; path = "Target Support Files/Pods-Romo X/Pods-Romo X.debug.xcconfig"; sourceTree = "<group>"; };
 		E792F209160D52CC0004A84E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E792F20B160D52D20004A84E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E792F20F160D52DB0004A84E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -1427,7 +1427,7 @@
 				71B9365317DA86B30069A461 /* Security.framework in Frameworks */,
 				71B9365517DA86D10069A461 /* SystemConfiguration.framework in Frameworks */,
 				71B9365617DA86DF0069A461 /* AssetsLibrary.framework in Frameworks */,
-				B72950C9EAFB429C5EA06A59 /* libPods-Romo X Control.a in Frameworks */,
+				5A60D6CA5CBF58C83B9E9910 /* libPods-Romo X Control.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1435,7 +1435,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1D18F033A85076A8FEDA971 /* libPods-Romo X.a in Frameworks */,
+				927A3D0657F2CC1E6D395135 /* libPods-Romo X.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3149,10 +3149,10 @@
 		B4362862F9296001B701F026 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DBE5AD370B7BD1E43CAF2A56 /* Pods-Romo X.debug.xcconfig */,
-				A26074A2FE645CD0C5395E22 /* Pods-Romo X.release.xcconfig */,
-				CB2FBDB26D1F29BB92A2C490 /* Pods-Romo X Control.debug.xcconfig */,
-				A6A86536AC81BA04F5B303C3 /* Pods-Romo X Control.release.xcconfig */,
+				789C039965E190FA8EAA49F0 /* Pods-Romo X.debug.xcconfig */,
+				23F5BEA8D7093A26E2E371ED /* Pods-Romo X.release.xcconfig */,
+				972A589B9A7707F08930D1A0 /* Pods-Romo X Control.debug.xcconfig */,
+				7963310E0E60F9279CD7ABA0 /* Pods-Romo X Control.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -3403,8 +3403,8 @@
 				BF93C69A161D4B8200D0161E /* Social.framework */,
 				E792F20B160D52D20004A84E /* SystemConfiguration.framework */,
 				E7E25AAE160D45E5007171E1 /* UIKit.framework */,
-				31458284B73DA085374757D0 /* libPods-Romo X.a */,
-				45817E5BFFAFB2841B1614A9 /* libPods-Romo X Control.a */,
+				29E514BCE171FDC96924538E /* libPods-Romo X.a */,
+				63C480A4D46215064843E0E5 /* libPods-Romo X Control.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -3416,12 +3416,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7130FD5117C42BAE0025B605 /* Build configuration list for PBXNativeTarget "Romo X Control" */;
 			buildPhases = (
-				1BA4283B9A9F8C82E349678A /* [CP] Check Pods Manifest.lock */,
+				A7BF7A44E8621C830D4F6A08 /* [CP] Check Pods Manifest.lock */,
 				7130FD2217C42BAD0025B605 /* Sources */,
 				7130FD2317C42BAD0025B605 /* Frameworks */,
 				7130FD2417C42BAD0025B605 /* Resources */,
 				1181DD4B205C9F02000A1C96 /* Embed Frameworks */,
-				5A0046708C7C15982C20872D /* [CP] Copy Pods Resources */,
+				7315AA48FBB5E03A20188E9F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3436,11 +3436,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF8EF19C21CD649F0025F16B /* Build configuration list for PBXNativeTarget "Romo X" */;
 			buildPhases = (
-				3E672EC49EF04C76902B6225 /* [CP] Check Pods Manifest.lock */,
+				FDB8FF95167E23EEFD5E8A98 /* [CP] Check Pods Manifest.lock */,
 				AF8EF18321CD649D0025F16B /* Sources */,
 				AF8EF18421CD649D0025F16B /* Frameworks */,
 				AF8EF18521CD649D0025F16B /* Resources */,
-				4908978F0896CDC2F1DAAC8A /* [CP] Copy Pods Resources */,
+				5BA485884B811636178DA211 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3457,7 +3457,7 @@
 		E7E25AA1160D45E5007171E1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = Romotive;
 				TargetAttributes = {
 					7130FD2517C42BAD0025B605 = {
@@ -3769,51 +3769,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1BA4283B9A9F8C82E349678A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Romo X Control-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3E672EC49EF04C76902B6225 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Romo X-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4908978F0896CDC2F1DAAC8A /* [CP] Copy Pods Resources */ = {
+		5BA485884B811636178DA211 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3843,7 +3799,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Romo X/Pods-Romo X-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5A0046708C7C15982C20872D /* [CP] Copy Pods Resources */ = {
+		7315AA48FBB5E03A20188E9F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3859,6 +3815,50 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Romo X Control/Pods-Romo X Control-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7BF7A44E8621C830D4F6A08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Romo X Control-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDB8FF95167E23EEFD5E8A98 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Romo X-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -4534,7 +4534,7 @@
 /* Begin XCBuildConfiguration section */
 		7130FD4B17C42BAD0025B605 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB2FBDB26D1F29BB92A2C490 /* Pods-Romo X Control.debug.xcconfig */;
+			baseConfigurationReference = 972A589B9A7707F08930D1A0 /* Pods-Romo X Control.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ControlAppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
@@ -4553,7 +4553,6 @@
 					"$(SRCROOT)/Frameworks/**",
 				);
 				GCC_PREFIX_HEADER = "Romo X Control/Supporting Files/RMControl-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -4569,8 +4568,8 @@
 					"$(SRCROOT)/lib/ext/libav",
 					"$SRCROOT/../SDK/RMCore/**",
 					"$SRCROOT/../SDK/RMCharacter/**",
-					"$SRCROOT/../SDK/RMVision",
-					"$SRCROOT/../SDK/RMShared",
+					$SRCROOT/../SDK/RMVision,
+					$SRCROOT/../SDK/RMShared,
 					"$(PROJECT_DIR)/lib/ext/libav",
 				);
 				MARKETING_VERSION = 1.4.6;
@@ -4585,7 +4584,7 @@
 		};
 		7130FD4C17C42BAD0025B605 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6A86536AC81BA04F5B303C3 /* Pods-Romo X Control.release.xcconfig */;
+			baseConfigurationReference = 7963310E0E60F9279CD7ABA0 /* Pods-Romo X Control.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ControlAppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
@@ -4620,8 +4619,8 @@
 					"$(SRCROOT)/lib/ext/libav",
 					"$SRCROOT/../SDK/RMCore/**",
 					"$SRCROOT/../SDK/RMCharacter/**",
-					"$SRCROOT/../SDK/RMVision",
-					"$SRCROOT/../SDK/RMShared",
+					$SRCROOT/../SDK/RMVision,
+					$SRCROOT/../SDK/RMShared,
 				);
 				MARKETING_VERSION = 1.4.6;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -4635,7 +4634,7 @@
 		};
 		AF8EF19A21CD649F0025F16B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBE5AD370B7BD1E43CAF2A56 /* Pods-Romo X.debug.xcconfig */;
+			baseConfigurationReference = 789C039965E190FA8EAA49F0 /* Pods-Romo X.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -4658,8 +4657,9 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "Supporting Files/Romo X-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"COCOAPODS=1",
+					"USE_SIMULATED_ROBOT=0",
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -4690,7 +4690,7 @@
 		};
 		AF8EF19B21CD649F0025F16B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A26074A2FE645CD0C5395E22 /* Pods-Romo X.release.xcconfig */;
+			baseConfigurationReference = 23F5BEA8D7093A26E2E371ED /* Pods-Romo X.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -4780,7 +4780,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
-					"DISABLE_AVC=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
@@ -4793,7 +4792,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "src/Romo3-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -4833,7 +4832,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = "DISABLE_AVC=1";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -4844,7 +4843,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "src/Romo3-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
