@@ -5,7 +5,7 @@
 
 #import "UIImage+Save.h"
 #import "RMAlertView.h"
-#import <AssetsLibrary/AssetsLibrary.h>
+#import <Photos/Photos.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
 
 static RMAlertView *photosNotAllowed;
@@ -17,11 +17,11 @@ static RMAlertView *photosNotAllowed;
                      completionSelector:(SEL)completionSelector
                             contextInfo:(void *)contextInfo {
     
-    DDLogVerbose(@"%ld", (long)[ALAssetsLibrary authorizationStatus]);
+    DDLogVerbose(@"%ld", (long)[PHPhotoLibrary authorizationStatus]);
 
-    ALAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
+  PHAuthorizationStatus authStatus = [PHPhotoLibrary authorizationStatus];
     // There are 4 possible auth statuses. These are the two that prevent access to the library
-    if (authStatus == ALAuthorizationStatusDenied || authStatus == ALAuthorizationStatusRestricted) {
+    if (authStatus == PHAuthorizationStatusDenied || authStatus == PHAuthorizationStatusRestricted) {
         if (photosNotAllowed == nil) {
             photosNotAllowed = [[RMAlertView alloc] initWithTitle:@"Romo can't save photos!"
                                                           message:@"To allow Romo to save photos to your Camera Roll, go to Settings > Privacy > Photos, and allow Romo access to your photos."

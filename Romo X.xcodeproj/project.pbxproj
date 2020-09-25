@@ -133,6 +133,7 @@
 		ACE687D118516800002D3436 /* Missions-Editor-Accept.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9400B4AF17E7ADF700B48997 /* Missions-Editor-Accept.caf */; };
 		AF23CEF8214D2ADA0030A653 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF23CEF7214D2ADA0030A653 /* Launch Screen.storyboard */; };
 		AF52E1C221CDADCC00678CF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF52E1C121CDADCC00678CF4 /* Assets.xcassets */; };
+		AF68BC23251F7C98001341ED /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF68BC22251F7C98001341ED /* Photos.framework */; };
 		AF8EF27421CD676D0025F16B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 948E4BFB176E88940077BBCF /* Reachability.m */; };
 		AF8EF27521CD676D0025F16B /* RMLoudSoundDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 94051BDC181A1CA900C87F0E /* RMLoudSoundDetector.m */; };
 		AF8EF27621CD676D0025F16B /* RMListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16841799B1DD002AF657 /* RMListener.m */; };
@@ -1289,6 +1290,7 @@
 		AF23CEF9214D312C0030A653 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		AF52E1C121CDADCC00678CF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF65AEF221CA645E00A3F26C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		AF68BC22251F7C98001341ED /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
 		AF87903E251E541900690395 /* Romo X Control.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Romo X Control.entitlements"; sourceTree = "<group>"; };
 		AF8EF18121CD55FA0025F16B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		AF8EF18721CD649D0025F16B /* Romo X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Romo X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1425,6 +1427,7 @@
 				71B9364F17DA86A20069A461 /* Accounts.framework in Frameworks */,
 				71B9365017DA86A20069A461 /* CFNetwork.framework in Frameworks */,
 				71B9365317DA86B30069A461 /* Security.framework in Frameworks */,
+				AF68BC23251F7C98001341ED /* Photos.framework in Frameworks */,
 				71B9365517DA86D10069A461 /* SystemConfiguration.framework in Frameworks */,
 				71B9365617DA86DF0069A461 /* AssetsLibrary.framework in Frameworks */,
 				5A60D6CA5CBF58C83B9E9910 /* libPods-Romo X Control.a in Frameworks */,
@@ -3369,6 +3372,7 @@
 		E7E25AAD160D45E5007171E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF68BC22251F7C98001341ED /* Photos.framework */,
 				AF8EF18121CD55FA0025F16B /* libz.tbd */,
 				AF65AEF221CA645E00A3F26C /* libsqlite3.tbd */,
 				1181DD44205C9937000A1C96 /* libiconv.tbd */,
