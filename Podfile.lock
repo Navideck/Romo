@@ -41,6 +41,7 @@ DEPENDENCIES:
   - Romo
   - Romo/RMCharacter
   - Romo/RMVision
+  - SocketRocket (from `https://github.com/Gkpsundar/SocketRocket.git`)
 
 SPEC REPOS:
   trunk:
@@ -49,7 +50,15 @@ SPEC REPOS:
     - GPUImage
     - OpenCV
     - Romo
-    - SocketRocket
+
+EXTERNAL SOURCES:
+  SocketRocket:
+    :git: https://github.com/Gkpsundar/SocketRocket.git
+
+CHECKOUT OPTIONS:
+  SocketRocket:
+    :commit: 064b2d2c83909832239a7d54aab046e32c4fed3e
+    :git: https://github.com/Gkpsundar/SocketRocket.git
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
@@ -57,8 +66,8 @@ SPEC CHECKSUMS:
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   OpenCV: cd36a3467c21572d658c2640488fe0d5a93ca192
   Romo: bdd6c682b825c4dd0f662cafe04e9c16eecf7259
-  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  SocketRocket: dbb1554b8fc288ef8ef370d6285aeca7361be31e
 
-PODFILE CHECKSUM: d89fedf07138f5780f79d0f11f0502eae8284f98
+PODFILE CHECKSUM: 5f01f69969d1fea596dfd406f456ada2abfa867c
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

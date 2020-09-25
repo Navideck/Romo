@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,7 +45,6 @@
 		7130FD8D17C42E140025B605 /* RAVService.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16701799B1DD002AF657 /* RAVService.m */; };
 		7130FD8E17C42E5C0025B605 /* RAVVideoOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16761799B1DD002AF657 /* RAVVideoOutput.m */; };
 		7130FD9A17C42F200025B605 /* RGLBufferVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16931799B1DE002AF657 /* RGLBufferVC.m */; };
-		7130FD9B17C42F230025B605 /* RGLBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16951799B1DE002AF657 /* RGLBufferView.m */; };
 		7130FDA517C42F4F0025B605 /* RMCommandService.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F167B1799B1DD002AF657 /* RMCommandService.m */; };
 		7130FDA617C42F5E0025B605 /* RMSpaceScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 941784271794AE4B00AAFF45 /* RMSpaceScene.m */; };
 		7130FDA717C42F610025B605 /* RMSpaceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9417842F1794AE8E00AAFF45 /* RMSpaceObject.m */; };
@@ -78,8 +77,8 @@
 		71A51B28184D2BBF00CB7D36 /* RMWifiToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A51B27184D2BBF00CB7D36 /* RMWifiToolbar.m */; };
 		71A51B3F184D67AF00CB7D36 /* RMControlDialPadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A51B3B184D67AF00CB7D36 /* RMControlDialPadCell.m */; };
 		71A51B40184D67AF00CB7D36 /* RMDriveTiltSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A51B3D184D67AF00CB7D36 /* RMDriveTiltSlider.m */; };
-		71B9364017DA86750069A461 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBE251E16156D0D00734C24 /* GLKit.framework */; };
-		71B9364317DA86790069A461 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A309E3EF1610DB3900E8730A /* OpenGLES.framework */; };
+		71B9364017DA86750069A461 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBE251E16156D0D00734C24 /* GLKit.framework */; platformFilter = ios; };
+		71B9364317DA86790069A461 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A309E3EF1610DB3900E8730A /* OpenGLES.framework */; platformFilter = ios; };
 		71B9364917DA86A20069A461 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A141AB17BF3FA000BDB66A /* CoreData.framework */; };
 		71B9364A17DA86A20069A461 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9456A820176FDD3000ECE9B7 /* CoreTelephony.framework */; };
 		71B9364C17DA86A20069A461 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94894F15176CEFCD000CCDD3 /* AdSupport.framework */; };
@@ -88,7 +87,7 @@
 		71B9365017DA86A20069A461 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94894F0D176CEF3F000CCDD3 /* CFNetwork.framework */; };
 		71B9365317DA86B30069A461 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E792F20F160D52DB0004A84E /* Security.framework */; };
 		71B9365517DA86D10069A461 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E792F20B160D52D20004A84E /* SystemConfiguration.framework */; };
-		71B9365617DA86DF0069A461 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7EC3D31641E5CF006F93C6 /* AssetsLibrary.framework */; };
+		71B9365617DA86DF0069A461 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7EC3D31641E5CF006F93C6 /* AssetsLibrary.framework */; platformFilter = ios; };
 		71D8A32318515E6F0070F928 /* Space-Trampoline.caf in Resources */ = {isa = PBXBuildFile; fileRef = 71D8A32218515E6F0070F928 /* Space-Trampoline.caf */; };
 		71E7464118564C6B00E40689 /* RMNoLocalRomosCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E7464018564C6B00E40689 /* RMNoLocalRomosCell.m */; };
 		71EEBFB6184E5C9500108591 /* UIAlertView+RMDismissAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EEBFB3184E5C9500108591 /* UIAlertView+RMDismissAll.m */; };
@@ -1290,6 +1289,7 @@
 		AF23CEF9214D312C0030A653 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		AF52E1C121CDADCC00678CF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF65AEF221CA645E00A3F26C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		AF87903E251E541900690395 /* Romo X Control.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Romo X Control.entitlements"; sourceTree = "<group>"; };
 		AF8EF18121CD55FA0025F16B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		AF8EF18721CD649D0025F16B /* Romo X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Romo X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF55054214DA4EC0027500F /* RomoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RomoTests.m; sourceTree = "<group>"; };
@@ -1467,6 +1467,7 @@
 		713D7A3B17CD64ED00B56A13 /* Romo X Control */ = {
 			isa = PBXGroup;
 			children = (
+				AF87903E251E541900690395 /* Romo X Control.entitlements */,
 				945C594517E7E0C0001C3CE8 /* src */,
 				713D7AF417CD64EE00B56A13 /* Supporting Files */,
 				713B324F17D79E1700E84037 /* Romo Control.xcassets */,
@@ -3421,7 +3422,7 @@
 				7130FD2317C42BAD0025B605 /* Frameworks */,
 				7130FD2417C42BAD0025B605 /* Resources */,
 				1181DD4B205C9F02000A1C96 /* Embed Frameworks */,
-				7315AA48FBB5E03A20188E9F /* [CP] Copy Pods Resources */,
+				37D6025F1CCA66830E8B1E12 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3769,52 +3770,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		37D6025F1CCA66830E8B1E12 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Romo X Control/Pods-Romo X Control-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Romo X Control/Pods-Romo X Control-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Romo X Control/Pods-Romo X Control-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5BA485884B811636178DA211 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Romo X/Pods-Romo X-resources.sh",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
-				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
-				"${PODS_CONFIGURATION_BUILD_DIR}/Romo.default-RMCharacter-RMShared-RMVision/RMCharacter.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/Romo.default-RMCharacter-RMShared-RMVision/RMVision.bundle",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Romo X/Pods-Romo X-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_amatorka.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_miss_etikate.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_1.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_2.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RMCharacter.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RMVision.bundle",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Romo X/Pods-Romo X-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Romo X/Pods-Romo X-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7315AA48FBB5E03A20188E9F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Romo X Control/Pods-Romo X Control-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/Romo-RMCharacter-RMShared/RMCharacter.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RMCharacter.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Romo X Control/Pods-Romo X Control-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A7BF7A44E8621C830D4F6A08 /* [CP] Check Pods Manifest.lock */ = {
@@ -3882,7 +3869,6 @@
 				711FB1BA184403D600A12550 /* RMTelepresencePeerRomoCell.m in Sources */,
 				ACE687C218516079002D3436 /* RMRealtimeAudio.m in Sources */,
 				7130FD7617C42D7A0025B605 /* RMNetworkUtilities.m in Sources */,
-				7130FD9B17C42F230025B605 /* RGLBufferView.m in Sources */,
 				7130FDAD17C42F8A0025B605 /* RMExtendedScrollView.m in Sources */,
 				94F24B0B17ECD644009C59FD /* RMControlAppDelegate.m in Sources */,
 				945C598917E7E0C0001C3CE8 /* RMRomoteDriveExpressionsPopover.m in Sources */,
@@ -4542,16 +4528,14 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = NO;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Romo X Control/Romo X Control.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/Frameworks/**",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Romo X Control/Supporting Files/RMControl-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
@@ -4562,21 +4546,16 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Romo X Control/Supporting Files/RMControl-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
-				LIBRARY_SEARCH_PATHS = (
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
 					"$(inherited)",
-					"$(SRCROOT)/lib/ext/libav",
-					"$SRCROOT/../SDK/RMCore/**",
-					"$SRCROOT/../SDK/RMCharacter/**",
-					$SRCROOT/../SDK/RMVision,
-					$SRCROOT/../SDK/RMShared,
-					"$(PROJECT_DIR)/lib/ext/libav",
 				);
 				MARKETING_VERSION = 1.4.6;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoXControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -4592,6 +4571,7 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = NO;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Romo X Control/Romo X Control.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -4599,10 +4579,7 @@
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
 				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/Frameworks/**",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Romo X Control/Supporting Files/RMControl-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
@@ -4613,20 +4590,16 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Romo X Control/Supporting Files/RMControl-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
-				LIBRARY_SEARCH_PATHS = (
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
 					"$(inherited)",
-					"$(SRCROOT)/lib/ext/libav",
-					"$SRCROOT/../SDK/RMCore/**",
-					"$SRCROOT/../SDK/RMCharacter/**",
-					$SRCROOT/../SDK/RMVision,
-					$SRCROOT/../SDK/RMShared,
 				);
 				MARKETING_VERSION = 1.4.6;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoXControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -4650,10 +4623,7 @@
 				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "Supporting Files/Romo X-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4678,7 +4648,10 @@
 				);
 				INFOPLIST_FILE = "Supporting Files/Romo X-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.4.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -4709,10 +4682,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
 				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "Supporting Files/Romo X-Prefix.pch";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -4732,7 +4702,10 @@
 				);
 				INFOPLIST_FILE = "Supporting Files/Romo X-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.4.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -4796,7 +4769,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7s armv7 arm64";
 			};
 			name = Debug;
 		};
@@ -4848,7 +4820,6 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7s armv7 arm64";
 			};
 			name = Release;
 		};

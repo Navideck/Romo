@@ -20,4 +20,5 @@ target 'Romo X Control' do
   # Pods for Romo X Control
   pod 'Romo/RMCharacter'#, :path => '../Romo'
   pod 'CocoaLumberjack'
+  pod 'SocketRocket', :git => 'https://github.com/Gkpsundar/SocketRocket.git'
 end
