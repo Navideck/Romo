@@ -6,8 +6,6 @@
 #import "RMConnection.h"
 #import "RMSession.h"
 
-#define LOCAL_LISTEN_PORT @"21131"
-
 @implementation RMConnection
 
 #pragma mark - Creation

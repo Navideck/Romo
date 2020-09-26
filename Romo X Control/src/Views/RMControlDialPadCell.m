@@ -38,6 +38,7 @@
 - (void)prepareForReuse
 {
     self.callPressBlock = nil;
+    [super prepareForReuse];
 }
 
 - (void)handleCallPress:(id)sender

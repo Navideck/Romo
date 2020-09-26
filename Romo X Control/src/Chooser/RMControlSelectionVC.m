@@ -24,6 +24,7 @@
 #import "Reachability.h"
 #import "RMNetworkUtilities.h"
 #import "RMAddress.h"
+#import "RMConnection.h"
 
 NSString * const kWifiPeerReuseIdentifier = @"WifiPeerReuseIdentifier";
 NSString * const kTelepresencePeerReuseIdentifier = @"TelepresencePeerReuseIdentifier";
@@ -154,10 +155,17 @@ typedef enum {
 
 - (void)handleCallWithNumber:(NSString *)number
 {
-    RMAddress * address = [RMAddress addressWithHost:@"100.118.252.19" port:@"21131"];
+    NSMutableArray * hostComponents = (NSMutableArray *)[number componentsSeparatedByString: @"."];
+    NSString * host = [hostComponents componentsJoinedByString:@"."];
+
+    RMAddress * address = [RMAddress addressWithHost:host port:LOCAL_LISTEN_PORT];
     RMPeer * peer = [[RMPeer alloc] initWithAddress:address];
     peer.appVersion = RMRomoWiFiDriveVersion;
     [self handleLocalConnectionWithPeer:peer];
+}
+
+//- (void)handleCallWithNumber:(NSString *)number
+//{
 //    RMTelepresenceClientViewController *controller =
 //    [[RMTelepresenceClientViewController alloc] initWithNumber:number completion:^(NSError *error) {
 //        if (error) {
@@ -168,7 +176,7 @@ typedef enum {
 //    }];
 //
 //    [self presentViewController:controller animated:YES completion:nil];
-}
+//}
 
 - (void)handleLocalConnectionWithPeer:(RMPeer *)peer
 {
