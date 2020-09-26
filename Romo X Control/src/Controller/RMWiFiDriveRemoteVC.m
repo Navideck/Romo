@@ -21,7 +21,7 @@
 #import "RMRemoteControlService.h"
 #import "RMSession.h"
 #import "RMPeer.h"
-#import "RMRomotePhotoVC.h"
+#import "RMRemotePhotoVC.h"
 #import "RMControlDriveActionBar.h"
 #import "RMControlInputMenu.h"
 #import "UIView+Additions.h"
@@ -310,7 +310,7 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
 {
     [self dismissPopovers];
 
-    RMRomotePhotoVC *photoVC = [[RMRomotePhotoVC alloc] init];
+    RMRemotePhotoVC *photoVC = [[RMRemotePhotoVC alloc] init];
     photoVC.photos = self.capturedPhotos;
     [photoVC.dismissButton addTarget:self action:@selector(handlePhotoVCDismissButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
     photoVC.modalPresentationStyle = UIModalPresentationFullScreen;

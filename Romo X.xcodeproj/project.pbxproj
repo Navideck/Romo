@@ -113,7 +113,7 @@
 		945C598C17E7E0C0001C3CE8 /* RMRomoteDrivePopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C597317E7E0C0001C3CE8 /* RMRomoteDrivePopoverController.m */; };
 		945C598D17E7E0C0001C3CE8 /* RMRomoteDriveSettingsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C597517E7E0C0001C3CE8 /* RMRomoteDriveSettingsButton.m */; };
 		945C598E17E7E0C0001C3CE8 /* RMRomoteDriveTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C597717E7E0C0001C3CE8 /* RMRomoteDriveTopBar.m */; };
-		945C598F17E7E0C0001C3CE8 /* RMRomotePhotoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C597917E7E0C0001C3CE8 /* RMRomotePhotoVC.m */; };
+		945C598F17E7E0C0001C3CE8 /* RMRemotePhotoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 945C597917E7E0C0001C3CE8 /* RMRemotePhotoVC.m */; };
 		947E66B518320584001992E5 /* RMSoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = AC67B36318177DB3007C8C3F /* RMSoundEffect.m */; };
 		947E66B61832058F001992E5 /* Spaceloop.caf in Resources */ = {isa = PBXBuildFile; fileRef = ACE26BBD180E568B0016D881 /* Spaceloop.caf */; };
 		947E66B7183205EF001992E5 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A309E3F11610DB4100E8730A /* OpenAL.framework */; };
@@ -782,8 +782,8 @@
 		945C597517E7E0C0001C3CE8 /* RMRomoteDriveSettingsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMRomoteDriveSettingsButton.m; sourceTree = "<group>"; };
 		945C597617E7E0C0001C3CE8 /* RMRomoteDriveTopBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMRomoteDriveTopBar.h; sourceTree = "<group>"; };
 		945C597717E7E0C0001C3CE8 /* RMRomoteDriveTopBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMRomoteDriveTopBar.m; sourceTree = "<group>"; };
-		945C597817E7E0C0001C3CE8 /* RMRomotePhotoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMRomotePhotoVC.h; sourceTree = "<group>"; };
-		945C597917E7E0C0001C3CE8 /* RMRomotePhotoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMRomotePhotoVC.m; sourceTree = "<group>"; };
+		945C597817E7E0C0001C3CE8 /* RMRemotePhotoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMRemotePhotoVC.h; sourceTree = "<group>"; };
+		945C597917E7E0C0001C3CE8 /* RMRemotePhotoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMRemotePhotoVC.m; sourceTree = "<group>"; };
 		945C59D517E8C25A001C3CE8 /* RMiPadVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMiPadVC.h; path = Drive/RMiPadVC.h; sourceTree = "<group>"; };
 		945C59D617E8C25A001C3CE8 /* RMiPadVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMiPadVC.m; path = Drive/RMiPadVC.m; sourceTree = "<group>"; };
 		9466AD2A18CEBD0C00FF9388 /* RMActivityChooserRobotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMActivityChooserRobotController.h; path = Selection/RMActivityChooserRobotController.h; sourceTree = "<group>"; };
@@ -1925,8 +1925,8 @@
 				945C597517E7E0C0001C3CE8 /* RMRomoteDriveSettingsButton.m */,
 				945C597617E7E0C0001C3CE8 /* RMRomoteDriveTopBar.h */,
 				945C597717E7E0C0001C3CE8 /* RMRomoteDriveTopBar.m */,
-				945C597817E7E0C0001C3CE8 /* RMRomotePhotoVC.h */,
-				945C597917E7E0C0001C3CE8 /* RMRomotePhotoVC.m */,
+				945C597817E7E0C0001C3CE8 /* RMRemotePhotoVC.h */,
+				945C597917E7E0C0001C3CE8 /* RMRemotePhotoVC.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -3935,7 +3935,7 @@
 				7130FD8B17C42DC30025B605 /* RAVVideoInput.m in Sources */,
 				7130FD7417C42D750025B605 /* RMAddress.m in Sources */,
 				7130FDEF17C4372C0025B605 /* UIImage+Save.m in Sources */,
-				945C598F17E7E0C0001C3CE8 /* RMRomotePhotoVC.m in Sources */,
+				945C598F17E7E0C0001C3CE8 /* RMRemotePhotoVC.m in Sources */,
 				945C598B17E7E0C0001C3CE8 /* RMRomoteDrivePopover.m in Sources */,
 				711FB1B71843E85E00A12550 /* RMWifiPeerRomoCell.m in Sources */,
 				945C598417E7E0C0001C3CE8 /* RMRomoteDriveBottomBar.m in Sources */,
