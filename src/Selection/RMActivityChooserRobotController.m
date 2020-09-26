@@ -126,7 +126,7 @@
         messageTemplate = NSLocalizedString(@"RomoControl-Message-NonCompatible-Device", @"Visit http://romo.tv on another local iDevice to control me.");
     }
     
-    NSString *romoNumber = [self getIPV4Address];
+    NSString *romoNumber = [self getVPNIPAddress];
     
 //    NSString *romoNumber = [[RMTelepresencePresence sharedInstance] number];
 
@@ -171,7 +171,7 @@
     self.Romo.activeFunctionalities = enableFunctionality(RMRomoFunctionalityBroadcasting, self.Romo.activeFunctionalities);
 }
 
-- (NSString *)getIPV4Address
+- (NSString *)getVPNIPAddress
 {
     NSString *address = @"error";
     struct ifaddrs *interfaces = NULL;
@@ -188,13 +188,30 @@
         {
             if(temp_addr->ifa_addr->sa_family == AF_INET)
             {
+                NSLog(@"%@",[NSString stringWithUTF8String:temp_addr->ifa_name]);
                 // Check if interface is en0 which is the wifi connection on the iPhone
-                if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"])
-                {
+                if(
+                   [[NSString stringWithUTF8String:temp_addr->ifa_name] containsString:@"tun"] ||
+                   [[NSString stringWithUTF8String:temp_addr->ifa_name] containsString:@"tap"] ||
+                   [[NSString stringWithUTF8String:temp_addr->ifa_name] containsString:@"ipsec"] ||
+                   [[NSString stringWithUTF8String:temp_addr->ifa_name] containsString:@"ppp"]){
                     // Get NSString from C String
-                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                    struct sockaddr_in *in = (struct sockaddr_in*) temp_addr->ifa_addr;
+                    address = [NSString stringWithUTF8String:inet_ntoa((in)->sin_addr)];
                 }
-            }
+            } //else { // IPv6
+//                char addr[INET6_ADDRSTRLEN];
+//                NSLog(@"%@",[NSString stringWithUTF8String:temp_addr->ifa_name]);
+//                // Check if interface is en0 which is the wifi connection on the iPhone
+//                if(
+//                   [[NSString stringWithUTF8String:temp_addr->ifa_name] containsString:@"tun"] ||
+//                   [[NSString stringWithUTF8String:temp_addr->ifa_name] containsString:@"tap"] ||
+//                   [[NSString stringWithUTF8String:temp_addr->ifa_name] containsString:@"ipsec"] ||
+//                   [[NSString stringWithUTF8String:temp_addr->ifa_name] containsString:@"ppp"]){
+//                    struct sockaddr_in6 *in6 = (struct sockaddr_in6*) temp_addr->ifa_addr;
+//                    address = [NSString stringWithUTF8String:inet_ntop(AF_INET6, &in6->sin6_addr, addr, sizeof(addr))];
+//                }
+//            }
             temp_addr = temp_addr->ifa_next;
         }
     }
