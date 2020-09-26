@@ -114,8 +114,8 @@
                                },
                                {
                                "name": "ask",
-                               "args": ["Open http://romo.tv\non your other device", "Not now", "Got it!"],
-                               "store-id": "interaction/final/romo.tv"
+                               "args": ["Open Romo X Control\non your other device", "Not now", "Got it!"],
+                               "store-id": "interaction/final/romo.control"
                                }
                                ]
                    },
@@ -123,7 +123,7 @@
                    "description": "Explain Romo Control.",
                    "condition": {
                    "name": "store-id",
-                   "args": ["interaction/final/romo.tv", "Not now"]
+                   "args": ["interaction/final/romo.control", "Not now"]
                    },
                    "actions": [{
                                "name": "mumbleWithText",
@@ -135,7 +135,7 @@
                    "description": "Explain Romo Control.",
                    "condition": {
                    "name": "store-id",
-                   "args": ["interaction/final/romo.tv", "Got it!"]
+                   "args": ["interaction/final/romo.control", "Got it!"]
                    },
                    "actions": [{
                                "name": "mumbleWithText",

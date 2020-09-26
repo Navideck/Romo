@@ -977,10 +977,10 @@
 "RomoControl-Alert-Title" = "Romo Control";
 
 /* RomoControl-Message-Compatible-Device */
-"RomoControl-Message-Compatible-Device" = "Visita http://romo.tv su un altro iDevice o computer per controllarmi.\n\nIl mio codice Romo è:\n%@";
+"RomoControl-Message-Compatible-Device" = "Visita Romo X Control su un altro iDevice o computer per controllarmi.\n\nIl mio codice Romo è:\n%@";
 
 /* RomoControl-Message-NonCompatible-Device */
-"RomoControl-Message-NonCompatible-Device" = "Visita http://romo.tv su un altro iDevice locale per controllarmi.";
+"RomoControl-Message-NonCompatible-Device" = "Visita Romo X Control su un altro iDevice locale per controllarmi.";
 
 /* RomoControl-Message-Number-Error */
 "RomoControl-Message-Number-Error" = "Si è verificato un problema nel recuperare il mio codice Romo. Assicurati di essere connesso a Internet.";

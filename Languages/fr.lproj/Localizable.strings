@@ -977,10 +977,10 @@
 "RomoControl-Alert-Title" = "Romo Control";
 
 /* RomoControl-Message-Compatible-Device */
-"RomoControl-Message-Compatible-Device" = "Consulte le site http://romo.tv sur un autre appareil iOS ou ordinateur pour me contrôler.\n\nMon numéro Romo est le :\n%@";
+"RomoControl-Message-Compatible-Device" = "Consulte le site Romo X Control sur un autre appareil iOS ou ordinateur pour me contrôler.\n\nMon numéro Romo est le :\n%@";
 
 /* RomoControl-Message-NonCompatible-Device */
-"RomoControl-Message-NonCompatible-Device" = "Consulte le site http://romo.tv sur un autre appareil iOS local pour me contrôler.";
+"RomoControl-Message-NonCompatible-Device" = "Consulte le site Romo X Control sur un autre appareil iOS local pour me contrôler.";
 
 /* RomoControl-Message-Number-Error */
 "RomoControl-Message-Number-Error" = "Un problème est survenu lors de la récupération de mon numéro Romo. Vérifie que tu es bien connecté à Internet.";

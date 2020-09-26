@@ -977,10 +977,10 @@
 "RomoControl-Alert-Title" = "Romo Control";
 
 /* RomoControl-Message-Compatible-Device */
-"RomoControl-Message-Compatible-Device" = "Bezoek http://romo.tv op een ander apparaat of computer om mij te besturen.\n\nMijn Romonummer is:\n%@";
+"RomoControl-Message-Compatible-Device" = "Bezoek Romo X Control op een ander apparaat of computer om mij te besturen.\n\nMijn Romonummer is:\n%@";
 
 /* RomoControl-Message-NonCompatible-Device */
-"RomoControl-Message-NonCompatible-Device" = "Bezoek http://romo.tv op een ander lokaal iApparaat om mij te besturen.";
+"RomoControl-Message-NonCompatible-Device" = "Bezoek Romo X Control op een ander lokaal iApparaat om mij te besturen.";
 
 /* RomoControl-Message-Number-Error */
 "RomoControl-Message-Number-Error" = "Er heeft zich een fout voorgedaan met het ophalen van mijn Romonummer. Zorg dat u verbonden bent met Internet.";

@@ -243,7 +243,7 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
     if (!self.inSession) {
         [self dismissDriveVC];
         if (!self.failureAlertView) {
-            self.failureAlertView = [[RMAlertView alloc] initWithTitle:NSLocalizedString(@"TP-Client-CallFailed-Alert-Title", @"Call Failed") message:NSLocalizedString(@"TP-Client-CallFailed-Alert-Message", @"Romo couldn't be reached") delegate:nil];
+            self.failureAlertView = [[RMAlertView alloc] initWithTitle:NSLocalizedString(@"TP-Client-CallFailed-Alert-Title", @"Call Failed") message:NSLocalizedString(@"TP-Client-CallFailed-Alert-Message", @"Romo couldn't be reached") delegate:nil];  // TODO: localize with a more explicit error message
         }
         [self.failureAlertView show];
     }

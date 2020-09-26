@@ -120,13 +120,17 @@
 {
     NSString *messageTemplate = nil;
     if ([UIDevice currentDevice].isDockableTelepresenceDevice) {
-        messageTemplate = NSLocalizedString(@"RomoControl-Message-Compatible-Device", @"Visit http://romo.tv on another iDevice or computer to control me.\n\n"
+        messageTemplate = NSLocalizedString(@"RomoControl-Message-Compatible-Device", @"Open Romo X Control on another iDevice or computer to control me.\n\n"
                                             "My Romo number is:\n%@");
     } else {
-        messageTemplate = NSLocalizedString(@"RomoControl-Message-NonCompatible-Device", @"Visit http://romo.tv on another local iDevice to control me.");
+        messageTemplate = NSLocalizedString(@"RomoControl-Message-NonCompatible-Device", @"Open Romo X Control on another local iDevice to control me.");
     }
-    
+
     NSString *romoNumber = [self getVPNIPAddress];
+    NSArray *ipAddressComponents = [romoNumber componentsSeparatedByString: @"."];
+    if (ipAddressComponents.count > 1) {
+        romoNumber = [NSString stringWithFormat:@"%@ - %@", ipAddressComponents[0], ipAddressComponents[1]];
+    }
     
 //    NSString *romoNumber = [[RMTelepresencePresence sharedInstance] number];
 
@@ -173,7 +177,7 @@
 
 - (NSString *)getVPNIPAddress
 {
-    NSString *address = @"error";
+    NSString *address = @"Make sure that both devices are connected to the same network, local or VPN";   // TODO: localize
     struct ifaddrs *interfaces = NULL;
     struct ifaddrs *temp_addr = NULL;
     int success = 0;

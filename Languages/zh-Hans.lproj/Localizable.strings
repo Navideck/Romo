@@ -977,10 +977,10 @@
 "RomoControl-Alert-Title" = "Romo 控制程序";
 
 /* RomoControl-Message-Compatible-Device */
-"RomoControl-Message-Compatible-Device" = "在其它设备或电脑，访问 http://romo.tv 来控制我。\n\n我的 Romo 号：\n%@";
+"RomoControl-Message-Compatible-Device" = "在其它设备或电脑，访问 Romo X Control 来控制我。\n\n我的 Romo 号：\n%@";
 
 /* RomoControl-Message-NonCompatible-Device */
-"RomoControl-Message-NonCompatible-Device" = "在其它本地设备或电脑，访问 http://romo.tv 来控制我。";
+"RomoControl-Message-NonCompatible-Device" = "在其它本地设备或电脑，访问 Romo X Control 来控制我。";
 
 /* RomoControl-Message-Number-Error */
 "RomoControl-Message-Number-Error" = "当读取 Romo 号码时发生问题。请确保你已经连到网路。";
