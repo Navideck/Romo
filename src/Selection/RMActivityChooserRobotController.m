@@ -13,6 +13,8 @@
 #import "RMLineFollowRobotController.h"
 #import "RMAlertView.h"
 //#import "RMTelepresencePresence.h"
+#include <arpa/inet.h>
+#import <ifaddrs.h>
 
 @interface RMActivityChooserRobotController () <RMActivityRobotControllerDelegate>
 
@@ -124,7 +126,7 @@
         messageTemplate = NSLocalizedString(@"RomoControl-Message-NonCompatible-Device", @"Visit http://romo.tv on another local iDevice to control me.");
     }
     
-    NSString *romoNumber = @"123-456-7890";
+    NSString *romoNumber = [self getIPV4Address];
     
 //    NSString *romoNumber = [[RMTelepresencePresence sharedInstance] number];
 
@@ -167,6 +169,73 @@
     }];
     
     self.Romo.activeFunctionalities = enableFunctionality(RMRomoFunctionalityBroadcasting, self.Romo.activeFunctionalities);
+}
+
+- (NSString *)getIPV4Address
+{
+    NSString *address = @"error";
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0)
+    {
+        // Loop through linked list of interfaces
+        temp_addr = interfaces;
+        while(temp_addr != NULL)
+        {
+            if(temp_addr->ifa_addr->sa_family == AF_INET)
+            {
+                // Check if interface is en0 which is the wifi connection on the iPhone
+                if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"])
+                {
+                    // Get NSString from C String
+                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                }
+            }
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+
+    // Free memory
+    freeifaddrs(interfaces);
+    return address;
+}
+
+- (NSString *)getIPAddress
+{
+    NSString *address = @"error";
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *ifa_tmp = NULL;
+    int success = 0;
+    char addr[INET6_ADDRSTRLEN];
+
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0)
+    {
+        // Loop through linked list of interfaces
+        ifa_tmp = interfaces;
+        while(ifa_tmp != NULL)
+        {
+            if (ifa_tmp->ifa_addr->sa_family == AF_INET) {
+                // create IPv4 string
+                struct sockaddr_in *in = (struct sockaddr_in*) ifa_tmp->ifa_addr;
+                inet_ntop(AF_INET, &in->sin_addr, addr, sizeof(addr));
+            } else { // AF_INET6
+                // create IPv6 string
+                struct sockaddr_in6 *in6 = (struct sockaddr_in6*) ifa_tmp->ifa_addr;
+                inet_ntop(AF_INET6, &in6->sin6_addr, addr, sizeof(addr));
+            }
+            ifa_tmp = ifa_tmp->ifa_next;
+        }
+    }
+
+    // Free memory
+    freeifaddrs(interfaces);
+    return [NSString stringWithCString:addr encoding:NSASCIIStringEncoding];
 }
 
 #pragma mark - Private Properties

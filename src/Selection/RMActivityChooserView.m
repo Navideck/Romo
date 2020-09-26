@@ -41,7 +41,7 @@
         [self.scrollView addSubview:self.theLabButton];
         [self.scrollView addSubview:self.chaseButton];
         [self.scrollView addSubview:self.lineFollowButton];
-        [self.scrollView addSubview:self.RomoControlButton];
+        [self.scrollView addSubview:self.RomoControlButton];    //
         
         [self addSubview:self.navigationBar];
         [self addSubview:self.backButton];
