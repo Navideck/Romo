@@ -23,6 +23,7 @@
 #import "RMWifiToolbar.h"
 #import "Reachability.h"
 #import "RMNetworkUtilities.h"
+#import "RMAddress.h"
 
 NSString * const kWifiPeerReuseIdentifier = @"WifiPeerReuseIdentifier";
 NSString * const kTelepresencePeerReuseIdentifier = @"TelepresencePeerReuseIdentifier";
@@ -31,8 +32,8 @@ NSString * const kNoLocalRomoReuseIdentifier = @"NoLocalRomoReuseIdentifier";
 
 typedef enum {
     RMSelectionSectionNoRomos = 0,
-    RMSelectionSectionPeerRomos = 1
-//    RMSelectionSectionDialPad = 2
+    RMSelectionSectionPeerRomos = 1,
+    RMSelectionSectionDialPad = 2
 } RMSelectionSection;
 
 @interface RMControlSelectionVC () <RMDrivableRomosResultsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, RMWiFiDriveRemoteVCDelegate>
@@ -42,7 +43,7 @@ typedef enum {
 
 // Views
 @property (nonatomic, strong) RMPlanetSpaceSceneView *scene;
-//@property (nonatomic, strong) RMRomoDialer *dialer; // For iPad only, iPhone uses a cell.
+@property (nonatomic, strong) RMRomoDialer *dialer; // For iPad only, iPhone uses a cell.
 @property (nonatomic, strong) RMWifiToolbar *toolbar;
 
 @end
@@ -105,14 +106,14 @@ typedef enum {
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.pagingEnabled = iPad ? NO : YES;
     
-//    if (iPad && [UIDevice currentDevice].isTelepresenceController) {
-//        // On the ipad we show the dialer outside of the collection view
-//        self.dialer = [[RMRomoDialer alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
-//        self.dialer.center = CGPointMake(self.view.boundsCenter.x, 300);
-//        [self.dialer.callButton addTarget:self action:@selector(handleCallPress:) forControlEvents:UIControlEventTouchUpInside];
-//
-//        [self.view addSubview:self.dialer];
-//    }
+    if (iPad && [UIDevice currentDevice].isTelepresenceController) {
+        // On the ipad we show the dialer outside of the collection view
+        self.dialer = [[RMRomoDialer alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+        self.dialer.center = CGPointMake(self.view.boundsCenter.x, 300);
+        [self.dialer.callButton addTarget:self action:@selector(handleCallPress:) forControlEvents:UIControlEventTouchUpInside];
+
+        [self.view addSubview:self.dialer];
+    }
 
     // Register the cell classes
     [self.collectionView registerClass:[RMWifiPeerRomoCell class] forCellWithReuseIdentifier:kWifiPeerReuseIdentifier];
@@ -153,15 +154,19 @@ typedef enum {
 
 - (void)handleCallWithNumber:(NSString *)number
 {
+    RMAddress * address = [RMAddress addressWithHost:@"100.118.252.19" port:@"21131"];
+    RMPeer * peer = [[RMPeer alloc] initWithAddress:address];
+    peer.appVersion = RMRomoWiFiDriveVersion;
+    [self handleLocalConnectionWithPeer:peer];
 //    RMTelepresenceClientViewController *controller =
 //    [[RMTelepresenceClientViewController alloc] initWithNumber:number completion:^(NSError *error) {
 //        if (error) {
 //            DDLogError(@"Error: %@", [error localizedDescription]);
 //        }
-//        
+//
 //        [self dismissViewControllerAnimated:YES completion:nil];
 //    }];
-//    
+//
 //    [self presentViewController:controller animated:YES completion:nil];
 }
 
@@ -198,11 +203,11 @@ typedef enum {
 
 #pragma mark - Handling UI events
 
-//// iPad only
-//- (void)handleCallPress:(id)sender
-//{
-//    [self handleCallWithNumber:self.dialer.inputNumber];
-//}
+// iPad only
+- (void)handleCallPress:(id)sender
+{
+    [self handleCallWithNumber:self.dialer.inputNumber];
+}
 
 #pragma mark - Handling Gestures
 
@@ -306,14 +311,14 @@ typedef enum {
         return;
     }
     
-//    // If on the DPad, let's just make sure we stay on it.
-//    if (currentIndexPath.section == RMSelectionSectionDialPad) {
-//        [self.collectionView scrollToItemAtIndexPath:currentIndexPath
-//                                    atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
-//                                            animated:NO];
-//
-//        return;
-//    }
+    // If on the DPad, let's just make sure we stay on it.
+    if (currentIndexPath.section == RMSelectionSectionDialPad) {
+        [self.collectionView scrollToItemAtIndexPath:currentIndexPath
+                                    atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+                                            animated:NO];
+
+        return;
+    }
 
     
     // Else we need to make sure we stay on the currently selected Romo.
@@ -348,7 +353,7 @@ typedef enum {
     if (iPad) {
         return 1;
     } else {
-        return 2; //[UIDevice currentDevice].isTelepresenceController ? 3 : 2;
+        return [UIDevice currentDevice].isTelepresenceController ? 3 : 2;
     }
 }
 
@@ -365,8 +370,8 @@ typedef enum {
         case RMSelectionSectionPeerRomos:
             return self.romosResultsController.count;
             
-//        case RMSelectionSectionDialPad:
-//            return 1;
+        case RMSelectionSectionDialPad:
+            return 1;
     }
 }
 
@@ -383,8 +388,8 @@ typedef enum {
         case RMSelectionSectionPeerRomos:
             return [self peerCellForIndexPath:indexPath];
             
-//        case RMSelectionSectionDialPad:
-//            return [self dialPadCellForIndexPath:indexPath];
+        case RMSelectionSectionDialPad:
+            return [self dialPadCellForIndexPath:indexPath];
     }
 }
 
