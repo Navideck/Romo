@@ -161,7 +161,7 @@ static const CGFloat clearInputButtonSize = 28.0;
             [digits addObject:digit];
         }
         UIButton *digit_dummy = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, iPad ? digitSizeiPad : digitSize, iPad ? digitSizeiPad : digitSize)];
-        digit_dummy.alpha = 0;
+        digit_dummy.hidden = YES;
         [digits addObject:digit_dummy];
 
         UIButton *digit_0 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, iPad ? digitSizeiPad : digitSize, iPad ? digitSizeiPad : digitSize)];
@@ -175,7 +175,7 @@ static const CGFloat clearInputButtonSize = 28.0;
         [digits addObject:digit_0];
 
         UIButton *digit_dummy2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, iPad ? digitSizeiPad : digitSize, iPad ? digitSizeiPad : digitSize)];
-        digit_dummy2.alpha = 0;
+        digit_dummy2.hidden = YES;
         [digits addObject:digit_dummy2];
 
         _digits = [NSArray arrayWithArray:digits];
