@@ -46,6 +46,7 @@ typedef enum {
 @property (nonatomic, strong) RMPlanetSpaceSceneView *scene;
 @property (nonatomic, strong) RMRomoDialer *dialer; // For iPad only, iPhone uses a cell.
 @property (nonatomic, strong) RMWifiToolbar *toolbar;
+@property (nonatomic, strong) UIPageControl *pageControl;
 
 @end
 
@@ -114,6 +115,18 @@ typedef enum {
         [self.dialer.callButton addTarget:self action:@selector(handleCallPress:) forControlEvents:UIControlEventTouchUpInside];
 
         [self.view addSubview:self.dialer];
+    }
+
+
+    if (!iPad) {
+        _pageControl = [[UIPageControl alloc] init];
+        _pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+        _pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+        _pageControl.numberOfPages = 2;
+        _pageControl.frame = CGRectMake(0, 0, 200, 100);
+        _pageControl.userInteractionEnabled = NO;
+        _pageControl.center = CGPointMake(self.collectionView.boundsCenter.x, self.collectionView.frame.size.height + 40);
+        [self.view addSubview:_pageControl];
     }
 
     // Register the cell classes
@@ -425,6 +438,11 @@ typedef enum {
 {
     [self.scene scrollToPosition:scrollView.contentOffset
            withTotalContentWidth:(self.view.width * (2 + self.romosResultsController.peerList.count))];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    _pageControl.currentPage = (int)self.collectionView.contentOffset.x /
+    (int)self.collectionView.frame.size.width;
 }
 
 #pragma mark - RMWiFiDriveRemoteVCDelegate

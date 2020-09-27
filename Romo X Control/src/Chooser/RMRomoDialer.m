@@ -70,7 +70,7 @@ static const CGFloat clearInputButtonSize = 28.0;
 - (void)layoutSubviews
 {
     self.inputNumberLabel.frame = CGRectMake(0, kPadding, self.width, 52);
-    self.clearInputButton.center = CGPointMake(self.width - clearInputButtonSize / 2.0 - kPadding, self.inputNumberLabel.centerY);
+    self.clearInputButton.center = CGPointMake(self.width - clearInputButtonSize / 2.0 - kPadding + 5, self.inputNumberLabel.centerY);
     
     [self.digits enumerateObjectsUsingBlock:^(UIButton *digit, NSUInteger index, BOOL *stop) {
         NSInteger i = (NSInteger)index;
@@ -125,7 +125,7 @@ static const CGFloat clearInputButtonSize = 28.0;
         _inputNumberLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _inputNumberLabel.backgroundColor = [UIColor clearColor];
         _inputNumberLabel.textColor = [UIColor whiteColor];
-        _inputNumberLabel.font = [UIFont fontWithSize:40.0];
+        _inputNumberLabel.font = [UIFont fontWithSize:30.0];
         _inputNumberLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _inputNumberLabel;
