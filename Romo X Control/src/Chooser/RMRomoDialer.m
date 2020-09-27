@@ -218,7 +218,8 @@ static const CGFloat clearInputButtonSize = 28.0;
 
 - (float)_mapDigitToFrequency:(int)digit
 {
-    if (digit == 1) { return [RMSynthesizer noteToFrequency:C inOctave:RMMusicOctave_4]; }
+    if (digit == 0) { return [RMSynthesizer noteToFrequency:C inOctave:RMMusicOctave_4]; }
+    else if (digit == 1) { return [RMSynthesizer noteToFrequency:C inOctave:RMMusicOctave_4]; }
     else if (digit == 2) { return [RMSynthesizer noteToFrequency:D inOctave:RMMusicOctave_4]; }
     else if (digit == 3) { return [RMSynthesizer noteToFrequency:E inOctave:RMMusicOctave_4]; }
     else if (digit == 4) { return [RMSynthesizer noteToFrequency:F inOctave:RMMusicOctave_4]; }
