@@ -123,7 +123,7 @@ typedef enum {
     [self.collectionView registerClass:[RMNoLocalRomosCell class] forCellWithReuseIdentifier:kNoLocalRomoReuseIdentifier];
     
     // Update the wifi name
-    [self updateWifiName];
+//    [self updateWifiName];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationDidBecomeActive:)
@@ -145,7 +145,7 @@ typedef enum {
 - (void)applicationDidBecomeActive:(NSNotification *)notification
 {
     [self.romosResultsController refresh];
-    [self updateWifiName];
+//    [self updateWifiName];
     [self.collectionView reloadData];
 }
 
