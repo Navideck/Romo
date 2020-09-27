@@ -109,7 +109,7 @@ typedef enum {
     
     if (iPad && [UIDevice currentDevice].isTelepresenceController) {
         // On the ipad we show the dialer outside of the collection view
-        self.dialer = [[RMRomoDialer alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+        self.dialer = [[RMRomoDialer alloc] initWithFrame:CGRectMake(0, 0, 320, 544)];
         self.dialer.center = CGPointMake(self.view.boundsCenter.x, 300);
         [self.dialer.callButton addTarget:self action:@selector(handleCallPress:) forControlEvents:UIControlEventTouchUpInside];
 

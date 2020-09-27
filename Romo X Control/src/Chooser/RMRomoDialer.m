@@ -39,7 +39,7 @@ static const CGFloat clearInputButtonSize = 28.0;
 
 + (CGFloat)preferredHeight
 {
-    return kPadding * 6 + digitSize * 3 + 74 + 52;
+    return kPadding * 6 + digitSize * 4 + 74 + 52;
 }
 
 - (id)initWithFrame:(CGRect)frame
