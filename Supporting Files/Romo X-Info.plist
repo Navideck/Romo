@@ -75,5 +75,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    <key>NSLocalNetworkUsageDescription</key>
+    <string>Make your Romo discoverable on your network</string>
+    <key>NSBonjourServices</key>
+    <array>
+        <string>_romo._tcp</string>
+    </array>
 </dict>
 </plist>
