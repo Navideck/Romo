@@ -34,6 +34,7 @@ PODS:
     - OpenCV (~> 2.0)
     - Romo/RMShared
   - SocketRocket (0.5.1)
+  - UICKeyChainStore (2.2.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0)
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - Romo/RMCharacter
   - Romo/RMVision
   - SocketRocket (from `https://github.com/Gkpsundar/SocketRocket.git`)
+  - UICKeyChainStore
 
 SPEC REPOS:
   trunk:
@@ -50,6 +52,7 @@ SPEC REPOS:
     - GPUImage
     - OpenCV
     - Romo
+    - UICKeyChainStore
 
 EXTERNAL SOURCES:
   SocketRocket:
@@ -67,7 +70,8 @@ SPEC CHECKSUMS:
   OpenCV: cd36a3467c21572d658c2640488fe0d5a93ca192
   Romo: bdd6c682b825c4dd0f662cafe04e9c16eecf7259
   SocketRocket: dbb1554b8fc288ef8ef370d6285aeca7361be31e
+  UICKeyChainStore: ba3bff2c762b12db1e516f395c837dd25298b05e
 
-PODFILE CHECKSUM: 5f01f69969d1fea596dfd406f456ada2abfa867c
+PODFILE CHECKSUM: e36ead72c85e34ae47a557eb9cb25c8cab74b0ed
 
 COCOAPODS: 1.9.3

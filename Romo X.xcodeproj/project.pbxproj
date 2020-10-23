@@ -1294,6 +1294,7 @@
 		AF87903E251E541900690395 /* Romo X Control.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Romo X Control.entitlements"; sourceTree = "<group>"; };
 		AF8EF18121CD55FA0025F16B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		AF8EF18721CD649D0025F16B /* Romo X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Romo X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFCB9C6825437B9000CD4324 /* Romo X.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Romo X.entitlements"; sourceTree = "<group>"; };
 		AFF55054214DA4EC0027500F /* RomoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RomoTests.m; sourceTree = "<group>"; };
 		AFF55056214DA4EC0027500F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF04B1F81805EF050008862A /* Character-Script-2-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Character-Script-2-1.json"; sourceTree = "<group>"; };
@@ -3345,6 +3346,7 @@
 		E7E25A9F160D45E5007171E1 = {
 			isa = PBXGroup;
 			children = (
+				AFCB9C6825437B9000CD4324 /* Romo X.entitlements */,
 				AF52E1C121CDADCC00678CF4 /* Assets.xcassets */,
 				94B1F128176D6A3400C5BABC /* src */,
 				94B1EFB5176D6A3300C5BABC /* lib */,
@@ -4623,8 +4625,9 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Romo X.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -4656,7 +4659,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.6;
+				MARKETING_VERSION = 1.4.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoX;
@@ -4679,10 +4682,11 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Romo X.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -4710,7 +4714,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.6;
+				MARKETING_VERSION = 1.4.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoX;

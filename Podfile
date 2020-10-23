@@ -11,6 +11,7 @@ target 'Romo X' do
   pod 'Romo/RMVision'#, :path => '../Romo'
   pod 'CocoaLumberjack'
   pod 'AFNetworking', '~> 4.0'
+  pod 'UICKeyChainStore'
 end
 
 target 'Romo X Control' do

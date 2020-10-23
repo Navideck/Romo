@@ -34,6 +34,9 @@
 #ifdef SIMULATOR
 #import <Romo/RMVision.h>
 #endif
+
+#import <UICKeyChainStore/UICKeyChainStore.h>
+
 @interface RMAppDelegate ()
 
 @property (nonatomic, strong) RMRomo *Romo;
@@ -113,7 +116,8 @@ DDLOG_ENABLE_DYNAMIC_LEVELS
         [[NSUserDefaults standardUserDefaults] setObject:@(1) forKey:@"all unlocked"];
     }
 #endif
-    
+
+    [self storeVendorID];
     return YES;
 }
 
@@ -364,6 +368,12 @@ DDLOG_ENABLE_DYNAMIC_LEVELS
 //{
 //    [[RMPushNotificationsManager sharedInstance] handlePush:userInfo];
 //}
+
+-(void)storeVendorID
+{
+    UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:@"com.navideck.RomoSharedItems" accessGroup:@"52RU2XXUH6.com.navideck.RomoSharedItems"];
+    keychain[@"romovendorid"] = [UIDevice currentDevice].identifierForVendor.UUIDString;
+}
 
 
 @end
