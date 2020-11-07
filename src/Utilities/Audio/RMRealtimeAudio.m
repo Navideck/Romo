@@ -93,6 +93,8 @@
 
 @property (atomic, readwrite, getter=isInterrupted) BOOL interrupted;
 
+@property (nonatomic, strong) AVAudioSession *session;
+
 @end
 
 //==============================================================================
@@ -348,12 +350,22 @@
 - (void)setupAudioUnits
 {
     // Initialize Audio Session
-    OSStatus status;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        OSStatus status = AudioSessionInitialize(NULL, NULL, interruptionListener, (__bridge void*) self);
-        checkStatus(status);
-    });
+    BOOL status = NO;
+    BOOL success = NO;
+    NSError *error = nil;
+
+//    dispatch_once(&onceToken, ^{
+//        static dispatch_once_t onceToken;
+        _session = [AVAudioSession sharedInstance];
+        success = [_session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers error:&error];
+        if (!success) {
+            NSLog(@"%@", [error localizedDescription]);
+        }
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(interruptionListener:) name:AVAudioSessionInterruptionNotification object:nil];
+
+//    });
+
     
     // Setup the Remote I/O unit for recording (not in the AUGraph)
     // Enable IO for recording
@@ -408,9 +420,9 @@
     checkStatus(status);
     
     // Set the audio session
-    UInt32 category = kAudioSessionCategory_PlayAndRecord;
-    status = AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(category), &category);
-    checkStatus(status);
+//    UInt32 category = kAudioSessionCategory_PlayAndRecord;
+//    status = AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(category), &category);
+//    checkStatus(status);
 
     // Use the device's primary microphone
     // Note - this also causes all audio output to have less processing, resulting in much quieter sounds
@@ -491,15 +503,15 @@
         CAShow(_audioGraph);
 #endif
     }
-    
-    // Set the session to be active
-    status = AudioSessionSetActive(YES);
-    checkStatus(status);
-    
     // Route the audio to the speaker
-    routeAudioToSpeaker(NULL, 0, 0, NULL);
-    status = AudioSessionAddPropertyListener(kAudioSessionProperty_AudioRouteChange, routeAudioToSpeaker, nil);
-    checkStatus(status);
+    routeAudioToSpeaker(NULL, _session, 0, NULL);
+
+    // Set the session to be active
+    success = [_session setActive:YES error:&error];
+    if (!success) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+
     
     // Initialize the Remote IO unit
     status = AudioUnitInitialize(_ioUnit);
@@ -540,15 +552,24 @@
 
 //------------------------------------------------------------------------------
 void routeAudioToSpeaker(void                   *inUserData,
-                         AudioSessionPropertyID inPropertyID,
+                         AVAudioSession         *session,
                          UInt32                 inPropertyValueSize,
                          const void             *inPropertyValue)
 {
-    UInt32 mixWithOthers = YES;
-    AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryMixWithOthers, sizeof(mixWithOthers), &mixWithOthers);
-    
-    UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_Speaker;
-    AudioSessionSetProperty(kAudioSessionProperty_OverrideAudioRoute, sizeof(audioRouteOverride), &audioRouteOverride);
+    BOOL success = NO;
+    NSError *error = nil;
+
+    success = [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker
+                                          error:&error];
+    if (!success) {
+        NSLog(@"AVAudioSession error overrideOutputAudioPort:%@",error);
+    }
+
+//    UInt32 mixWithOthers = YES;
+//    AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryMixWithOthers, sizeof(mixWithOthers), &mixWithOthers);
+//
+//    UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_Speaker;
+//    AudioSessionSetProperty(kAudioSessionProperty_OverrideAudioRoute, sizeof(audioRouteOverride), &audioRouteOverride);
 }
 
 //------------------------------------------------------------------------------
@@ -573,29 +594,64 @@ void routeAudioToSpeaker(void                   *inUserData,
 
 // Handler that is called when we get an audio interrupt
 //------------------------------------------------------------------------------
-void interruptionListener(void      *inRefCon,
-                          UInt32    inInterruptionState)
+- (void)interruptionListener:(NSNotification *)notification
+//- (void) interruptionListener(void      *inRefCon,
+//                          UInt32    inInterruptionState)
 {
-    RMRealtimeAudio *me = (__bridge RMRealtimeAudio *)inRefCon;
-    // Flag that we need to start up again
-    if (inInterruptionState == kAudioSessionBeginInterruption) {
+    if ([notification.name isEqualToString:@"AVAudioSessionInterruptionNotification"] && notification.userInfo != nil)
+    {
+        AVAudioSessionInterruptionType interruptionType = [[[notification userInfo] objectForKey:AVAudioSessionInterruptionTypeKey] unsignedIntegerValue];
+        switch (interruptionType) {
+            case AVAudioSessionInterruptionTypeBegan:   {
 #ifdef SOUND_DEBUG
-        printf("\n\nRMRealtimeAudio: Begin interruption\n\n");
+                printf("\n\nRMRealtimeAudio: Begin interruption\n\n");
 #endif
-        me.interrupted = YES;
-        
-        OSStatus status = AudioSessionSetActive(NO);
-        checkStatus(status);
-    }
-    // Let's start things back up...
-    else if ((inInterruptionState == kAudioSessionEndInterruption) && me.interrupted) {
+                _interrupted = YES;
+
+                NSError *error;
+                BOOL success = [_session setActive:NO error:&error];
+                if (!success) {
+                    NSLog(@"%@", [error localizedDescription]);
+                }
+                break;
+            }
+            case AVAudioSessionInterruptionTypeEnded:
 #ifdef SOUND_DEBUG
-        printf("\n\nRMRealtimeAudio: End interruption\n\n");
+                printf("\n\nRMRealtimeAudio: End interruption\n\n");
 #endif
-        me.interrupted = NO;
-        [me shutdown];
-        [me startup];
+                _interrupted = NO;
+                [self shutdown];
+                [self startup];
+                break;
+            default:
+                break;
+        }
+
     }
+
+
+//    RMRealtimeAudio *me = (__bridge RMRealtimeAudio *)inRefCon;
+//    // Flag that we need to start up again
+//    if (inInterruptionState == kAudioSessionBeginInterruption) {
+//#ifdef SOUND_DEBUG
+//        printf("\n\nRMRealtimeAudio: Begin interruption\n\n");
+//#endif
+//        me.interrupted = YES;
+//
+//        success = [session setActive:NO error:&error];
+//        if (!success) {
+//            NSLog(@"%@", [error localizedDescription]);
+//        }
+//    }
+//    // Let's start things back up...
+//    else if ((inInterruptionState == kAudioSessionEndInterruption) && me.interrupted) {
+//#ifdef SOUND_DEBUG
+//        printf("\n\nRMRealtimeAudio: End interruption\n\n");
+//#endif
+//        me.interrupted = NO;
+//        [me shutdown];
+//        [me startup];
+//    }
 }
 
 // This function alerts you that the newest input samples are available and you
