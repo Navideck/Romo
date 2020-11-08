@@ -87,6 +87,10 @@
     }
     
     self.dismissButton.left = x;
+#if TARGETOSMACCATALYST
+    self.dismissButton.top = 30;
+#endif
+
 }
 
 #pragma mark - Private Methods

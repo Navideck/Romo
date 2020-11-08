@@ -23,7 +23,7 @@ ddLogLevel = logLevel; \
 
 #define RMRomoWiFiDriveVersion @"3.0"
 
-#define iPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define iPad ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 
 /** 
  For iPhones & iPods, supply a y-position on the screen for tall devices and short devices

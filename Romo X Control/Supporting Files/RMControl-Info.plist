@@ -33,10 +33,18 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.education</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_romo._tcp</string>
+	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Telepresence requires access to your camera</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Discover Romos on your network</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>For two-way communication between Romo and this app</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
@@ -76,11 +84,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSLocalNetworkUsageDescription</key>
-	<string>Discover Romos on your network</string>
-	<key>NSBonjourServices</key>
-	<array>
-		<string>_romo._tcp</string>
-	</array>
 </dict>
 </plist>
