@@ -149,7 +149,7 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
     [self layoutUI];
 }
 
--(void)layoutUI {
+- (void)layoutUI {
     self.videoView.center = CGPointMake(self.view.width/2, self.view.height/2);
     [self updateDrivingMethod];
     self.actionBar.frame = CGRectMake(0, CGRectGetMaxY(self.view.bounds) - [self.actionBar desiredHeight], CGRectGetMaxX(self.view.bounds), [self.actionBar desiredHeight]);

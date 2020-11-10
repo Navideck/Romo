@@ -59,8 +59,7 @@
 
 + (NSString *)getVPNIPAddress
 {
-    //    NSString *address = @"Make sure that both devices are connected to the same network, local or VPN";   // TODO: localize
-    NSString *address;   // TODO: localize
+    NSString *address;
     struct ifaddrs *interfaces = NULL;
     struct ifaddrs *temp_addr = NULL;
     int success = 0;
