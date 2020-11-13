@@ -19,7 +19,7 @@ Find the *Romo X* app on the [App Store](https://itunes.apple.com/us/app/romo-x/
 First use ```pod install``` to fetch the dependencies using [CocoaPods](https://cocoapods.org/). Then build like any other project on Xcode.
 
 ### Is there an SDK?
-Find the SDK [here](https://github.com/Navideck/Romo)
+Find the SDK [here](https://github.com/Navideck/Romo-iOS-SDK)
 
 ### Where can I buy a Romo robot?
 There seems to be plenty of stock in online stores.
@@ -49,6 +49,3 @@ Issues and pull requests are always welcome!
 Support us by becoming a patron!
 
 <a href="https://www.patreon.com/bePatron?u=5127277" target="_blank"><img alt="become a patron" src="https://c5.patreon.com/external/logo/become_a_patron_button.png" height="35px"></a>
-
-
-
