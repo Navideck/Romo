@@ -131,7 +131,9 @@
 		ACE687D01851675D002D3436 /* Missions-Editor-Unswipe-Delete.caf in Resources */ = {isa = PBXBuildFile; fileRef = AC6536681810BE150092A0CB /* Missions-Editor-Unswipe-Delete.caf */; };
 		ACE687D118516800002D3436 /* Missions-Editor-Accept.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9400B4AF17E7ADF700B48997 /* Missions-Editor-Accept.caf */; };
 		AF23CEF8214D2ADA0030A653 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF23CEF7214D2ADA0030A653 /* Launch Screen.storyboard */; };
+		AF516A0825B1E68F00EB04BC /* RMGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF516A0725B1E68F00EB04BC /* RMGameController.m */; };
 		AF52E1C221CDADCC00678CF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF52E1C121CDADCC00678CF4 /* Assets.xcassets */; };
+		AF5EE69725B1F0F400FDB15E /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5EE69625B1F0F400FDB15E /* GameController.framework */; };
 		AF68BC23251F7C98001341ED /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF68BC22251F7C98001341ED /* Photos.framework */; };
 		AF8EF27421CD676D0025F16B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 948E4BFB176E88940077BBCF /* Reachability.m */; };
 		AF8EF27521CD676D0025F16B /* RMLoudSoundDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 94051BDC181A1CA900C87F0E /* RMLoudSoundDetector.m */; };
@@ -1289,7 +1291,10 @@
 		ACF763161811E668007C2ECD /* RomoJingle.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RomoJingle.caf; sourceTree = "<group>"; };
 		AF23CEF7214D2ADA0030A653 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		AF23CEF9214D312C0030A653 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		AF516A0625B1E68F00EB04BC /* RMGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGameController.h; sourceTree = "<group>"; };
+		AF516A0725B1E68F00EB04BC /* RMGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMGameController.m; sourceTree = "<group>"; };
 		AF52E1C121CDADCC00678CF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF5EE69625B1F0F400FDB15E /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		AF65AEF221CA645E00A3F26C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		AF68BC22251F7C98001341ED /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
 		AF87903E251E541900690395 /* Romo X Control.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Romo X Control.entitlements"; sourceTree = "<group>"; };
@@ -1411,6 +1416,7 @@
 			files = (
 				1181DD45205C9937000A1C96 /* libiconv.tbd in Frameworks */,
 				1181DCCA205C932F000A1C96 /* VideoToolbox.framework in Frameworks */,
+				AF5EE69725B1F0F400FDB15E /* GameController.framework in Frameworks */,
 				947E66B7183205EF001992E5 /* OpenAL.framework in Frameworks */,
 				7130FDE117C433090025B605 /* ExternalAccessory.framework in Frameworks */,
 				7130FD2817C42BAD0025B605 /* CoreGraphics.framework in Frameworks */,
@@ -1856,6 +1862,7 @@
 				945C595217E7E0C0001C3CE8 /* Joystick */,
 				945C595517E7E0C0001C3CE8 /* Tank Drive */,
 				945C595817E7E0C0001C3CE8 /* Tilt */,
+				AF516A0525B1E68F00EB04BC /* GameController */,
 			);
 			path = Inputs;
 			sourceTree = "<group>";
@@ -3144,6 +3151,15 @@
 			path = Creature;
 			sourceTree = "<group>";
 		};
+		AF516A0525B1E68F00EB04BC /* GameController */ = {
+			isa = PBXGroup;
+			children = (
+				AF516A0625B1E68F00EB04BC /* RMGameController.h */,
+				AF516A0725B1E68F00EB04BC /* RMGameController.m */,
+			);
+			path = GameController;
+			sourceTree = "<group>";
+		};
 		AFF55053214DA4EC0027500F /* RomoTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -3378,6 +3394,7 @@
 		E7E25AAD160D45E5007171E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF5EE69625B1F0F400FDB15E /* GameController.framework */,
 				AF68BC22251F7C98001341ED /* Photos.framework */,
 				AF8EF18121CD55FA0025F16B /* libz.tbd */,
 				AF65AEF221CA645E00A3F26C /* libsqlite3.tbd */,
@@ -3921,6 +3938,7 @@
 				7130FDA517C42F4F0025B605 /* RMCommandService.m in Sources */,
 				7130FD8317C42D9F0025B605 /* RMService.m in Sources */,
 				7130FDAF17C42F910025B605 /* RMAlertView.m in Sources */,
+				AF516A0825B1E68F00EB04BC /* RMGameController.m in Sources */,
 				7130FD8017C42D980025B605 /* RMListener.m in Sources */,
 				7130FD7817C42D7E0025B605 /* RMSerializable.m in Sources */,
 				7130FD8917C42DB90025B605 /* RMCommandSubscriber.m in Sources */,
