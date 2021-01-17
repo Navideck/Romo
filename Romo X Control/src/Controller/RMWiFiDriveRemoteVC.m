@@ -25,9 +25,10 @@
 #import "RMControlDriveActionBar.h"
 #import "RMControlInputMenu.h"
 #import "UIView+Additions.h"
+#import "RMGameController.h"
 
 @interface RMWiFiDriveRemoteVC () <RMRomoteDriveExpressionsPopoverDelegate, RMJoystickDelegate, RMDpadDelegate, RMTiltControllerDelegate, RMSessionDelegate,
-RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
+RMRemoteControlServiceDelegate, RMTankSliderDelegate, RMGameControllerDelegate> {
     RAVService *_avService;
     RMCommandSubscriber *_commandSubscriber;
     RMRemoteControlService *_romoteService;
@@ -56,6 +57,8 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
 
 @property (nonatomic, strong) UIImageView *flippedRomoIndicator;
 @property (nonatomic, strong) UIButton *backButton;
+
+@property (nonatomic, strong) RMGameController *gameController;
 
 /** If shit's gone down, let's abort and cleanup as best we can */
 - (void)shutdownEverything;
@@ -110,6 +113,9 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
     [self.view addSubview:self.actionBar];
     [self.view addSubview:self.inputMenu];
     [self.view addSubview:self.backButton];
+
+    self.gameController = [[RMGameController alloc] init];
+    self.gameController.delegate = self;
 }
 
 - (void)positionTopButtons
@@ -611,6 +617,13 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
     [_activeDriveViews addObject:joystick];
 }
 
+- (void)moveWithAngle:(float)angle speed:(float)distance {
+    NSLog(@"distance: %f angle: %f", distance, angle);
+
+    [_commandSubscriber sendJoystickDistance:distance angle:angle];
+    [self dismissPopovers];
+}
+
 #pragma mark - Tank Delegate
 
 - (void)slider:(RMTankSlider *)slider didChangeToValue:(CGFloat)sliderValue
@@ -646,11 +659,10 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
 
 - (void)joystick:(RMJoystick *)joystick didMoveToAngle:(float)angle distance:(float)distance
 {
-    [_commandSubscriber sendJoystickDistance:distance angle:angle];
-    [self dismissPopovers];
+    [self moveWithAngle:angle speed:distance];
 }
 
-#pragma mark - Tilt Delgate
+#pragma mark - Tilt Delegate
 
 - (void)tiltWithVelocity:(CGFloat)velocity {
     [self dismissPopovers];
@@ -667,6 +679,12 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
         float tiltMotorPower = (velocity*0.85) + (velocity > 0 ? 1 : -1) * 0.15;
         [_commandSubscriber sendTiltMotorPower:-tiltMotorPower];
     }
+}
+
+#pragma mark - GameController Delegate
+
+- (void)thumbstickInputDetectedwithDistance:(float)distance angle:(float)angle {
+    [self moveWithAngle:angle speed:distance];
 }
 
 @end

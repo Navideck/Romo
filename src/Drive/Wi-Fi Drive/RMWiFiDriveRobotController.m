@@ -57,6 +57,8 @@ NSString *const RMWiFiDriveRobotControllerSessionDidEnd = @"RMWiFiDriveRobotCont
 
 @implementation RMWiFiDriveRobotController
 
+const float kTurnInPlaceSpeed = 0.3;
+
 - (id)init
 {
     self = [super init];
@@ -402,8 +404,6 @@ NSString *const RMWiFiDriveRobotControllerSessionDidEnd = @"RMWiFiDriveRobotCont
 
 - (void)processDPadSector:(RMDpadSector)sector
 {
-    const float kTurnInPlaceSpeed = 0.3;
-
     switch (sector) {
         case RMDpadSectorUp:
             [(RMCoreRobot<DriveProtocol> *)self.Romo.robot driveWithRadius:RM_DRIVE_RADIUS_STRAIGHT
@@ -439,14 +439,29 @@ NSString *const RMWiFiDriveRobotControllerSessionDidEnd = @"RMWiFiDriveRobotCont
     // only update the drive command if they've changed their position enough since we last commanded
     if (previousAngle == -1 || previousDistance == -1 ||
         ABS(angle - previousAngle) > MIN_ANGLE_CHANGE || ABS(distance - previousDistance) > MIN_DISTANCE_CHANGE) {
-        float direction = (angle >= 180) || (angle < 0) ? -1 : 1;
-        float driveSpeed = powf(distance, 2) * direction;
-        float driveRadius = tanf(DEG2RAD(-angle));
 
-        [(RMCoreRobot<DriveProtocol> *)self.Romo.robot driveWithRadius:driveRadius
-                                                                 speed:driveSpeed];
-        previousAngle = angle;
-        previousDistance = distance;
+        switch ((int) angle) {
+            case 0:
+                [(RMCoreRobot<DriveProtocol> *)self.Romo.robot driveWithRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE
+                                                                         speed:-kTurnInPlaceSpeed * distance];
+                break;
+            case 180:
+                [(RMCoreRobot<DriveProtocol> *)self.Romo.robot driveWithRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE
+                                                                         speed:kTurnInPlaceSpeed * distance];
+                break;
+            default:
+            {
+                float direction = (angle >= 180) || (angle < 0) ? -1 : 1;
+                float driveSpeed = powf(distance, 2) * direction;
+                float driveRadius = tanf(DEG2RAD(-angle));
+
+                [(RMCoreRobot<DriveProtocol> *)self.Romo.robot driveWithRadius:driveRadius
+                                                                         speed:driveSpeed];
+                previousAngle = angle;
+                previousDistance = distance;
+            }
+                break;
+        }
     }
 }
 
