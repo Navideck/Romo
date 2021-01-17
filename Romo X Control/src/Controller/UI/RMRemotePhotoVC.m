@@ -1,13 +1,13 @@
 //
-//  RMRomotePhotoVC.m
+//  RMRemotePhotoVC.m
 //  Romo
 //
 
-#import "RMRomotePhotoVC.h"
+#import "RMRemotePhotoVC.h"
 #import "UIButton+RMButtons.h"
 #import "UIView+Additions.h"
 
-@interface RMRomotePhotoVC () <UIScrollViewDelegate>
+@interface RMRemotePhotoVC () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *view;
 @property (nonatomic, strong) NSMutableDictionary *photoViews;
@@ -15,7 +15,7 @@
 
 @end
 
-@implementation RMRomotePhotoVC
+@implementation RMRemotePhotoVC
 
 @dynamic view;
 
@@ -87,6 +87,10 @@
     }
     
     self.dismissButton.left = x;
+#if TARGETOSMACCATALYST
+    self.dismissButton.top = 30;
+#endif
+
 }
 
 #pragma mark - Private Methods

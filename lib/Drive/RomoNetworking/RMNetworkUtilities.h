@@ -46,6 +46,12 @@ typedef int AddressFamily;
 
 + (NSString *)WiFiName;
 
+/**
+ * Finds the IP address of the device. If the device is connected to a VPN then this address is preferred over the local IP
+ * @return The IP address of the device
+ */
++ (NSString *)getIPAddress;
+
 @end
 
 #pragma mark -

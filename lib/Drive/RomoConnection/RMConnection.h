@@ -7,6 +7,8 @@
 #import "RMPeerManager.h"
 #import "RMListener.h"
 
+#define LOCAL_LISTEN_PORT @"21131"
+
 @class RMPeer, RMSession;
 
 #pragma mark - ConnectionDelegate --

@@ -1,4 +1,4 @@
-﻿/* Action-Duration-Input-Label-Title */
+/* Action-Duration-Input-Label-Title */
 "Action-Duration-Input-Label-Title" = "この時間は何もしない";
 
 /* Action-Emotion-Bewildered-Title */
@@ -977,10 +977,10 @@
 "RomoControl-Alert-Title" = "ロモコントロール";
 
 /* RomoControl-Message-Compatible-Device */
-"RomoControl-Message-Compatible-Device" = "べつのiデバイスかコンピューターからhttp://romo.tvを開いて、ボクをそうさしてね。\n\nボクのロモばんごう:\n%@";
+"RomoControl-Message-Compatible-Device" = "べつのiデバイスかコンピューターからRomo X Controlを開いて、ボクをそうさしてね。\n\nリモート接続を確立するには、両方のデバイスでTailscaleなどのVPNサービスを使用するか、ルーターがサポートしている場合は独自のVPNを設定します。\n\nボクのロモばんごう:\n%@";
 
 /* RomoControl-Message-NonCompatible-Device */
-"RomoControl-Message-NonCompatible-Device" = "べつのローカルiデバイスからhttp://romo.tvをひらいて、ボクをそうさしてね。";
+"RomoControl-Message-NonCompatible-Device" = "べつのローカルiデバイスからRomo X Controlをひらいて、ボクをそうさしてね。\n\nリモート接続を確立するには、両方のデバイスでTailscaleなどのVPNサービスを使用するか、ルーターがサポートしている場合は独自のVPNを設定します。";
 
 /* RomoControl-Message-Number-Error */
 "RomoControl-Message-Number-Error" = "ロモ番号の取得で問題が発生しました。インターネットに接続していることを確認してください。";

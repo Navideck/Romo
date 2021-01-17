@@ -35,7 +35,7 @@
         [self addSubview:self.wifiIcon];
         
         _titleLabel = [UILabel labelWithStyleOptions:UILabelRomoStyleAlignmentCenter | UILabelRomoStyleFontSizeMedium];
-        self.titleLabel.text = @"Hello";
+        self.titleLabel.text = @"";
         [self addSubview:self.titleLabel];
     }
     return self;

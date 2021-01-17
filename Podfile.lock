@@ -14,9 +14,9 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - CocoaLumberjack (3.6.1):
-    - CocoaLumberjack/Core (= 3.6.1)
-  - CocoaLumberjack/Core (3.6.1)
+  - CocoaLumberjack (3.6.2):
+    - CocoaLumberjack/Core (= 3.6.2)
+  - CocoaLumberjack/Core (3.6.2)
   - GPUImage (0.1.7)
   - OpenCV (2.4.13.6)
   - Romo (0.5.1):
@@ -65,13 +65,13 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
+  CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   OpenCV: cd36a3467c21572d658c2640488fe0d5a93ca192
   Romo: bdd6c682b825c4dd0f662cafe04e9c16eecf7259
   SocketRocket: dbb1554b8fc288ef8ef370d6285aeca7361be31e
   UICKeyChainStore: ba3bff2c762b12db1e516f395c837dd25298b05e
 
-PODFILE CHECKSUM: e36ead72c85e34ae47a557eb9cb25c8cab74b0ed
+PODFILE CHECKSUM: b3696cdb1729ccdb9ac5d6402921eeb4216d217d
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

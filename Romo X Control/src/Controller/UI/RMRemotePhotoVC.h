@@ -1,11 +1,11 @@
 //
-//  RMRomotePhotoVC.h
+//  RMRemotePhotoVC.h
 //  Romo
 //
 
 #import <UIKit/UIKit.h>
 
-@interface RMRomotePhotoVC : UIViewController
+@interface RMRemotePhotoVC : UIViewController
 
 @property (nonatomic, strong) NSArray *photos;
 @property (nonatomic, readonly) UIButton *dismissButton;

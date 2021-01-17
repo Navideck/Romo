@@ -23,3 +23,15 @@ target 'Romo X Control' do
   pod 'CocoaLumberjack'
   pod 'SocketRocket', :git => 'https://github.com/Gkpsundar/SocketRocket.git'
 end
+
+# Mac Catalyst workaround
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        # Fix bundle targets' 'Signing Certificate' to 'Sign to Run Locally'
+        if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+            target.build_configurations.each do |config|
+                config.build_settings['CODE_SIGN_IDENTITY[sdk=macosx*]'] = '-'
+            end
+        end
+    end
+end

@@ -21,7 +21,7 @@
 #import "RMRemoteControlService.h"
 #import "RMSession.h"
 #import "RMPeer.h"
-#import "RMRomotePhotoVC.h"
+#import "RMRemotePhotoVC.h"
 #import "RMControlDriveActionBar.h"
 #import "RMControlInputMenu.h"
 #import "UIView+Additions.h"
@@ -84,18 +84,11 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
     
     // Create the control menu
     self.inputMenu = [[RMControlInputMenu alloc] initWithFrame:CGRectZero];
-    CGSize inputMenuSize = [self.inputMenu desiredSize];
-    
+
     self.backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.backButton setImage:[UIImage imageNamed:@"drive-back"] forState:UIControlStateNormal];
     
-    if (iPad) {
-        self.inputMenu.frame = CGRectMake(self.view.right - inputMenuSize.width - 30, 30, inputMenuSize.width, inputMenuSize.height);
-        self.backButton.frame = CGRectMake(25, 25, 64, 64);
-    } else {
-        self.inputMenu.frame = CGRectMake(self.view.right - inputMenuSize.width - 10, 25, inputMenuSize.width, inputMenuSize.height);
-        self.backButton.frame = CGRectMake(5, 20, 64, 64);
-    }
+    [self positionTopButtons];
     
     // Create the action bar
     self.actionBar = [[RMControlDriveActionBar alloc] initWithFrame:CGRectZero];
@@ -117,6 +110,50 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
     [self.view addSubview:self.actionBar];
     [self.view addSubview:self.inputMenu];
     [self.view addSubview:self.backButton];
+}
+
+- (void)positionTopButtons
+{
+    CGSize inputMenuSize = [self.inputMenu desiredSize];
+    CGRect inputMenuRect;
+    CGRect backButtonRect;
+    if (iPad) {
+        inputMenuRect = CGRectMake(self.view.right - inputMenuSize.width - 30, 30, inputMenuSize.width, inputMenuSize.height);
+        backButtonRect = CGRectMake(25, 25, 64, 64);
+#if TARGET_OS_MACCATALYST
+        inputMenuRect.origin.y += 15;
+        backButtonRect.origin.y += 15;
+#endif
+        self.inputMenu.frame = inputMenuRect;
+        self.backButton.frame = backButtonRect;
+    } else {
+        self.inputMenu.frame = CGRectMake(self.view.right - inputMenuSize.width - 10, 25, inputMenuSize.width, inputMenuSize.height);
+        self.backButton.frame = CGRectMake(5, 20, 64, 64);
+    }
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+
+    // The view frame is the correct one here. This is called after viewWillAppear and before viewDidAppear
+    if ([self isBeingPresented] || [self isMovingToParentViewController]) {
+         // Perform an action that will only be done once
+        [self layoutUI];
+     }
+}
+
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    [self layoutUI];
+}
+
+- (void)layoutUI {
+    self.videoView.center = CGPointMake(self.view.width/2, self.view.height/2);
+    [self updateDrivingMethod];
+    self.actionBar.frame = CGRectMake(0, CGRectGetMaxY(self.view.bounds) - [self.actionBar desiredHeight], CGRectGetMaxX(self.view.bounds), [self.actionBar desiredHeight]);
+    [self positionTopButtons];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -194,9 +231,8 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
     if ([service isKindOfClass:[RAVService class]]) {
         dispatch_async(dispatch_get_main_queue(), ^() {
             self.videoView = self->_avService.peerView;
-            if ([[UIScreen mainScreen] bounds].size.height == 568) {
-                self.videoView.center = CGPointMake(self.view.width/2, self.view.height/2);
-            }
+            self.videoView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+
             [self.view insertSubview:self.videoView atIndex:0];
             self.view.backgroundColor = [UIColor romoBlack];
         });
@@ -243,7 +279,7 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
     if (!self.inSession) {
         [self dismissDriveVC];
         if (!self.failureAlertView) {
-            self.failureAlertView = [[RMAlertView alloc] initWithTitle:NSLocalizedString(@"RomoControl-CallFailed-Title", @"Call Failed") message:NSLocalizedString(@"RomoControl-CallFailed-Message", @"Romo couldn't be reached") delegate:nil];
+            self.failureAlertView = [[RMAlertView alloc] initWithTitle:NSLocalizedString(@"TP-Client-CallFailed-Alert-Title", @"Call Failed") message:NSLocalizedString(@"TP-Client-CallFailed-Alert-Message", @"Romo couldn't be reached") delegate:nil];  // TODO: localize with a more explicit error message
         }
         [self.failureAlertView show];
     }
@@ -310,7 +346,7 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate> {
 {
     [self dismissPopovers];
 
-    RMRomotePhotoVC *photoVC = [[RMRomotePhotoVC alloc] init];
+    RMRemotePhotoVC *photoVC = [[RMRemotePhotoVC alloc] init];
     photoVC.photos = self.capturedPhotos;
     [photoVC.dismissButton addTarget:self action:@selector(handlePhotoVCDismissButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
     photoVC.modalPresentationStyle = UIModalPresentationFullScreen;

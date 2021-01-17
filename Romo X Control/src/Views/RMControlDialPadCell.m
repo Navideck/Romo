@@ -11,7 +11,7 @@
 #import "UIView+Additions.h"
 #import "RMSoundEffect.h"
 
-#define inputNumberIsLongEnough(inputNumber) (((NSString *)(inputNumber)).length >= 7)
+#define inputNumberIsLongEnough(inputNumber) (((NSString *)(inputNumber)).length >= 15)
 
 @interface RMControlDialPadCell ()
 
@@ -38,6 +38,7 @@
 - (void)prepareForReuse
 {
     self.callPressBlock = nil;
+    [super prepareForReuse];
 }
 
 - (void)handleCallPress:(id)sender

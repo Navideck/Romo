@@ -39,7 +39,7 @@ static const CGFloat clearInputButtonSize = 28.0;
 
 + (CGFloat)preferredHeight
 {
-    return kPadding * 6 + digitSize * 3 + 74 + 52;
+    return kPadding * 6 + digitSize * 4 + 74 + 52;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -70,7 +70,7 @@ static const CGFloat clearInputButtonSize = 28.0;
 - (void)layoutSubviews
 {
     self.inputNumberLabel.frame = CGRectMake(0, kPadding, self.width, 52);
-    self.clearInputButton.center = CGPointMake(self.width - clearInputButtonSize / 2.0 - kPadding, self.inputNumberLabel.centerY);
+    self.clearInputButton.center = CGPointMake(self.width - clearInputButtonSize / 2.0 - kPadding + 5, self.inputNumberLabel.centerY);
     
     [self.digits enumerateObjectsUsingBlock:^(UIButton *digit, NSUInteger index, BOOL *stop) {
         NSInteger i = (NSInteger)index;
@@ -125,7 +125,7 @@ static const CGFloat clearInputButtonSize = 28.0;
         _inputNumberLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _inputNumberLabel.backgroundColor = [UIColor clearColor];
         _inputNumberLabel.textColor = [UIColor whiteColor];
-        _inputNumberLabel.font = [UIFont fontWithSize:48.0];
+        _inputNumberLabel.font = [UIFont fontWithSize:30.0];
         _inputNumberLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _inputNumberLabel;
@@ -148,18 +148,36 @@ static const CGFloat clearInputButtonSize = 28.0;
 - (NSArray *)digits
 {
     if (!_digits) {
-        NSMutableArray *digits = [NSMutableArray arrayWithCapacity:9];
-        for (int i = 0; i < 9; i++) {
+        NSMutableArray *digits = [NSMutableArray arrayWithCapacity:12];
+        for (int i = 1; i < 10; i++) {
             UIButton *digit = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, iPad ? digitSizeiPad : digitSize, iPad ? digitSizeiPad : digitSize)];
             digit.layer.cornerRadius = (iPad ? digitSizeiPad : digitSize) / 2.0;
             digit.backgroundColor = [UIColor colorWithHue:0.54 saturation:0.65 brightness:1.0 alpha:0.90];
             digit.titleLabel.font = [UIFont fontWithSize:iPad ? digitFontSizeiPad : digitFontSize];
-            [digit setTitle:[NSString stringWithFormat:@"%d", i + 1] forState:UIControlStateNormal];
+            [digit setTitle:[NSString stringWithFormat:@"%d", i] forState:UIControlStateNormal];
             [digit setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [digit addTarget:self action:@selector(handleDigitTouchDown:) forControlEvents:UIControlEventTouchDown | UIControlEventTouchDragEnter];
             [digit addTarget:self action:@selector(handleDigitTouchUp:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchDragExit | UIControlEventTouchUpOutside | UIControlEventTouchCancel];
             [digits addObject:digit];
         }
+        UIButton *digit_dummy = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, iPad ? digitSizeiPad : digitSize, iPad ? digitSizeiPad : digitSize)];
+        digit_dummy.hidden = YES;
+        [digits addObject:digit_dummy];
+
+        UIButton *digit_0 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, iPad ? digitSizeiPad : digitSize, iPad ? digitSizeiPad : digitSize)];
+        digit_0.layer.cornerRadius = (iPad ? digitSizeiPad : digitSize) / 2.0;
+        digit_0.backgroundColor = [UIColor colorWithHue:0.54 saturation:0.65 brightness:1.0 alpha:0.90];
+        digit_0.titleLabel.font = [UIFont fontWithSize:iPad ? digitFontSizeiPad : digitFontSize];
+        [digit_0 setTitle:[NSString stringWithFormat:@"%d", 0] forState:UIControlStateNormal];
+        [digit_0 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [digit_0 addTarget:self action:@selector(handleDigitTouchDown:) forControlEvents:UIControlEventTouchDown | UIControlEventTouchDragEnter];
+        [digit_0 addTarget:self action:@selector(handleDigitTouchUp:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchDragExit | UIControlEventTouchUpOutside | UIControlEventTouchCancel];
+        [digits addObject:digit_0];
+
+        UIButton *digit_dummy2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, iPad ? digitSizeiPad : digitSize, iPad ? digitSizeiPad : digitSize)];
+        digit_dummy2.hidden = YES;
+        [digits addObject:digit_dummy2];
+
         _digits = [NSArray arrayWithArray:digits];
     }
     return _digits;
@@ -168,10 +186,11 @@ static const CGFloat clearInputButtonSize = 28.0;
 #pragma mark - Private Methods
 - (void)handleDigitTouchDown:(UIButton *)sender
 {
-    int digit = 1 + [self.digits indexOfObject:sender];
+    int digitIndex = (int)[self.digits indexOfObject:sender];
+    int digit = digitIndex < 10 ? 1 + digitIndex : 0;
     self.frequencyToPlay = [self _mapDigitToFrequency:digit];
-    if (self.inputNumber.length < 7) {
-        self.inputNumber = [self.inputNumber stringByAppendingString:[NSString stringWithFormat:@"%@%d", self.inputNumber.length == 3 ? @"-" : @"", digit]];
+    if (self.inputNumber.length < 15) {
+        self.inputNumber = [self.inputNumber stringByAppendingString:[NSString stringWithFormat:@"%@%d", self.inputNumber.length == 3 || self.inputNumber.length == 3 || self.inputNumber.length == 7 || self.inputNumber.length == 11 ? @"." : @"", digit]];
         self.synth.frequency = self.frequencyToPlay;
         [self.synth play];
     } else {
@@ -199,7 +218,8 @@ static const CGFloat clearInputButtonSize = 28.0;
 
 - (float)_mapDigitToFrequency:(int)digit
 {
-    if (digit == 1) { return [RMSynthesizer noteToFrequency:C inOctave:RMMusicOctave_4]; }
+    if (digit == 0) { return [RMSynthesizer noteToFrequency:C inOctave:RMMusicOctave_4]; }
+    else if (digit == 1) { return [RMSynthesizer noteToFrequency:C inOctave:RMMusicOctave_4]; }
     else if (digit == 2) { return [RMSynthesizer noteToFrequency:D inOctave:RMMusicOctave_4]; }
     else if (digit == 3) { return [RMSynthesizer noteToFrequency:E inOctave:RMMusicOctave_4]; }
     else if (digit == 4) { return [RMSynthesizer noteToFrequency:F inOctave:RMMusicOctave_4]; }
