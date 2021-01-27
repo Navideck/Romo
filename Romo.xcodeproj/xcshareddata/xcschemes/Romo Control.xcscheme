@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7130FD2517C42BAD0025B605"
-               BuildableName = "Romo X Control.app"
-               BlueprintName = "Romo X Control"
-               ReferencedContainer = "container:Romo X.xcodeproj">
+               BuildableName = "Romo Control.app"
+               BlueprintName = "Romo Control"
+               ReferencedContainer = "container:Romo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,9 +31,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7130FD2517C42BAD0025B605"
-            BuildableName = "Romo X Control.app"
-            BlueprintName = "Romo X Control"
-            ReferencedContainer = "container:Romo X.xcodeproj">
+            BuildableName = "Romo Control.app"
+            BlueprintName = "Romo Control"
+            ReferencedContainer = "container:Romo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -54,9 +54,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7130FD2517C42BAD0025B605"
-            BuildableName = "Romo X Control.app"
-            BlueprintName = "Romo X Control"
-            ReferencedContainer = "container:Romo X.xcodeproj">
+            BuildableName = "Romo Control.app"
+            BlueprintName = "Romo Control"
+            ReferencedContainer = "container:Romo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7130FD2517C42BAD0025B605"
-            BuildableName = "Romo X Control.app"
-            BlueprintName = "Romo X Control"
-            ReferencedContainer = "container:Romo X.xcodeproj">
+            BuildableName = "Romo Control.app"
+            BlueprintName = "Romo Control"
+            ReferencedContainer = "container:Romo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

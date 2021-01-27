@@ -119,10 +119,10 @@
 {
     NSString *messageTemplate = nil;
     if ([UIDevice currentDevice].isDockableTelepresenceDevice) {
-        messageTemplate = NSLocalizedString(@"RomoControl-Message-Compatible-Device", @"Open Romo X Control on another iDevice or computer to control me.\n\n"
+        messageTemplate = NSLocalizedString(@"RomoControl-Message-Compatible-Device", @"Open Romo Control on another iDevice or computer to control me.\n\n"
                                             "My Romo number is:\n%@");
     } else {
-        messageTemplate = NSLocalizedString(@"RomoControl-Message-NonCompatible-Device", @"Open Romo X Control on another local iDevice to control me.");
+        messageTemplate = NSLocalizedString(@"RomoControl-Message-NonCompatible-Device", @"Open Romo Control on another local iDevice to control me.");
     }
 
     NSString * romoNumber = [RMNetworkUtilities getIPAddress];

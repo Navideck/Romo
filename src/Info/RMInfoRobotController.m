@@ -354,7 +354,7 @@ typedef enum RMInfoRobotControllerRow {
     } else if (row == RMInfoRobotControllerRowLicense) {
         RMTextButtonCell *cell = [RMTextButtonCell dequeueOrCreateCellForTableView:tableView];
         cell.mainLabel.text = NSLocalizedString(@"Info-Label-License", @"License");
-        [cell.rightButton setTitle:NSLocalizedString(@"navideck.com/romo-x/legal", @"navideck.com/romo-x/legal") forState:UIControlStateNormal];
+        [cell.rightButton setTitle:NSLocalizedString(@"navideck.com/romo/legal", @"navideck.com/romo/legal") forState:UIControlStateNormal];
         [cell.rightButton addTarget:self action:@selector(handleLicenseLinkTap:) forControlEvents:UIControlEventTouchUpInside];
         
         return cell;

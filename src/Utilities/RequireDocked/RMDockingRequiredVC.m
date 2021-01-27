@@ -14,7 +14,7 @@
 #import "RMSoundEffect.h"
 #import <Romo/UIDevice+Romo.h>
 
-NSString *const RMRomoControlAppStoreURL = @"https://itunes.apple.com/us/app/romo-x-control/id1436338304";
+NSString *const RMRomoControlAppStoreURL = @"https://itunes.apple.com/us/app/romo-control/id1436338304";
 
 @interface RMDockingRequiredVC () <UIAlertViewDelegate>
 

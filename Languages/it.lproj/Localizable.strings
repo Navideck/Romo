@@ -977,10 +977,10 @@
 "RomoControl-Alert-Title" = "Romo Control";
 
 /* RomoControl-Message-Compatible-Device */
-"RomoControl-Message-Compatible-Device" = "Apri Romo X Control su un altro iDevice o computer per controllarmi.\n\nPer stabilire connessioni remote puoi utilizzare un servizio VPN come Tailscale su entrambi i dispositivi o configurare la tua VPN se il tuo router lo supporta.\n\nIl mio codice Romo è:\n%@";
+"RomoControl-Message-Compatible-Device" = "Apri Romo Control su un altro iDevice o computer per controllarmi.\n\nPer stabilire connessioni remote puoi utilizzare un servizio VPN come Tailscale su entrambi i dispositivi o configurare la tua VPN se il tuo router lo supporta.\n\nIl mio codice Romo è:\n%@";
 
 /* RomoControl-Message-NonCompatible-Device */
-"RomoControl-Message-NonCompatible-Device" = "Apri Romo X Control su un altro iDevice locale per controllarmi.\n\nPer stabilire connessioni remote puoi utilizzare un servizio VPN come Tailscale su entrambi i dispositivi o configurare la tua VPN se il tuo router lo supporta.";
+"RomoControl-Message-NonCompatible-Device" = "Apri Romo Control su un altro iDevice locale per controllarmi.\n\nPer stabilire connessioni remote puoi utilizzare un servizio VPN come Tailscale su entrambi i dispositivi o configurare la tua VPN se il tuo router lo supporta.";
 
 /* RomoControl-Message-Number-Error */
 "RomoControl-Message-Number-Error" = "Si è verificato un problema nel recuperare il mio codice Romo. Assicurati di essere connesso a Internet.";

@@ -977,10 +977,10 @@
 "RomoControl-Alert-Title" = "Romo Control";
 
 /* RomoControl-Message-Compatible-Device */
-"RomoControl-Message-Compatible-Device" = "Open Romo X Control on another iDevice or computer to control me.\n\nTo establish remote connections you can use a VPN service like Tailscale on both devices or setup your own VPN if your router supports it.\n\nMy Romo number is:\n%@";
+"RomoControl-Message-Compatible-Device" = "Open Romo Control on another iDevice or computer to control me.\n\nTo establish remote connections you can use a VPN service like Tailscale on both devices or setup your own VPN if your router supports it.\n\nMy Romo number is:\n%@";
 
 /* RomoControl-Message-NonCompatible-Device */
-"RomoControl-Message-NonCompatible-Device" = "Open Romo X Control on another local iDevice to control me.\n\nTo establish remote connections you can use a VPN service like Tailscale on both devices or setup your own VPN if your router supports it.";
+"RomoControl-Message-NonCompatible-Device" = "Open Romo Control on another local iDevice to control me.\n\nTo establish remote connections you can use a VPN service like Tailscale on both devices or setup your own VPN if your router supports it.";
 
 /* RomoControl-Message-Number-Error */
 "RomoControl-Message-Number-Error" = "There was an issue fetching my Romo number. Make sure you are connected to the internet.";

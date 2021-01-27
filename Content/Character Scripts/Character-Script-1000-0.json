@@ -114,7 +114,7 @@
                                },
                                {
                                "name": "ask",
-                               "args": ["Open Romo X Control\non your other device", "Not now", "Got it!"],
+                               "args": ["Open Romo Control\non your other device", "Not now", "Got it!"],
                                "store-id": "interaction/final/romo.control"
                                }
                                ]

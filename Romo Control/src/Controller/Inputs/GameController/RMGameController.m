@@ -1,6 +1,6 @@
 //
 //  RMGameController.m
-//  Romo X Control
+//  Romo Control
 //
 //  Created by Foti Dim on 15.12.20.
 //  Copyright © 2020 Romotive. All rights reserved.
