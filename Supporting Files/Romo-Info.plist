@@ -54,6 +54,10 @@
 		<string>Brandon-Medium.otf</string>
 		<string>Chewy.ttf</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>external-accessory</string>
+	</array>
 	<key>UIFileSharingEnabled</key>
 	<false/>
 	<key>UILaunchStoryboardName</key>

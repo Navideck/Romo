@@ -73,6 +73,7 @@ NSString *const RMRomoDidChangeNameNotification = @"RMRomoDidChangeNameNotificat
                                                    object:nil];
 
         [RMCore setDelegate:self];
+        [RMCore allowBackground:YES];
     }
     return self;
 }
