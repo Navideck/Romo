@@ -687,4 +687,15 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate, RMGameControllerDelegate> 
     [self moveWithAngle:angle speed:distance];
 }
 
+- (void)shoulderInputDetectedwithTiltDirectionPositive:(BOOL)isTiltDirectionPositive pressed:(BOOL)pressed {
+    float velocity = 0.8;
+    if (pressed && isTiltDirectionPositive) {
+        [self tiltWithVelocity:velocity];
+    } else if (pressed && !isTiltDirectionPositive) {
+        [self tiltWithVelocity:-velocity];
+    } else {
+        [self tiltWithVelocity:0];
+    }
+}
+
 @end

@@ -69,6 +69,14 @@
             [weakSelf.delegate thumbstickInputDetectedwithDistance:distance angle:angle];
         }
     }];
+
+    [self.controller.extendedGamepad.rightShoulder setValueChangedHandler:^(GCControllerButtonInput * _Nonnull button, float value, BOOL pressed) {
+        [weakSelf.delegate shoulderInputDetectedwithTiltDirectionPositive:true pressed:pressed];
+    }];
+
+    [self.controller.extendedGamepad.leftShoulder setValueChangedHandler:^(GCControllerButtonInput * _Nonnull button, float value, BOOL pressed) {
+        [weakSelf.delegate shoulderInputDetectedwithTiltDirectionPositive:false pressed:pressed];
+    }];
 }
 
 - (void)dealloc
