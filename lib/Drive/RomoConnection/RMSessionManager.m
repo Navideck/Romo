@@ -165,7 +165,7 @@
 
 - (void)handleApplicationDidEnterBackgroundNotification:(NSNotification *)notification
 {
-    [self stopBroadcasting];
+//    [self stopBroadcasting];
     [self.activeSession stop];
 }
 
