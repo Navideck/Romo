@@ -77,6 +77,10 @@
     [self.controller.extendedGamepad.leftShoulder setValueChangedHandler:^(GCControllerButtonInput * _Nonnull button, float value, BOOL pressed) {
         [weakSelf.delegate shoulderInputDetectedwithTiltDirectionPositive:false pressed:pressed];
     }];
+
+    [self.controller.extendedGamepad.dpad setValueChangedHandler:^(GCControllerDirectionPad * _Nonnull dpad, float xValue, float yValue) {
+        [weakSelf.delegate DPadInputDetectedWithXValue:xValue yValue:yValue];
+    }];
 }
 
 - (void)dealloc

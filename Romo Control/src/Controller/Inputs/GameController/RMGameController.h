@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)thumbstickInputDetectedwithDistance:(float)distance angle:(float)angle;
 - (void)shoulderInputDetectedwithTiltDirectionPositive:(BOOL)isTiltDirectionPositive pressed:(BOOL)pressed;
+- (void)DPadInputDetectedWithXValue:(float)xValue yValue:(float)yValue;
 
 @end
 

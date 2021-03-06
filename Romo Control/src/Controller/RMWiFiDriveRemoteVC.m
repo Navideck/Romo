@@ -618,9 +618,12 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate, RMGameControllerDelegate> 
 }
 
 - (void)moveWithAngle:(float)angle speed:(float)distance {
-    NSLog(@"distance: %f angle: %f", distance, angle);
-
     [_commandSubscriber sendJoystickDistance:distance angle:angle];
+    [self dismissPopovers];
+}
+
+- (void)moveTowardsSector:(RMDpadSector)sector {
+    [_commandSubscriber sendDpadSector:sector];
     [self dismissPopovers];
 }
 
@@ -645,8 +648,7 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate, RMGameControllerDelegate> 
 
 - (void)dPad:(RMDpad *)dpad didTouchSector:(RMDpadSector)sector
 {
-    [_commandSubscriber sendDpadSector:sector];
-    [self dismissPopovers];
+    [self moveTowardsSector:sector];
 }
 
 - (void)dPadTouchEnded:(RMDpad *)dpad
@@ -695,6 +697,20 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate, RMGameControllerDelegate> 
         [self tiltWithVelocity:-velocity];
     } else {
         [self tiltWithVelocity:0];
+    }
+}
+
+- (void)DPadInputDetectedWithXValue:(float)xValue yValue:(float)yValue {
+    if (yValue == 1.0f) {
+        [self moveTowardsSector:RMDpadSectorUp];
+    } else if (yValue == -1.0f) {
+        [self moveTowardsSector:RMDpadSectorDown];
+    } else if (xValue == 1.0f) {
+        [self moveTowardsSector:RMDpadSectorRight];
+    } else if (xValue == -1.0f) {
+        [self moveTowardsSector:RMDpadSectorLeft];
+    } else {
+        [self moveTowardsSector:RMDpadSectorNone];
     }
 }
 
