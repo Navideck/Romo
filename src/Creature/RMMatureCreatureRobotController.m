@@ -7,6 +7,7 @@
 //
 
 #import "RMMatureCreatureRobotController.h"
+#import "Photos/Photos.h"
 
 #import <Romo/RMVision.h>
 #import <Romo/RMImageUtils.h>
@@ -491,6 +492,31 @@ static const int motionDetectionConsecutiveTriggerCount = 10; // # of frames
 
 - (void)requestPhotoLibraryPermission
 {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                   message:@"Please allow to access PhotoLibrary"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK"
+                                              style:UIAlertActionStyleDefault handler:nil]];
+
+    switch ([PHPhotoLibrary authorizationStatus]) {
+        case PHAuthorizationStatusNotDetermined: {
+            // In case of unpermitted
+            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status){
+                switch (status) {
+                    case PHAuthorizationStatusRestricted:
+                    case PHAuthorizationStatusDenied:
+                        // Alert
+                        [self presentViewController:alert animated:YES completion:nil];
+                        break;
+
+                    default:
+                        break;
+                }
+            }];
+            break;
+        }
+    }
+    
     // By creating and showing a UIImagePickerController, the user will be
     // prompted to allow photo access
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
