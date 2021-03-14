@@ -599,7 +599,7 @@
 "FavColor-WrongColorPrompt1" = "ちがうよ！考えつづけてね！";
 
 /* FavColor-WrongColorPrompt10 */
-"FavColor-WrongColorPrompt10" = "ちがうけど、それは{userName}の\n好きな色？";
+"FavColor-WrongColorPrompt10" = "ちがうけど、それは${userName}の\n好きな色？";
 
 /* FavColor-WrongColorPrompt11 */
 "FavColor-WrongColorPrompt11" = "うーん…その色じゃないよ";
