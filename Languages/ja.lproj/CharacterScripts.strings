@@ -713,7 +713,7 @@
 "Now go build%nyour track!" = "自分のコース%nをつくりに行こう！";
 
 /* LineFollow-Introduction-First-Run DO NOT See Video */
-"Okay, I'll leave you to%nbuild your track." = "よし、コース作りは%n{userName}にまかせるね";
+"Okay, I'll leave you to%nbuild your track." = "よし、コース作りは%n${userName}にまかせるね";
 
 /* LineFollow-Introduction-First-Run Ask them to let Romo know when they are done! */
 "Tell me when you're%ndone building." = "作りおわったら%n教えてね";
