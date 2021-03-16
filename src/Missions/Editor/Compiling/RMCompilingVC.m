@@ -16,6 +16,7 @@
 #import "RMParameter.h"
 #import "RMSoundEffect.h"
 #import "RMAlertView.h"
+#import <Photos/Photos.h>
 
 #define compileStepCount 3
 #define kNumCompilingSounds 8
@@ -178,7 +179,8 @@
 
 - (BOOL)hasPermissionToSavePhotos
 {
-    return [ALAssetsLibrary authorizationStatus] == ALAuthorizationStatusAuthorized;
+    return [PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusAuthorized;
+
 }
 
 - (BOOL)hasMicrophonePermission

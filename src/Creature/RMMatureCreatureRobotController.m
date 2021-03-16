@@ -69,12 +69,6 @@ static const int motionDetectionConsecutiveTriggerCount = 10; // # of frames
         self.attentive = YES;
     }
     
-    if ([ALAssetsLibrary authorizationStatus] == ALAuthorizationStatusNotDetermined) {
-        // If we've never asked the user for permission to their photo library, ask them now
-        // so we have an answer later on in the story
-        [self requestPhotoLibraryPermission];
-    }
-    
     [self _scheduleCuriosityTimers];
     
     if ([self creatureDetectsFaces]) {
@@ -204,7 +198,7 @@ static const int motionDetectionConsecutiveTriggerCount = 10; // # of frames
         // Don't react if a bored event is running
         return;
     }
-        
+
     if (self.motivationManager.motivation == RMMotivation_SocialDrive) {
         self.Romo.character.emotion = RMCharacterEmotionCurious;
     }
@@ -265,7 +259,7 @@ static const int motionDetectionConsecutiveTriggerCount = 10; // # of frames
 {
     // If we have advanced face info, do stuff with it!
     [self _mimicRotation:face];
-//    [self _mimicLookLocation:face];
+    //    [self _mimicLookLocation:face];
 }
 
 //------------------------------------------------------------------------------
@@ -297,17 +291,17 @@ static const int motionDetectionConsecutiveTriggerCount = 10; // # of frames
             [self.Romo.robot turnByAngle:turnAngle
                               withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE
                               completion:^(BOOL success, float heading) {
-                                  double delayInSeconds = 2.0;
-                                  dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-                                  dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                                      [self.Romo.robot turnToHeading:self.tracker.lastFaceLocation
-                                                          withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE
-                                                               speed:0.5
-                                                   forceShortestTurn:YES
-                                                     finishingAction:RMCoreTurnFinishingActionStopDriving
-                                                          completion:nil];
-                                  });
-                              }];
+                double delayInSeconds = 2.0;
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    [self.Romo.robot turnToHeading:self.tracker.lastFaceLocation
+                                        withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE
+                                             speed:0.5
+                                 forceShortestTurn:YES
+                                   finishingAction:RMCoreTurnFinishingActionStopDriving
+                                        completion:nil];
+                });
+            }];
         }
     }
 }
@@ -358,8 +352,8 @@ static const int motionDetectionConsecutiveTriggerCount = 10; // # of frames
         [RMMissionRuntime runUserTrainedAction:RMUserTrainedActionRomotionTangoWithMusic
                                         onRomo:self.Romo
                                     completion:^(BOOL finished) {
-                                        self.doingBoredEvent = NO;
-                                    }];
+            self.doingBoredEvent = NO;
+        }];
     } else {
         if ([self creatureShouldFartOnShake]) {
             // Do a random expression (with a bias towards farting)
@@ -486,46 +480,6 @@ static const int motionDetectionConsecutiveTriggerCount = 10; // # of frames
         _motionDetectionModule.minimumConsecutiveTriggerCount = motionDetectionConsecutiveTriggerCount;
     }
     return _motionDetectionModule;
-}
-
-#pragma mark - Private Methods
-
-- (void)requestPhotoLibraryPermission
-{
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
-                                                                   message:@"Please allow to access PhotoLibrary"
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"OK"
-                                              style:UIAlertActionStyleDefault handler:nil]];
-
-    switch ([PHPhotoLibrary authorizationStatus]) {
-        case PHAuthorizationStatusNotDetermined: {
-            // In case of unpermitted
-            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status){
-                switch (status) {
-                    case PHAuthorizationStatusRestricted:
-                    case PHAuthorizationStatusDenied:
-                        // Alert
-                        [self presentViewController:alert animated:YES completion:nil];
-                        break;
-
-                    default:
-                        break;
-                }
-            }];
-            break;
-        }
-    }
-    
-    // By creating and showing a UIImagePickerController, the user will be
-    // prompted to allow photo access
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    picker.view.frame = CGRectZero;
-    picker.view.clipsToBounds = YES;
-    picker.view.alpha = 0.0;
-    [self.view addSubview:picker.view];
-    [picker.view removeFromSuperview];
 }
 
 @end

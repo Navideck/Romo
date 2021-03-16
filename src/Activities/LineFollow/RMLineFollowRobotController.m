@@ -744,7 +744,10 @@ static const float topShadowHeight = 200.0; // pixels
         [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
         UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-        UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil);
+        [UIImage writeToSavedPhotoAlbumWithImage:screenshot
+                                        completionTarget:nil
+                                      completionSelector:nil
+                                             contextInfo:nil];
         
         double delayInSeconds = 0.25;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
