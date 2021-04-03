@@ -1,8 +1,9 @@
 /* 
  * h264bitstream - a library for reading and writing H.264 video
  * Copyright (C) 2005-2007 Auroras Entertainment, LLC
+ * Copyright (C) 2008-2012 Avail-TVN
  * 
- * Written by Alex Izvorski <aizvorski@gmail.com>
+ * Written by Alex Izvorski <aizvorski@gmail.com> and Alex Giladi <alex.giladi@gmail.com>
  * 
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -19,13 +20,13 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#include <stdint.h>
-
 #ifndef _H264_STREAM_H
 #define _H264_STREAM_H        1
 
-#include "bs.h"
+#include <stdint.h>
+#include <assert.h>
 
+#include "bs.h"
 #include "h264_sei.h"
 
 #ifdef __cplusplus
@@ -167,13 +168,17 @@ typedef struct
     int deblocking_filter_control_present_flag;
     int constrained_intra_pred_flag;
     int redundant_pic_cnt_present_flag;
+
+    // set iff we carry any of the optional headers
+    int _more_rbsp_data_present;
+
     int transform_8x8_mode_flag;
     int pic_scaling_matrix_present_flag;
-      int pic_scaling_list_present_flag[8];
-      int* ScalingList4x4[6];
-      int UseDefaultScalingMatrix4x4Flag[6];
-      int* ScalingList8x8[2];
-      int UseDefaultScalingMatrix8x8Flag[2];
+       int pic_scaling_list_present_flag[8];
+       int* ScalingList4x4[6];
+       int UseDefaultScalingMatrix4x4Flag[6];
+       int* ScalingList8x8[2];
+       int UseDefaultScalingMatrix8x8Flag[2];
     int second_chroma_qp_index_offset;
 } pps_t;
 
@@ -216,16 +221,16 @@ typedef struct
     {
         int luma_log2_weight_denom;
         int chroma_log2_weight_denom;
-        int luma_weight_l0_flag;
+        int luma_weight_l0_flag[64];
         int luma_weight_l0[64];
         int luma_offset_l0[64];
-        int chroma_weight_l0_flag;
+        int chroma_weight_l0_flag[64];
         int chroma_weight_l0[64][2];
         int chroma_offset_l0[64][2];
-        int luma_weight_l1_flag;
+        int luma_weight_l1_flag[64];
         int luma_weight_l1[64];
         int luma_offset_l1[64];
-        int chroma_weight_l1_flag;
+        int chroma_weight_l1_flag[64];
         int chroma_weight_l1[64][2];
         int chroma_offset_l1[64][2];
     } pwt; // predictive weight table
@@ -278,10 +283,58 @@ typedef struct
     int forbidden_zero_bit;
     int nal_ref_idc;
     int nal_unit_type;
+    void* parsed; // FIXME
+    int sizeof_parsed;
+
     //uint8_t* rbsp_buf;
     //int rbsp_size;
 } nal_t;
 
+typedef struct
+{
+    int _is_initialized;
+    int sps_id;
+    int initial_cpb_removal_delay;
+    int initial_cpb_delay_offset;
+} sei_buffering_t;
+
+typedef struct
+{
+    int clock_timestamp_flag;
+        int ct_type;
+        int nuit_field_based_flag;
+        int counting_type;
+        int full_timestamp_flag;
+        int discontinuity_flag;
+        int cnt_dropped_flag;
+        int n_frames;
+
+        int seconds_value;
+        int minutes_value;
+        int hours_value;
+
+        int seconds_flag;
+        int minutes_flag;
+        int hours_flag;
+
+        int time_offset;
+} picture_timestamp_t;
+
+typedef struct
+{
+  int _is_initialized;
+  int cpb_removal_delay;
+  int dpb_output_delay;
+  int pic_struct;
+  picture_timestamp_t clock_timestamps[3]; // 3 is the maximum possible value
+} sei_picture_timing_t;
+
+
+typedef struct
+{
+  int rbsp_size;
+  uint8_t* rbsp_buf;
+} slice_data_rbsp_t;
 
 /**
    H264 stream
@@ -296,10 +349,15 @@ typedef struct
     sps_t* sps;
     pps_t* pps;
     aud_t* aud;
-    sei_t* sei;
-    sei_t** seis;
+    sei_t* sei; //This is a TEMP pointer at whats in h->seis...    
     int num_seis;
     slice_header_t* sh;
+    slice_data_rbsp_t* slice_data;
+
+    sps_t* sps_table[32];
+    pps_t* pps_table[256];
+    sei_t** seis;
+
 } h264_stream_t;
 
 h264_stream_t* h264_new();
@@ -307,10 +365,13 @@ void h264_free(h264_stream_t* h);
 
 int find_nal_unit(uint8_t* buf, int size, int* nal_start, int* nal_end);
 
-void rbsp_to_nal(uint8_t* rbsp_buf, int* rbsp_size, uint8_t* nal_buf, int* nal_size);
-void nal_to_rbsp(uint8_t* nal_buf, int* nal_size, uint8_t* rbsp_buf, int* rbsp_size);
+//void rbsp_to_nal(uint8_t* rbsp_buf, int* rbsp_size, uint8_t* nal_buf, int* nal_size);
+//void nal_to_rbsp(uint8_t* nal_buf, int* nal_size, uint8_t* rbsp_buf, int* rbsp_size);
+int rbsp_to_nal(const uint8_t* rbsp_buf, int rbsp_size, uint8_t* nal_buf, int nal_buf_size);
+int nal_to_rbsp(uint8_t* nal_buf, int nal_size, uint8_t* rbsp_buf, int rbsp_size);
 
 int read_nal_unit(h264_stream_t* h, uint8_t* buf, int size);
+int peek_nal_unit(h264_stream_t* h, uint8_t* buf, int size);
 
 void read_seq_parameter_set_rbsp(h264_stream_t* h, bs_t* b);
 void read_scaling_list(bs_t* b, int* scalingList, int sizeOfScalingList, int useDefaultScalingMatrixFlag );
@@ -335,7 +396,6 @@ void read_pred_weight_table(h264_stream_t* h, bs_t* b);
 void read_dec_ref_pic_marking(h264_stream_t* h, bs_t* b);
 
 int more_rbsp_trailing_data(h264_stream_t* h, bs_t* b);
-
 
 int write_nal_unit(h264_stream_t* h, uint8_t* buf, int size);
 
@@ -367,11 +427,15 @@ void debug_slice_header(slice_header_t* sh);
 void debug_nal(h264_stream_t* h, nal_t* nal);
 
 void debug_bytes(uint8_t* buf, int len);
-void debug_bs(bs_t* b);
 
 void read_sei_payload( h264_stream_t* h, bs_t* b, int payloadType, int payloadSize);
 void write_sei_payload( h264_stream_t* h, bs_t* b, int payloadType, int payloadSize);
 
+//NAL ref idc codes
+#define NAL_REF_IDC_PRIORITY_HIGHEST    3
+#define NAL_REF_IDC_PRIORITY_HIGH       2
+#define NAL_REF_IDC_PRIORITY_LOW        1
+#define NAL_REF_IDC_PRIORITY_DISPOSABLE 0
 
 //Table 7-1 NAL unit type codes
 #define NAL_UNIT_TYPE_UNSPECIFIED                    0    // Unspecified
@@ -392,6 +456,8 @@ void write_sei_payload( h264_stream_t* h, bs_t* b, int payloadType, int payloadS
 #define NAL_UNIT_TYPE_CODED_SLICE_AUX               19    // Coded slice of an auxiliary coded picture without partitioning
                                              // 20..23    // Reserved
                                              // 24..31    // Unspecified
+
+ 
 
 //7.4.3 Table 7-6. Name association to slice_type
 #define SH_SLICE_TYPE_P        0        // P (P slice)
@@ -448,6 +514,11 @@ void write_sei_payload( h264_stream_t* h, bs_t* b, int payloadType, int payloadS
 #define AUD_PRIMARY_PIC_TYPE_ISI     5                // I, SI
 #define AUD_PRIMARY_PIC_TYPE_ISIPSP  6                // I, SI, P, SP
 #define AUD_PRIMARY_PIC_TYPE_ISIPSPB 7                // I, SI, P, SP, B
+
+#define H264_PROFILE_BASELINE  66
+#define H264_PROFILE_MAIN      77
+#define H264_PROFILE_EXTENDED  88
+#define H264_PROFILE_HIGH     100
 
 #ifdef __cplusplus
 }

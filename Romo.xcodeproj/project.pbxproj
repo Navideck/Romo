@@ -134,8 +134,6 @@
 		AF0D55C226166AFF00906F6C /* qt_parser.m in Sources */ = {isa = PBXBuildFile; fileRef = AFACD2CE2616610400E8487D /* qt_parser.m */; };
 		AF0D55D126166DBA00906F6C /* h264_sei.c in Sources */ = {isa = PBXBuildFile; fileRef = AF0D55C526166DBA00906F6C /* h264_sei.c */; };
 		AF0D55D226166DBA00906F6C /* h264_sei.c in Sources */ = {isa = PBXBuildFile; fileRef = AF0D55C526166DBA00906F6C /* h264_sei.c */; };
-		AF0D55D726166DBA00906F6C /* bs.c in Sources */ = {isa = PBXBuildFile; fileRef = AF0D55CA26166DBA00906F6C /* bs.c */; };
-		AF0D55D826166DBA00906F6C /* bs.c in Sources */ = {isa = PBXBuildFile; fileRef = AF0D55CA26166DBA00906F6C /* bs.c */; };
 		AF0D55DD26166DBA00906F6C /* h264_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = AF0D55D026166DBA00906F6C /* h264_stream.c */; };
 		AF0D55DE26166DBA00906F6C /* h264_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = AF0D55D026166DBA00906F6C /* h264_stream.c */; };
 		AF23CEF8214D2ADA0030A653 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF23CEF7214D2ADA0030A653 /* Launch Screen.storyboard */; };
@@ -1256,7 +1254,6 @@
 		AF0D55C526166DBA00906F6C /* h264_sei.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = h264_sei.c; sourceTree = "<group>"; };
 		AF0D55C726166DBA00906F6C /* h264_analyze.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = h264_analyze.c; sourceTree = "<group>"; };
 		AF0D55C926166DBA00906F6C /* h264_stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = h264_stream.h; sourceTree = "<group>"; };
-		AF0D55CA26166DBA00906F6C /* bs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bs.c; sourceTree = "<group>"; };
 		AF0D55CD26166DBA00906F6C /* h264_sei.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = h264_sei.h; sourceTree = "<group>"; };
 		AF0D55CF26166DBA00906F6C /* bs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bs.h; sourceTree = "<group>"; };
 		AF0D55D026166DBA00906F6C /* h264_stream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = h264_stream.c; sourceTree = "<group>"; };
@@ -3045,7 +3042,6 @@
 		AF0D55C426166DBA00906F6C /* h264bitstream */ = {
 			isa = PBXGroup;
 			children = (
-				AF0D55CA26166DBA00906F6C /* bs.c */,
 				AF0D55C726166DBA00906F6C /* h264_analyze.c */,
 				AF0D55C526166DBA00906F6C /* h264_sei.c */,
 				AF0D55D026166DBA00906F6C /* h264_stream.c */,
@@ -3917,7 +3913,6 @@
 				7130FD8117C42D9A0025B605 /* RMPeer.m in Sources */,
 				7130FD7217C42D6F0025B605 /* RMRemoteControlService.m in Sources */,
 				7130FD8617C42DA50025B605 /* RMSubscriber.m in Sources */,
-				AF0D55D826166DBA00906F6C /* bs.c in Sources */,
 				7130FD8B17C42DC30025B605 /* RAVVideoInput.m in Sources */,
 				7130FD7417C42D750025B605 /* RMAddress.m in Sources */,
 				7130FDEF17C4372C0025B605 /* UIImage+Save.m in Sources */,
@@ -4076,7 +4071,6 @@
 				AF8EF2FA21CD676D0025F16B /* RMAppDelegate.m in Sources */,
 				AF8EF2FB21CD676D0025F16B /* RMShuffleActionView.m in Sources */,
 				AF8EF2FC21CD676D0025F16B /* RMSpaceScene.m in Sources */,
-				AF0D55D726166DBA00906F6C /* bs.c in Sources */,
 				AF8EF2FD21CD676D0025F16B /* UIColor+RMColor.m in Sources */,
 				AF8EF2FE21CD676D0025F16B /* RMWaitActionView.m in Sources */,
 				AF8EF2FF21CD676D0025F16B /* RMObjectTrackingVirtualSensor.m in Sources */,
