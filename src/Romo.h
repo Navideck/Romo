@@ -1,4 +1,4 @@
-#import "UIImage+Retina.h"
+#import "UIImage+Cache.h"
 #import <CocoaLumberjack/CocoaLumberjack.h>
 
 #ifdef DEBUG

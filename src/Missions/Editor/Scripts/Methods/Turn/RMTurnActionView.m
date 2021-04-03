@@ -57,7 +57,7 @@ static const CGFloat animationCenterY = 132.0;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _robot = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"romoDriveForward1.png"]];
+        _robot = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"romoDriveForward1.png"]];
         self.robot.contentMode = UIViewContentModeCenter;
         self.robot.frame = CGRectMake(0, 0, 200, 200);
         self.robot.transform = CGAffineTransformMakeScale(0.55, 0.55);
@@ -213,7 +213,7 @@ static const CGFloat animationCenterY = 132.0;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             self.robot.center = CGPointMake(x - xRadius * sinf(self->_animationAngle), y + yRadius * cosf(self->_animationAngle));
-            self.robot.image = [UIImage smartImageNamed:[NSString stringWithFormat:@"romoTurn%d.png",imageNumber]];
+            self.robot.image = [UIImage cacheableImageNamed:[NSString stringWithFormat:@"romoTurn%d.png",imageNumber]];
         });
     }
     self.previousStepTime = currentTime;

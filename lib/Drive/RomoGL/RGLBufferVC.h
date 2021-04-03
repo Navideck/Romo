@@ -14,7 +14,7 @@
  */
 @interface RGLBufferVC : UIViewController
 
-@property (nonatomic) AVSampleBufferDisplayLayer *displayLayer;
+@property (nonatomic) AVSampleBufferDisplayLayer *displayLayer API_AVAILABLE(ios(8.0));
 
 #pragma mark - Initialization --
 
@@ -28,13 +28,13 @@
 
 #pragma mark - Methods --
 
-///**
-// * Draws the provided pixel planes to the screen.
-// * @param planes An array of pointers to the pixel planes to be drawn to the screen.
-// * @param width The width of the planes to be drawn.
-// * @param height The height of the planes to be drawn.
-// */
-//- (void)drawPlanes:(void **)planes width:(size_t)width height:(size_t)height;
+/**
+ * Draws the provided pixel planes to the screen.
+ * @param planes An array of pointers to the pixel planes to be drawn to the screen.
+ * @param width The width of the planes to be drawn.
+ * @param height The height of the planes to be drawn.
+ */
+- (void)drawPlanes:(void **)planes width:(size_t)width height:(size_t)height;
 
 - (void) playSampleBuffer:(CMSampleBufferRef) sampleBuffer;
 

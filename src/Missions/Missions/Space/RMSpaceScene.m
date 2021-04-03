@@ -4,7 +4,7 @@
 #import <Romo/RMMath.h>
 #import "RMChapterPlanet.h"
 #import <Romo/UIDevice+Romo.h>
-#import <Romo/UIImage+Retina.h>
+#import <Romo/UIImage+Cache.h>
 
 static const CGFloat numberOfStarsForFastDevice = 72;
 static const CGFloat numberOfStarsForSlowDevice = 0;
@@ -123,7 +123,7 @@ static const CGFloat universeScale = 3.0;
 - (UIImageView *)backgroundImageView
 {
     if (!_backgroundImageView) {
-        _backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"spaceBackground.png"]];
+        _backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"spaceBackground.png"]];
     }
     
     return _backgroundImageView;

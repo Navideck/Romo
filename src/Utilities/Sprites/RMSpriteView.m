@@ -5,7 +5,7 @@
 
 #import "RMSpriteView.h"
 #import "UIView+Additions.h"
-#import "UIImage+Retina.h"
+#import "UIImage+Cache.h"
 
 static NSString *animationKey = @"spriteAnimation";
 
@@ -85,9 +85,9 @@ static NSString *animationKey = @"spriteAnimation";
         while (1) {
             UIImage *sprite;
             if (i == 1) {
-                sprite = [UIImage smartImageNamed:[self.spriteName stringByAppendingString:@".png"]];
+                sprite = [UIImage cacheableImageNamed:[self.spriteName stringByAppendingString:@".png"]];
             } else {
-                sprite = [UIImage smartImageNamed:[NSString stringWithFormat:@"%@%d.png", self.spriteName, i]];
+                sprite = [UIImage cacheableImageNamed:[NSString stringWithFormat:@"%@%d.png", self.spriteName, i]];
             }
             
             if (sprite) {

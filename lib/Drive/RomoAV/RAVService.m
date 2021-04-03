@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) RMDataSocket *socket;
 @property (nonatomic, strong) RMAddress *peerAddress;
+@property (nonatomic, strong) RAVHWVideoOutput *hwVideoOutput;
 @property (nonatomic, strong) RAVVideoOutput *videoOutput;
 
 - (void)prepareNetworking;
@@ -48,7 +49,11 @@
 - (void)dealloc
 {
     [self stop];
-    [self.videoOutput stop];
+    if (@available(iOS 8.0, *)) {
+        [self.hwVideoOutput stop];
+    } else {
+        [self.videoOutput stop];
+    }
 }
 
 - (void)prepareNetworking
@@ -59,7 +64,11 @@
 
 - (void)prepareVideo
 {
-    self.videoOutput = [[RAVVideoOutput alloc] init];
+    if (@available(iOS 8.0, *)) {
+        self.hwVideoOutput = [[RAVHWVideoOutput alloc] init];
+    } else {
+        self.videoOutput = [[RAVVideoOutput alloc] init];
+    }
 }
 
 #pragma mark - Service --
@@ -93,7 +102,11 @@
         }
 
         case DATA_TYPE_VIDEO: {
-            [self.videoOutput playVideoFrame:[dataPacket extractData] length:dataPacket.dataSize];
+            if (@available(iOS 8.0, *)) {
+                [self.hwVideoOutput playVideoFrame:[dataPacket extractData] length:dataPacket.dataSize];
+            } else {
+                [self.videoOutput playVideoFrame:[dataPacket extractData] length:dataPacket.dataSize];
+            }
             break;
         }
         default:
@@ -113,7 +126,11 @@
 
 - (UIView *)peerView
 {
-    return self.videoOutput.peerView;
+    if (@available(iOS 8.0, *)) {
+        return self.hwVideoOutput.peerView;
+    } else {
+        return self.videoOutput.peerView;
+    }
 }
 
 - (void)sendDeviceInfo

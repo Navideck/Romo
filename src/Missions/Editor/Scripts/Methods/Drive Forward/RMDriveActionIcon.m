@@ -19,7 +19,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _robot = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"romoDriveForward1.png"]];
+        _robot = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"romoDriveForward1.png"]];
         self.robot.animationRepeatCount = 0;
         self.robot.frame = CGRectMake(0, 14, 57.5, 60);
         [self.contentView addSubview:self.robot];
@@ -56,17 +56,17 @@
 
     if (forward) {
         self.robot.animationImages = @[
-                                       [UIImage smartImageNamed:@"romoDriveForward1.png"],
-                                       [UIImage smartImageNamed:@"romoDriveForward2.png"],
-                                       [UIImage smartImageNamed:@"romoDriveForward3.png"],
-                                       [UIImage smartImageNamed:@"romoDriveForward4.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward1.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward2.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward3.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward4.png"],
                                        ];
     } else {
         self.robot.animationImages = @[
-                                       [UIImage smartImageNamed:@"romoDriveForward4.png"],
-                                       [UIImage smartImageNamed:@"romoDriveForward3.png"],
-                                       [UIImage smartImageNamed:@"romoDriveForward2.png"],
-                                       [UIImage smartImageNamed:@"romoDriveForward1.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward4.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward3.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward2.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward1.png"],
                                        ];
     }
 }

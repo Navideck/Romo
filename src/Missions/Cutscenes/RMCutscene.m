@@ -11,7 +11,8 @@
 @interface RMCutscene ()
 
 @property (nonatomic) int cutsceneNumber;
-@property (nonatomic, strong) AVPlayerViewController *playerViewController;
+@property (nonatomic, strong) AVPlayerViewController *playerViewController API_AVAILABLE(ios(8.0));
+@property (nonatomic, strong) MPMoviePlayerController *player;
 
 @property (nonatomic, strong) NSTimer *playbackTimer;
 @property (nonatomic, copy) void (^completion)(BOOL completion);
@@ -28,23 +29,32 @@
     NSString *cutscenePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"Cutscene-%d",cutscene] ofType:@"m4v"];
 
     AVPlayer *player = [AVPlayer playerWithURL:[NSURL fileURLWithPath:cutscenePath]];
-    self.playerViewController = [AVPlayerViewController new];
-    self.playerViewController.player = player;
-    self.playerViewController.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    self.playerViewController.showsPlaybackControls = false;
-    self.playerViewController.view.frame = view.bounds;
-    self.playerViewController.view.backgroundColor = [UIColor clearColor];
-    self.playerViewController.view.accessibilityLabel = @"Cutscene";
-    self.playerViewController.view.isAccessibilityElement = YES;
+    if (@available(iOS 8.0, *)) {
+        self.playerViewController = [AVPlayerViewController new];
 
-    [self.playerViewController.player.currentItem addObserver:self forKeyPath:@"status" options:0 context:nil];
+        self.playerViewController.player = player;
+        self.playerViewController.videoGravity = AVLayerVideoGravityResizeAspectFill;
+        self.playerViewController.showsPlaybackControls = false;
+        [self.playerViewController.player.currentItem addObserver:self forKeyPath:@"status" options:0 context:nil];
+    } else {
+        self.player = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL fileURLWithPath:cutscenePath]];
+        [self.player prepareToPlay];
+        self.player.controlStyle = MPMovieControlStyleNone;
+        self.player.scalingMode = MPMovieScalingModeAspectFill;
+        self.player.shouldAutoplay = NO;
+    }
+    
+    self.view.frame = view.bounds;
+    self.view.backgroundColor = [UIColor clearColor];
+    self.view.accessibilityLabel = @"Cutscene";
+    self.view.isAccessibilityElement = YES;
+    [view addSubview:self.view];
 
     // trick to prevent iOS from showing the volume alert bezel
     self.volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(0, 0, -1000, -1000)];
     self.volumeView.clipsToBounds = YES;
     [view addSubview:self.volumeView];
-    [view addSubview:self.playerViewController.view];
-    
+
 #ifdef DEBUG
     UITapGestureRecognizer *threeFingerTripleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleThreeFingerTripleTap:)];
 #ifdef SIMULATOR
@@ -55,12 +65,17 @@
     threeFingerTripleTap.numberOfTapsRequired = 3;
     [view addGestureRecognizer:threeFingerTripleTap];
     view.userInteractionEnabled = YES;
-    self.playerViewController.view.userInteractionEnabled = NO;
+    view.userInteractionEnabled = NO;
     
 #endif  // DEBUG
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackDidFinish:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.playerViewController.player.currentItem];
+    if (@available(iOS 8.0, *)) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackDidFinish:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.playerViewController.player.currentItem];
+    } else {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackDidFinish:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackStateDidChange:) name:MPMoviePlayerPlaybackStateDidChangeNotification object:nil];
+    }
 
     self.boostedVolume = NO;
     
@@ -74,7 +89,11 @@
 
 - (UIView *)view
 {
-    return self.playerViewController.view;
+    if (@available(iOS 8.0, *)) {
+        return self.playerViewController.view;
+    } else {
+        return self.player.view;
+    }
 }
 
 - (void)dealloc
@@ -86,10 +105,17 @@
 
 - (void)playbackDidFinish:(NSNotification *)notification
 {
-    AVPlayerItem  *currentItem = notification.object;
+    if (@available(iOS 8.0, *)) {
+        AVPlayerItem  *currentItem = notification.object;
 
-    if (CMTimeGetSeconds(currentItem.duration) > 0 && ABS(CMTimeGetSeconds(currentItem.currentTime) - CMTimeGetSeconds(currentItem.duration)) < 0.06) {
-        [self cleanupAfterPlaybackFinished];
+        if (CMTimeGetSeconds(currentItem.duration) > 0 && ABS(CMTimeGetSeconds(currentItem.currentTime) - CMTimeGetSeconds(currentItem.duration)) < 0.06) {
+            [self cleanupAfterPlaybackFinished];
+        }
+    } else {
+        MPMoviePlayerController *player = notification.object;
+        if (player.playableDuration > 0.0 && ABS(player.currentPlaybackTime - player.playableDuration) < 0.06) {
+            [self cleanupAfterPlaybackFinished];
+        }
     }
 }
 
@@ -98,7 +124,11 @@
     if (!self.playbackTimer) {
         self.playbackTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/30.0 target:self selector:@selector(playbackTimeDidChange:) userInfo:nil repeats:YES];
     }
-    [self.playerViewController.player play];
+    if (@available(iOS 8.0, *)) {
+        [self.playerViewController.player play];
+    } else {
+        [self.player play];
+    }
 }
 
 - (void)cleanupAfterPlaybackFinished
@@ -113,9 +143,16 @@
         self.volumeView = nil;
     }
     
-    if (self.playerViewController) {
-        [self.playerViewController.view removeFromSuperview];
-        self.playerViewController = nil;
+    if (@available(iOS 8.0, *)) {
+        if (self.playerViewController) {
+            [self.view removeFromSuperview];
+            self.playerViewController = nil;
+        }
+    } else {
+        if (self.player) {
+            [self.view removeFromSuperview];
+            self.player = nil;
+        }
     }
     
     if (self.completion) {
@@ -126,22 +163,44 @@
     }
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [self.playerViewController.player.currentItem removeObserver:self forKeyPath:@"status"];
+    if (@available(iOS 8.0, *)) {
+        [self.playerViewController.player.currentItem removeObserver:self forKeyPath:@"status"];
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"rate"]) {
-        float time = CMTimeGetSeconds(self.playerViewController.player.currentItem.currentTime) - CMTimeGetSeconds(self.playerViewController.player.currentItem.duration);
-
-        if ((self.playerViewController.player.rate == 0) && ABS(time) > 0.05) {
-            [self.playerViewController.player play];
+        if (@available(iOS 8.0, *)) {
+            float time = CMTimeGetSeconds(self.playerViewController.player.currentItem.currentTime) - CMTimeGetSeconds(self.playerViewController.player.currentItem.duration);
+            
+            if ((self.playerViewController.player.rate == 0) && ABS(time) > 0.05) {
+                [self.playerViewController.player play];
+            }
         }
+    }
+}
+
+- (void)playbackStateDidChange:(NSNotification *)notification
+{
+    MPMoviePlayerController *player = notification.object;
+
+    if ((player.playbackState == MPMoviePlaybackStateInterrupted ||
+         player.playbackState == MPMoviePlaybackStatePaused ||
+         player.playbackState == MPMoviePlaybackStateStopped) &&
+        ABS(player.currentPlaybackTime - player.playableDuration) > 0.05) {
+        [player play];
     }
 }
 
 - (void)playbackTimeDidChange:(NSTimer *)playbackTimer
 {
-    float time = CMTimeGetSeconds(self.playerViewController.player.currentTime);
+    float time;
+
+    if (@available(iOS 8.0, *)) {
+        time = CMTimeGetSeconds(self.playerViewController.player.currentTime);
+    } else {
+        time = self.player.currentPlaybackTime;
+    }
 
     if (!self.boostedVolume && time > 0.1) {
         [self boostVolume];
@@ -190,8 +249,12 @@
 
 - (void)handleThreeFingerTripleTap:(UITapGestureRecognizer *)tap
 {
-    CMTime time = CMTimeMakeWithSeconds(CMTimeGetSeconds(self.playerViewController.player.currentItem.duration) - 0.02, self.playerViewController.player.currentTime.timescale);
-    [self.playerViewController.player seekToTime:time];
+    if (@available(iOS 8.0, *)) {
+        CMTime time = CMTimeMakeWithSeconds(CMTimeGetSeconds(self.playerViewController.player.currentItem.duration) - 0.02, self.playerViewController.player.currentTime.timescale);
+        [self.playerViewController.player seekToTime:time];
+    } else {
+        self.player.currentPlaybackTime = self.player.playableDuration - 0.02;
+    }
     [self cleanupAfterPlaybackFinished];
 }
 
@@ -202,7 +265,11 @@
 
 - (void)applicationWillResignActive:(NSNotification *)notification
 {
-    [self.playerViewController.player pause];
+    if (@available(iOS 8.0, *)) {
+        [self.playerViewController.player pause];
+    } else {
+        [self.player stop];
+    }
 }
 
 - (void)boostVolume

@@ -20,7 +20,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        UIImageView *eyes = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"iconLookEyes.png"]];
+        UIImageView *eyes = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"iconLookEyes.png"]];
         eyes.frame = self.contentView.bounds;
         eyes.contentMode = UIViewContentModeCenter;
         [self.contentView addSubview:eyes];

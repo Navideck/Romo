@@ -226,7 +226,11 @@ NSString *const RMRomoControlAppStoreURL = @"https://itunes.apple.com/us/app/rom
     if (!_buyRomoView) {
         _buyRomoView = [[RMPopupWebview alloc] initWithFrame:[UIScreen mainScreen].bounds];
         NSURLRequest *requestStore = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://www.amazon.com/s?field-keywords=romotive"]];
-        [_buyRomoView.webView loadRequest:requestStore];
+        if (@available(iOS 8.0, *)) {
+            [_buyRomoView.wkWebView loadRequest:requestStore];
+        } else {
+            [_buyRomoView.uiWebView loadRequest:requestStore];
+        }
         [_buyRomoView.dismissButton addTarget:self action:@selector(handleDismissBuyRomoViewButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _buyRomoView;

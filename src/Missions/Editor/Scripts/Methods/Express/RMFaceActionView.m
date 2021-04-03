@@ -40,12 +40,12 @@ static const CGFloat unselectedFaceOptionTop = 8.0;
     if (self) {
         self.title = @"";
 
-        _iPhone = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"iphoneFull.png"]];
+        _iPhone = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"iphoneFull.png"]];
         self.iPhone.center = CGPointMake(self.contentView.width / 2, self.contentView.height / 2 + 20);
         self.iPhone.contentMode = UIViewContentModeScaleAspectFit;
         [self.contentView insertSubview:self.iPhone atIndex:0];
 
-        _screen = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"romoExpression10.png"]];
+        _screen = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"romoExpression10.png"]];
         self.screen.origin = CGPointMake(15, 44);
         self.screen.alpha = 1.0;
         self.screen.clipsToBounds = YES;
@@ -292,7 +292,7 @@ static const CGFloat unselectedFaceOptionTop = 8.0;
         for (int i = 0; i < count; i++) {
             BOOL isUnlocked = i < unlocked.count;
             NSNumber *faceNumber = isUnlocked ? unlocked[i] : locked[i - unlocked.count];
-            UIImage *faceImage = [UIImage smartImageNamed:[NSString stringWithFormat:@"romo%@%d",self.showingEmotion ? @"Emotion" : @"Expression", faceNumber.intValue]];
+            UIImage *faceImage = [UIImage cacheableImageNamed:[NSString stringWithFormat:@"romo%@%d",self.showingEmotion ? @"Emotion" : @"Expression", faceNumber.intValue]];
 
             UIImageView *phone = [[UIImageView alloc] initWithFrame:CGRectMake(16 + 64 * i, unselectedFaceOptionTop, 55, 100)];
             phone.image = [UIImage imageNamed:@"iphoneFull.png"];
@@ -341,7 +341,7 @@ static const CGFloat unselectedFaceOptionTop = 8.0;
         _expression = expression;
 
         self.title = [RMFaceActionView nameForExpression:expression];
-        self.screen.image = [UIImage smartImageNamed:[NSString stringWithFormat:@"romoExpression%d.png",expression]];
+        self.screen.image = [UIImage cacheableImageNamed:[NSString stringWithFormat:@"romoExpression%d.png",expression]];
 
         if (self.isEditing) {
             [self.character removeFromSuperview];
@@ -380,7 +380,7 @@ static const CGFloat unselectedFaceOptionTop = 8.0;
         _emotion = emotion;
 
         self.title = [RMFaceActionView nameForEmotion:emotion];
-        self.screen.image = [UIImage smartImageNamed:[NSString stringWithFormat:@"romoEmotion%d.png",emotion]];
+        self.screen.image = [UIImage cacheableImageNamed:[NSString stringWithFormat:@"romoEmotion%d.png",emotion]];
 
         if (self.showingEmotion) {
             self.character.emotion = self.emotion;

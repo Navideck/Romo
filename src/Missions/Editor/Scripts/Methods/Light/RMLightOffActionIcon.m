@@ -19,7 +19,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _robot = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"iconLightOff.png"]];
+        _robot = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"iconLightOff.png"]];
         self.robot.centerX = self.contentView.width / 2;
         [self.contentView addSubview:self.robot];
     }

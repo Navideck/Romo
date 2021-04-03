@@ -21,12 +21,12 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _iPhone = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"iphoneCamera.png"]];
+        _iPhone = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"iphoneCamera.png"]];
         self.iPhone.centerX = self.contentView.width / 2;
         self.iPhone.bottom = self.contentView.height;
         [self.contentView addSubview:self.iPhone];
 
-        _lensGlow = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"iphoneCameraGlow.png"]];
+        _lensGlow = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"iphoneCameraGlow.png"]];
         self.lensGlow.center = CGPointMake(61, 31.5);
         self.lensGlow.alpha = 0.0;
         [self.iPhone addSubview:self.lensGlow];

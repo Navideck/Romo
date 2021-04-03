@@ -28,7 +28,7 @@
         _eyesView = [[UIView alloc] initWithFrame:self.contentView.bounds];
         [self.contentView addSubview:self.eyesView];
         
-        UIImageView *eyes = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"lookEyes.png"]];
+        UIImageView *eyes = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"lookEyes.png"]];
         eyes.frame = self.eyesView.bounds;
         eyes.top = 14;
         eyes.contentMode = UIViewContentModeCenter;

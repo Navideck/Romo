@@ -4,6 +4,7 @@
 //
 
 #import "RAVVideoInput.h"
+#import "RAVHWVideoOutput.h"
 #import "RAVVideoOutput.h"
 #import "RMService.h"
 #import "RMDataSocket.h"

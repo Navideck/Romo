@@ -19,13 +19,13 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        UIImageView *robot = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"baseTiltBig.png"]];
+        UIImageView *robot = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"baseTiltBig.png"]];
         robot.size = CGSizeMake(robot.width * 0.28, robot.height * 0.28);
         robot.bottom = self.contentView.height - 2;
         robot.centerX = self.contentView.width / 2;
         [self.contentView addSubview:robot];
 
-        _phoneTilt = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"iPhoneTiltBig.png"]];
+        _phoneTilt = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"iPhoneTiltBig.png"]];
         self.phoneTilt.size = CGSizeMake(self.phoneTilt.width * 0.3, self.phoneTilt.height * 0.25);
         self.phoneTilt.bottom = self.contentView.height - 6;
         self.phoneTilt.centerX = self.contentView.width / 2;

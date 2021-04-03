@@ -189,7 +189,11 @@ typedef enum RMInfoRobotControllerRow {
     self.popupWebview.top = self.view.bottom;
     NSURLRequest *txtFileRequest = [[NSURLRequest alloc] initWithURL:[[NSBundle mainBundle] URLForResource:@"software-legal" withExtension:@"txt"]];
 
-    [self.popupWebview.webView loadRequest:txtFileRequest];
+    if (@available(iOS 8.0, *)) {
+        [self.popupWebview.wkWebView loadRequest:txtFileRequest];
+    } else {
+        [self.popupWebview.uiWebView loadRequest:txtFileRequest];
+    }
     
     [self.view addSubview:self.popupWebview];
     [UIView animateWithDuration:0.35 delay:0 options:UIViewAnimationOptionCurveEaseOut

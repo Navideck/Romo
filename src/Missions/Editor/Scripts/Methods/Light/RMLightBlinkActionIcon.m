@@ -19,7 +19,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _robot = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"iconLightOn.png"]];
+        _robot = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"iconLightOn.png"]];
         self.robot.centerX = self.contentView.width / 2;
         [self.contentView addSubview:self.robot];
     }
@@ -29,8 +29,8 @@
 - (void)startAnimating
 {
     self.robot.animationImages = @[
-                                   [UIImage smartImageNamed:@"iconLightOn.png"],
-                                   [UIImage smartImageNamed:@"iconLightOff.png"],
+                                   [UIImage cacheableImageNamed:@"iconLightOn.png"],
+                                   [UIImage cacheableImageNamed:@"iconLightOff.png"],
                                    ];
     self.robot.animationDuration = 0.75;
     [self.robot startAnimating];

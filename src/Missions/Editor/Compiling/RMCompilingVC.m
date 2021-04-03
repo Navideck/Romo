@@ -179,7 +179,11 @@
 
 - (BOOL)hasPermissionToSavePhotos
 {
-    return [PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusAuthorized;
+    if (@available(iOS 8, *)) {
+        return [PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusAuthorized;
+    } else {
+        return [ALAssetsLibrary authorizationStatus] == ALAuthorizationStatusAuthorized;
+    }
 
 }
 

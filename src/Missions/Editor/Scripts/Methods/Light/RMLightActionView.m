@@ -28,7 +28,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _robot = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"romoLightOff.png"]];
+        _robot = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"romoLightOff.png"]];
         self.robot.centerX = self.contentView.width / 2;
         self.robot.top = 18;
         [self.contentView insertSubview:self.robot atIndex:0];
@@ -55,7 +55,7 @@
         case RMLightActionViewStateBlink:
         default:
             if (!self.light) {
-                self.light = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"romoLightOn.png"]];
+                self.light = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"romoLightOn.png"]];
                 self.light.center = CGPointMake(self.robot.width / 2, 70);
                 [self.robot addSubview:self.light];
             }

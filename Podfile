@@ -1,17 +1,17 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, '8.0'
 
 target 'Romo' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
   # Pods for Romo
-  pod 'Romo'#, :path => '../Romo'
-  pod 'Romo/RMCharacter'#, :path => '../Romo'
-  pod 'Romo/RMVision'#, :path => '../Romo'
+  pod 'Romo', :path => '../Romo-iOS-SDK'
+  pod 'Romo/RMCharacter', :path => '../Romo-iOS-SDK'
+  pod 'Romo/RMVision', :path => '../Romo-iOS-SDK'
   pod 'CocoaLumberjack'
-  pod 'AFNetworking', '~> 4.0'
-  pod 'UICKeyChainStore'
+  pod 'AFNetworking', '~> 3.0'
+  pod 'mobile-ffmpeg-min'
 end
 
 target 'Romo Control' do
@@ -19,7 +19,7 @@ target 'Romo Control' do
   # use_frameworks!
 
   # Pods for Romo Control
-  pod 'Romo/RMCharacter'#, :path => '../Romo'
+  pod 'Romo/RMCharacter', :path => '../Romo-iOS-SDK'
   pod 'CocoaLumberjack'
   pod 'SocketRocket', :git => 'https://github.com/Gkpsundar/SocketRocket.git'
 end
