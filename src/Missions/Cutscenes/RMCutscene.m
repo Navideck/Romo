@@ -35,7 +35,7 @@
         self.playerViewController.player = player;
         self.playerViewController.videoGravity = AVLayerVideoGravityResizeAspectFill;
         self.playerViewController.showsPlaybackControls = false;
-        [self.playerViewController.player.currentItem addObserver:self forKeyPath:@"status" options:0 context:nil];
+        [self.playerViewController.player addObserver:self forKeyPath:@"rate" options:0 context:nil];
     } else {
         self.player = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL fileURLWithPath:cutscenePath]];
         [self.player prepareToPlay];
@@ -164,7 +164,7 @@
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     if (@available(iOS 8.0, *)) {
-        [self.playerViewController.player.currentItem removeObserver:self forKeyPath:@"status"];
+        [self.playerViewController.player removeObserver:self forKeyPath:@"rate"];
     }
 }
 

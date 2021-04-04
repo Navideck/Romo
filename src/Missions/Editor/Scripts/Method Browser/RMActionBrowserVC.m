@@ -4,7 +4,7 @@
 //
 
 #import "RMActionBrowserVC.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import <QuartzCore/QuartzCore.h>
 #import "UIFont+RMFont.h"
 #import "UIButton+RMButtons.h"

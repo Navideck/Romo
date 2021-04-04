@@ -17,7 +17,7 @@
 #import "RMPeer.h"
 #import "RMContact.h"
 #import "RMPlanetSpaceSceneView.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "RMAlertView.h"
 #import "RMRomoDialer.h"
 #import "RMWifiToolbar.h"

@@ -4,7 +4,7 @@
 //
 
 #import "RMSpriteView.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIImage+Cache.h"
 
 static NSString *animationKey = @"spriteAnimation";

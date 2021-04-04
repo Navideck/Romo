@@ -4,7 +4,7 @@
 //
 
 #import "RMEventIcon.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 #import "RMEvent.h"
 #import "RMParameter.h"

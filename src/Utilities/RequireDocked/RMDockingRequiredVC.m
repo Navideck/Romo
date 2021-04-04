@@ -5,7 +5,7 @@
 
 #import "RMDockingRequiredVC.h"
 #import <Romo/RMCore.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 #import "RMGradientLabel.h"
 #import "RMMissionEditorVC.h"

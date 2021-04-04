@@ -7,7 +7,7 @@
 #import <Romo/RMMath.h>
 #import <Romo/RMVisionNaiveLineTrainingModule.h>
 #import <Romo/RMVisionObjectTrackingModule.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIColor+RMColor.h"
 #import "RMAppDelegate.h"
 #import "RMBehaviorArbiter.h"

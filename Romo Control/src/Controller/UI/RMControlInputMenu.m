@@ -7,7 +7,7 @@
 //
 
 #import "RMControlInputMenu.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMControlInputMenu ()
 

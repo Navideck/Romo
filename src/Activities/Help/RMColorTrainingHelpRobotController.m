@@ -8,7 +8,7 @@
 #import <Romo/RMThroughRomosEyesModule.h>
 #import <Romo/RMMotionTriggeredColorTrainingModule.h>
 #import <Romo/RMDispatchTimer.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIColor+RMColor.h"
 #import "RMAppDelegate.h"
 #import <Romo/RMCharacterColorFill.h>

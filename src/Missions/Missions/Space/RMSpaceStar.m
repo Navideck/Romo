@@ -1,5 +1,5 @@
 #import "RMSpaceStar.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 #define RAND(min, max) ((min) + ((float)(arc4random() % (int)(((max) - (min)) * 1000))) / 1000.0)
 

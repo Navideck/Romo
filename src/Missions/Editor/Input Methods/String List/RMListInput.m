@@ -5,7 +5,7 @@
 
 #import "RMListInput.h"
 #import "RMScrollingInput.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMListInput () <RMScrollingInputDelegate>
 

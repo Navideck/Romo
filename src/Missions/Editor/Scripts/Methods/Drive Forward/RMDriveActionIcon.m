@@ -5,7 +5,7 @@
 
 #import "RMDriveActionIcon.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMDriveActionIcon ()
 

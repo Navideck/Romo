@@ -6,7 +6,7 @@
 
 #import "RMActivityChooserButton.h"
 #import "UIFont+RMFont.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @implementation RMActivityChooserButton
 

@@ -8,7 +8,7 @@
 
 #import "RMTelepresencePeerRomoCell.h"
 #import "RMContact.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMTelepresencePeerRomoCell ()
 

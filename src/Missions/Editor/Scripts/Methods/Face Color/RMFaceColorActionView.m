@@ -5,7 +5,7 @@
 
 #import "RMFaceColorActionView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 #import "RMProgressManager.h"
 #import <Romo/RMMath.h>

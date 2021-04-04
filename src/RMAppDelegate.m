@@ -6,7 +6,7 @@
 #import "RMAppDelegate.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <MediaPlayer/MediaPlayer.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "RMRobotController.h"
 #import <CocoaLumberjack/DDASLLogger.h>
 #import <CocoaLumberjack/DDTTYLogger.h>

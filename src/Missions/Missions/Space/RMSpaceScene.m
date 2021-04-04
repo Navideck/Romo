@@ -1,5 +1,5 @@
 #import "RMSpaceScene.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "RMSpaceStar.h"
 #import <Romo/RMMath.h>
 #import "RMChapterPlanet.h"

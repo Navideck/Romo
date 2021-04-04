@@ -44,7 +44,7 @@
 // Camera Settings:
 - (NSUInteger)cameraCount;
 - (AVCaptureDevice *)cameraWithPosition:(AVCaptureDevicePosition)position;
-- (void)setCameraFPS:(NSInteger)fps;
+- (void)setCameraFPS:(int32_t)fps;
 
 @end
 
@@ -98,7 +98,7 @@
     self.starting = YES;
     _captureSession = [[AVCaptureSession alloc] init];
     [_captureSession beginConfiguration];
-    if (@available(iOS 8.0, *)) {
+    if ([self shouldUseH264HwEncoderImpl]) {
         [_captureSession setSessionPreset:AVCaptureSessionPreset640x480];
     } else {
         [_captureSession setSessionPreset:AVCaptureSessionPresetMedium];
@@ -156,7 +156,7 @@
 {
 
 #ifndef SIMULATOR
-    if (@available(iOS 8.0, *)) {
+    if ([self shouldUseH264HwEncoderImpl]) {
         _hwencoder = [H264HwEncoderImpl alloc];
         [_hwencoder initWithConfiguration];
 
@@ -186,7 +186,7 @@
         if (prepareSucceeded) {
             return [_encoder start];
         } else {
-            if (@available(iOS 8.0, *)) {
+            if ([self shouldUseH264HwEncoderImpl]) {
                 DDLogError(@"prepareEncoder failed: %@", _hwencoder.error);
             } else {
                 DDLogError(@"prepareEncoder failed: %@", _encoder.error);
@@ -216,7 +216,7 @@
 
     if (![self initEncoder]) {
 #ifndef SIMULATOR
-        if (@available(iOS 8.0, *)) {
+        if ([self shouldUseH264HwEncoderImpl]) {
             DDLogError(@"Start encoder failed: %@", _hwencoder.error);
         } else {
             DDLogError(@"Start encoder failed: %@", _encoder.error);
@@ -234,7 +234,7 @@
     void (^stop)(BOOL started) = ^(BOOL started){
         [self->_captureSession stopRunning];
 #ifndef SIMULATOR
-        if (@available(iOS 8.0, *)) {
+        if ([self shouldUseH264HwEncoderImpl]) {
             [self->_hwencoder performSelectorInBackground:@selector(stop) withObject:nil];
         } else {
             [self->_encoder performSelectorInBackground:@selector(stop) withObject:nil];
@@ -303,6 +303,14 @@
     return nil;
 }
 
+- (BOOL)shouldUseH264HwEncoderImpl {
+    if (@available(iOS 8.0, *)) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 #pragma mark - AVCaptureSession Delegate Methods --
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput
@@ -311,7 +319,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 {
     [connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
 #ifndef SIMULATOR
-    if (@available(iOS 8.0, *)) {
+    if ([self shouldUseH264HwEncoderImpl]) {
         [_hwencoder encode:sampleBuffer];
     } else {
         [_encoder encode:sampleBuffer];
@@ -326,21 +334,21 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 #ifndef SIMULATOR
     switch (videoQuality) {
         case RMVideoQualityLow:
-            if (@available(iOS 8.0, *)) {} else {
+            if ([self shouldUseH264HwEncoderImpl]) {} else {
                 [_encoder setAveragebps:BPS_LOW];
             }
             [self setCameraFPS:FPS_LOW];
             break;
 
         case RMVideoQualityDefault:
-            if (@available(iOS 8.0, *)) {} else {
+            if ([self shouldUseH264HwEncoderImpl]) {} else {
                 [_encoder setAveragebps:BPS_DEFAULT];
             }
             [self setCameraFPS:FPS_DEFAULT];
             break;
 
         case RMVideoQualityHigh:
-            if (@available(iOS 8.0, *)) {
+            if ([self shouldUseH264HwEncoderImpl]) {} else {
                 [_encoder setAveragebps:BPS_HIGH];
             }
             [self setCameraFPS:FPS_HIGH];
@@ -349,7 +357,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 #endif
 }
 
-- (void)setCameraFPS:(NSInteger)fps
+- (void)setCameraFPS:(int32_t)fps
 {
     CMTime duration = CMTimeMake(1, fps);
 

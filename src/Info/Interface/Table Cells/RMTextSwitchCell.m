@@ -6,7 +6,7 @@
 #import "RMTextSwitchCell.h"
 #import "UIColor+RMColor.h"
 #import "UIFont+RMFont.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMTextSwitchCell ()
 

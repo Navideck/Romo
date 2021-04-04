@@ -4,7 +4,7 @@
 //
 #import "RMSlideToStart.h"
 
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 #import <Romo/RMMath.h>
 #import "RMSoundEffect.h"

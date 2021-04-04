@@ -4,7 +4,7 @@
 //
 
 #import "RMAlarmActionView.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMAlarmActionView ()
 @property (nonatomic, strong) UIImageView *alarm;

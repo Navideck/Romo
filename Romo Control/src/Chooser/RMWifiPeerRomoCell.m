@@ -9,7 +9,7 @@
 #import "RMWifiPeerRomoCell.h"
 #import "RMPeer.h"
 #import "UIFont+RMFont.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMWifiPeerRomoCell ()
 

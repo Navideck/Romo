@@ -7,7 +7,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <Romo/RMMath.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 #import "RMGradientLabel.h"
 #import "RMMission.h"

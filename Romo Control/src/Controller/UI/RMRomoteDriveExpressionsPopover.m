@@ -3,7 +3,7 @@
 //
 
 #import "RMRomoteDriveExpressionsPopover.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIColor+RMColor.h"
 
 @implementation RMRomoteDriveExpressionsPopover

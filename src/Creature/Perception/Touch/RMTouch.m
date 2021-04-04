@@ -4,7 +4,7 @@
 //
 
 #import "RMTouch.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import <Romo/RMMath.h>
 #import <Romo/RMDispatchTimer.h>
 

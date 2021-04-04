@@ -4,7 +4,7 @@
 //
 
 #import "RMEventBrowserVC.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "RMEventBrowserView.h"
 #import "RMEvent.h"
 #import "RMEventIcon.h"

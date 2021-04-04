@@ -4,7 +4,7 @@
 //
 
 #import "RMInfoRobotController.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIColor+RMColor.h"
 #import <Romo/UIDevice+UDID.h>
 #import "UIFont+RMFont.h"

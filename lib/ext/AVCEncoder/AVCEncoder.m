@@ -98,7 +98,7 @@ typedef void (^AVCEncoderBlock)(CMSampleBufferRef);
 @property (nonatomic, retain) NSMutableDictionary* compressionProperties;
 @property (nonatomic, retain) NSMutableDictionary* videoSettings;
 @property (nonatomic, retain) AVCWriterObj* writerObj;
-@property (nonatomic, retain) AVCWriterCreationBlock writerCreationBlock;
+@property (nonatomic, copy) AVCWriterCreationBlock writerCreationBlock;
 @property (nonatomic, copy) AVCEncoderBlock encoderBlock;
 @property (nonatomic, copy) AVCFrameCallback parserCallback;
 @property (nonatomic, retain) dispatch_queue_t writer_queue;
@@ -160,7 +160,7 @@ typedef void (^AVCEncoderBlock)(CMSampleBufferRef);
 @implementation AVCWriterObj
 @synthesize fileName, writer, writerInput, pixelAdaptor;
 - (void)dealloc {
-    if(writer && writer.status == AVAssetWriterStatusWriting) [writer finishWriting];
+    if(writer && writer.status == AVAssetWriterStatusWriting) [writer finishWritingWithCompletionHandler:^{}];;
     [SMFileUtil deleteFile:self.fileName];
     self.fileName = nil;
     self.writer = nil;
@@ -407,7 +407,7 @@ bail:
     
     NSError *err = nil;
     BOOL ret = YES;
-    AVCParameters* params = self.parameters;
+//    AVCParameters* params = self.parameters;
     NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
     [errorDetail setValue:@"Error generating SPS/PPS" forKey:NSLocalizedDescriptionKey];
     
@@ -456,7 +456,7 @@ bail:
 		self.error = [NSError errorWithDomain:@"AVCEncoder" code:104 userInfo:errorDetail];
         ret = NO;
     }
-    
+
     if(!parse_sps_pps(file_path, parser)) {
         self.error = [NSError errorWithDomain:@"AVCEncoder" code:105 userInfo:errorDetail];
         ret = NO;
@@ -510,7 +510,7 @@ bail:
                 [self.writerObj->writer startSessionAtSourceTime:startTime];
                 
                 
-                if(! start_parser(parser, self.writerObj.fileName) ) {
+                if(! start_parser(self->parser, self.writerObj.fileName) ) {
                     //TODO: Handle Error
                 }
                 if (self.writerObj->writer.status != AVAssetWriterStatusWriting) {
@@ -518,7 +518,7 @@ bail:
                 }            
                 
             case AVAssetWriterStatusWriting:
-                if( !writerObj->writerInput.readyForMoreMediaData) { 
+                if( !self->writerObj->writerInput.readyForMoreMediaData) {
                     break;
                 }
                 //NSLog(@"Encoding Frame");
@@ -529,7 +529,7 @@ bail:
                 }
                 
                 //@try { 
-                if( ![writerObj->writerInput appendSampleBuffer:sample] ) {
+                if( ![self->writerObj->writerInput appendSampleBuffer:sample] ) {
                     //We are not doing anything so why check
                     //TODO: We really need to do something this time steve.
                 }
@@ -586,7 +586,7 @@ bail:
     self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER,0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
     dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, TIMER_DELTA), TIMER_DELTA, 10000);
     dispatch_source_set_event_handler(timer, ^{ 
-        double delta = CACurrentMediaTime() - timeOfBitrateChange;
+        double delta = CACurrentMediaTime() - self->timeOfBitrateChange;
 		if (delta > BRC_MAX_DELTA_SEC) {
             [self setAveragebps:self.parameters.bps];
         }

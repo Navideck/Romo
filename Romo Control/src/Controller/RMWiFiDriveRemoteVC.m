@@ -24,7 +24,7 @@
 #import "RMRemotePhotoVC.h"
 #import "RMControlDriveActionBar.h"
 #import "RMControlInputMenu.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "RMGameController.h"
 
 @interface RMWiFiDriveRemoteVC () <RMRomoteDriveExpressionsPopoverDelegate, RMJoystickDelegate, RMDpadDelegate, RMTiltControllerDelegate, RMSessionDelegate,

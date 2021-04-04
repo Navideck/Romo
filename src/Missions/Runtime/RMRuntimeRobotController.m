@@ -9,7 +9,7 @@
 #import <Romo/RMMotionDetectionModule.h>
 #import <Romo/RMVisionBrightHueSegmentationModule.h>
 #import <Romo/RMMath.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 #import "UIButton+RMButtons.h"
 #import "RMMissionRobotController.h"

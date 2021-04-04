@@ -53,7 +53,7 @@ AVCParserStruct* alloc_parser(uint32_t bufferSize) {
     parser->parse_buffer = malloc(sizeof(char) * bufferSize);
     if(parser->parse_buffer == NULL) return NULL;
     parser->reader_queue = dispatch_queue_create("com.stevemcfarlin.gcdqueue.frame_packager", NULL);
-	
+
     parser->avcStream = h264_new();
     
     generate_aud(parser);

@@ -4,7 +4,7 @@
 
 #import "RMRomoteDriveCameraButton.h"
 #import "UIColor+RMColor.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @implementation RMRomoteDriveCameraButton
 

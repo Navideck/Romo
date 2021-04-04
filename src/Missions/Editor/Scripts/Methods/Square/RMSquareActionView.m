@@ -4,7 +4,7 @@
 //
 
 #import "RMSquareActionView.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @implementation RMSquareActionView
 

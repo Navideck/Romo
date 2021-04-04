@@ -5,7 +5,7 @@
 
 #import "RMInfoRobotView.h"
 #import "UIColor+RMColor.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIButton+RMButtons.h"
 #import "RMSpaceScene.h"
 

@@ -4,7 +4,7 @@
 //
 
 #import "RMJoystick.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import <Romo/RMMath.h>
 
 @interface RMJoystick()

@@ -4,7 +4,7 @@
 //
 
 #import "RMRomoteDrivePopover.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 #import "UIColor+RMColor.h"
 

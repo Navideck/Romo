@@ -7,7 +7,7 @@
 #import <Romo/RMVision.h>
 #import <Romo/RMImageUtils.h>
 #import <Romo/RMVisionDebugBroker.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 #import "RMAppDelegate.h"
 #import <Romo/RMMath.h>

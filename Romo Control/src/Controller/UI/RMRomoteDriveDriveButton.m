@@ -5,7 +5,7 @@
 
 #import "RMRomoteDriveDriveButton.h"
 #import "UIFont+RMFont.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @implementation RMRomoteDriveDriveButton
 

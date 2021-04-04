@@ -179,7 +179,6 @@
 		AF8EF29621CD676D0025F16B /* RMRemoteControlService.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16AC1799B1DE002AF657 /* RMRemoteControlService.m */; };
 		AF8EF29721CD676D0025F16B /* RMDoodle.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C766BE183D3AAA00A980CD /* RMDoodle.m */; };
 		AF8EF29821CD676D0025F16B /* RMDoodleActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C766B2183D39D100A980CD /* RMDoodleActionView.m */; };
-		AF8EF29921CD676D0025F16B /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 949077FC179610AE005C885F /* UIView+Additions.m */; };
 		AF8EF29A21CD676D0025F16B /* RMTimeInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 949B587A17949EE30042D062 /* RMTimeInput.m */; };
 		AF8EF29D21CD676D0025F16B /* RMDockingRequiredVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8BF4E61862ECE000A887D3 /* RMDockingRequiredVC.m */; };
 		AF8EF29E21CD676D0025F16B /* RMTurnActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 949B58C917949EE30042D062 /* RMTurnActionView.m */; };
@@ -3978,7 +3977,6 @@
 				AF8EF29621CD676D0025F16B /* RMRemoteControlService.m in Sources */,
 				AF8EF29721CD676D0025F16B /* RMDoodle.m in Sources */,
 				AF8EF29821CD676D0025F16B /* RMDoodleActionView.m in Sources */,
-				AF8EF29921CD676D0025F16B /* UIView+Additions.m in Sources */,
 				AF8EF29A21CD676D0025F16B /* RMTimeInput.m in Sources */,
 				AFACD1D02615E9CF00E8487D /* RAVVideoOutput.m in Sources */,
 				AF8EF29D21CD676D0025F16B /* RMDockingRequiredVC.m in Sources */,
@@ -4686,7 +4684,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.2.1;
+				CURRENT_PROJECT_VERSION = 2.3.1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
 				ENABLE_BITCODE = YES;
@@ -4721,7 +4719,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/ext/libav",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.romoSimulated;
@@ -4794,7 +4792,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = Romo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.2.1;
+				CURRENT_PROJECT_VERSION = 2.3.1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
 				ENABLE_BITCODE = YES;
@@ -4829,7 +4827,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/ext/libav",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.romotive.romo;
@@ -4856,7 +4854,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2.2.1;
+				CURRENT_PROJECT_VERSION = 2.3.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
 				ENABLE_BITCODE = YES;
@@ -4888,7 +4886,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/ext/libav",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoX;

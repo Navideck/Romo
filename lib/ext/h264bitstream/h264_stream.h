@@ -360,7 +360,7 @@ typedef struct
 
 } h264_stream_t;
 
-h264_stream_t* h264_new();
+h264_stream_t* h264_new(void);
 void h264_free(h264_stream_t* h);
 
 int find_nal_unit(uint8_t* buf, int size, int* nal_start, int* nal_end);

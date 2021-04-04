@@ -4,7 +4,7 @@
 //
 
 #import "RMExploreActionView.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import <Romo/RMDispatchTimer.h>
 #import <Romo/RMMath.h>
 

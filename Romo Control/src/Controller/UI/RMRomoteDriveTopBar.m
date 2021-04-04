@@ -1,7 +1,7 @@
 
 #import "RMRomoteDriveTopBar.h"
 #import "UIButton+RMButtons.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @implementation RMRomoteDriveTopBar
 

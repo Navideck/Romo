@@ -4,7 +4,7 @@
 //
 
 #import "RMActivityMotivation.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 #import "RMMissionToken.h"
 #import "RMGradientLabel.h"

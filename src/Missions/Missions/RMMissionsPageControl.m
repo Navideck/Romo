@@ -4,7 +4,7 @@
 //
 
 #import "RMMissionsPageControl.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "RMProgressManager.h"
 
 static const CGFloat sidePadding = 12.0;
