@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '8.0'
+platform :ios, '7.0'
 
 target 'Romo' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
@@ -11,7 +11,8 @@ target 'Romo' do
   pod 'Romo/RMVision', :path => '../Romo-iOS-SDK'
   pod 'CocoaLumberjack'
   pod 'AFNetworking', '~> 3.0'
-  pod 'mobile-ffmpeg-min'
+#  pod 'FFmpeg-iOS'
+  pod 'FFmpeg-static', :git => 'https://github.com/stephanecopin/FFmpeg-static.git'
 end
 
 target 'Romo Control' do

@@ -3396,7 +3396,6 @@
 				AF8EF18421CD649D0025F16B /* Frameworks */,
 				AF8EF18521CD649D0025F16B /* Resources */,
 				BD715F0CFFA2EAD8AD823097 /* [CP] Copy Pods Resources */,
-				9BEB66B8888FE8EF1BF7E254 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -3725,38 +3724,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9BEB66B8888FE8EF1BF7E254 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Romo/Pods-Romo-frameworks.sh",
-				"${PODS_ROOT}/mobile-ffmpeg-min/mobileffmpeg.framework",
-				"${PODS_ROOT}/mobile-ffmpeg-min/libavcodec.framework",
-				"${PODS_ROOT}/mobile-ffmpeg-min/libavdevice.framework",
-				"${PODS_ROOT}/mobile-ffmpeg-min/libavfilter.framework",
-				"${PODS_ROOT}/mobile-ffmpeg-min/libavformat.framework",
-				"${PODS_ROOT}/mobile-ffmpeg-min/libavutil.framework",
-				"${PODS_ROOT}/mobile-ffmpeg-min/libswresample.framework",
-				"${PODS_ROOT}/mobile-ffmpeg-min/libswscale.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mobileffmpeg.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libavcodec.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libavdevice.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libavfilter.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libavformat.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libavutil.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libswresample.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libswscale.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Romo/Pods-Romo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9DAEEFE5DC3A641C38FE8393 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4550,6 +4517,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/ext/libav",
+					"$(PROJECT_DIR)/lib/ext/mobile-ffmpeg/lib",
 				);
 				MARKETING_VERSION = 2.2;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -4599,6 +4567,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/ext/libav",
+					"$(PROJECT_DIR)/lib/ext/mobile-ffmpeg/lib",
 				);
 				MARKETING_VERSION = 2.2;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -4684,10 +4653,9 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.3.1;
+				CURRENT_PROJECT_VERSION = 2.3.3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
-				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Supporting Files/Romo-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4718,6 +4686,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/ext/libav",
+					"$(PROJECT_DIR)/lib/ext/mobile-ffmpeg/lib",
 				);
 				MARKETING_VERSION = 2.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -4763,6 +4732,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/ext/libav",
+					"$(PROJECT_DIR)/lib/ext/mobile-ffmpeg/lib",
 				);
 				MARKETING_VERSION = 2.2;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -4792,10 +4762,9 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = Romo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.3.1;
+				CURRENT_PROJECT_VERSION = 2.3.3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
-				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Supporting Files/Romo-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4826,6 +4795,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/ext/libav",
+					"$(PROJECT_DIR)/lib/ext/mobile-ffmpeg/lib",
 				);
 				MARKETING_VERSION = 2.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -4854,10 +4824,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2.3.1;
+				CURRENT_PROJECT_VERSION = 2.3.3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
-				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Supporting Files/Romo-Prefix.pch";
@@ -4885,6 +4854,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/ext/libav",
+					"$(PROJECT_DIR)/lib/ext/mobile-ffmpeg/lib",
 				);
 				MARKETING_VERSION = 2.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
