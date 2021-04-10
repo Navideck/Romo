@@ -11,7 +11,6 @@ target 'Romo' do
   pod 'Romo/RMVision', :path => '../Romo-iOS-SDK'
   pod 'CocoaLumberjack'
   pod 'AFNetworking', '~> 3.0'
-#  pod 'FFmpeg-iOS'
   pod 'FFmpeg-static', :git => 'https://github.com/stephanecopin/FFmpeg-static.git'
 end
 
@@ -23,6 +22,7 @@ target 'Romo Control' do
   pod 'Romo/RMCharacter', :path => '../Romo-iOS-SDK'
   pod 'CocoaLumberjack'
   pod 'SocketRocket', :git => 'https://github.com/Gkpsundar/SocketRocket.git'
+  pod 'FFmpeg-static', :git => 'https://github.com/stephanecopin/FFmpeg-static.git'
 end
 
 # Mac Catalyst workaround
