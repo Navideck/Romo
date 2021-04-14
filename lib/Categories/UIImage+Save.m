@@ -36,9 +36,10 @@ static RMAlertView *photosNotAllowed;
         } else {
             UIImageWriteToSavedPhotosAlbum(image, completionTarget, completionSelector, contextInfo);
         }
-    } else {
+    }
+#if !TARGET_OS_MACCATALYST
+    else {
         DDLogVerbose(@"%ld", (long)[ALAssetsLibrary authorizationStatus]);
-
         ALAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
         // There are 4 possible auth statuses. These are the two that prevent access to the library
         if (authStatus == ALAuthorizationStatusDenied || authStatus == ALAuthorizationStatusRestricted) {
@@ -55,6 +56,7 @@ static RMAlertView *photosNotAllowed;
             UIImageWriteToSavedPhotosAlbum(image, completionTarget, completionSelector, contextInfo);
         }
     }
+#endif
 }
 
 +(void)presentPhotosPermissionError {

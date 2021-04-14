@@ -44,7 +44,7 @@
 		7130FD8B17C42DC30025B605 /* RAVVideoInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16741799B1DD002AF657 /* RAVVideoInput.m */; };
 		7130FD8D17C42E140025B605 /* RAVService.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16701799B1DD002AF657 /* RAVService.m */; };
 		7130FD8E17C42E5C0025B605 /* RAVHWVideoOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16761799B1DD002AF657 /* RAVHWVideoOutput.m */; };
-		7130FD9A17C42F200025B605 /* RGLBufferVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16931799B1DE002AF657 /* RGLBufferVC.m */; };
+		7130FD9A17C42F200025B605 /* RGLBufferVCHW.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16931799B1DE002AF657 /* RGLBufferVCHW.m */; };
 		7130FDA517C42F4F0025B605 /* RMCommandService.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F167B1799B1DD002AF657 /* RMCommandService.m */; };
 		7130FDA617C42F5E0025B605 /* RMSpaceScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 941784271794AE4B00AAFF45 /* RMSpaceScene.m */; };
 		7130FDA717C42F610025B605 /* RMSpaceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9417842F1794AE8E00AAFF45 /* RMSpaceObject.m */; };
@@ -139,7 +139,6 @@
 		AF516A0825B1E68F00EB04BC /* RMGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF516A0725B1E68F00EB04BC /* RMGameController.m */; };
 		AF52E1C221CDADCC00678CF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF52E1C121CDADCC00678CF4 /* Assets.xcassets */; };
 		AF5EE69725B1F0F400FDB15E /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5EE69625B1F0F400FDB15E /* GameController.framework */; };
-		AF605B5826224684000B8511 /* RGLBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16951799B1DE002AF657 /* RGLBufferView.m */; };
 		AF605B592622478E000B8511 /* AVCParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = AFACD2CB2616610300E8487D /* AVCParameters.m */; };
 		AF605B5A26224792000B8511 /* AVCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AFACD2CD2616610400E8487D /* AVCEncoder.m */; };
 		AF68BC23251F7C98001341ED /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF68BC22251F7C98001341ED /* Photos.framework */; };
@@ -297,7 +296,6 @@
 		AF8EF31521CD676D0025F16B /* RMButtonIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 949B58A117949EE30042D062 /* RMButtonIcon.m */; };
 		AF8EF31621CD676D0025F16B /* UIButton+RMButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 949077EC179610AE005C885F /* UIButton+RMButtons.m */; };
 		AF8EF31721CD676D0025F16B /* RMSquareActionIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 949B58BD17949EE30042D062 /* RMSquareActionIcon.m */; };
-		AF8EF31821CD676D0025F16B /* RGLBufferVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16931799B1DE002AF657 /* RGLBufferVC.m */; };
 		AF8EF31921CD676D0025F16B /* RAVSubscriber.m in Sources */ = {isa = PBXBuildFile; fileRef = 948F16721799B1DD002AF657 /* RAVSubscriber.m */; };
 		AF8EF31A21CD676D0025F16B /* RMTextButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB24AB217EE3DE4009C7129 /* RMTextButtonCell.m */; };
 		AF8EF31B21CD676D0025F16B /* UIFont+RMFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 949077F6179610AE005C885F /* UIFont+RMFont.m */; };
@@ -550,12 +548,12 @@
 		AF8EF41421CD676D0025F16B /* Missions-State Compiling-4.caf in Resources */ = {isa = PBXBuildFile; fileRef = AC5BA36F180CAEFB00119FA6 /* Missions-State Compiling-4.caf */; };
 		AF8EF41521CD676D0025F16B /* EyePoke-4.caf in Resources */ = {isa = PBXBuildFile; fileRef = ACD22EA9180E766E00464A7D /* EyePoke-4.caf */; };
 		AFACD1D02615E9CF00E8487D /* RAVVideoOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = AFACD1CF2615E9CF00E8487D /* RAVVideoOutput.m */; };
-		AFACD1D62615EA1F00E8487D /* RAVVideoOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = AFACD1CF2615E9CF00E8487D /* RAVVideoOutput.m */; };
 		AFACD2A326165F5800E8487D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1181DD44205C9937000A1C96 /* libiconv.tbd */; };
 		AFACD2D22616610400E8487D /* AVCParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = AFACD2CB2616610300E8487D /* AVCParameters.m */; };
 		AFACD2D42616610400E8487D /* AVCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AFACD2CD2616610400E8487D /* AVCEncoder.m */; };
 		AFACD2D82616610400E8487D /* SMFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = AFACD2CF2616610400E8487D /* SMFileUtil.m */; };
 		AFACD2D92616610400E8487D /* SMFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = AFACD2CF2616610400E8487D /* SMFileUtil.m */; };
+		AFCCAB3026263EC400BADEE5 /* RGLBufferVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCCAB2F26263EC400BADEE5 /* RGLBufferVC.m */; };
 		BFCDD5C718774BBC0051C0CF /* CharacterScripts.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD59118774BBC0051C0CF /* CharacterScripts.strings */; };
 		BFCDD5CA18774BBC0051C0CF /* Extras.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD59318774BBC0051C0CF /* Extras.strings */; };
 		BFCDD5CD18774BBC0051C0CF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFCDD59518774BBC0051C0CF /* Localizable.strings */; };
@@ -888,7 +886,7 @@
 		948F168F1799B1DE002AF657 /* RMSubscriber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSubscriber.h; sourceTree = "<group>"; };
 		948F16901799B1DE002AF657 /* RMSubscriber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSubscriber.m; sourceTree = "<group>"; };
 		948F16921799B1DE002AF657 /* RGLBufferVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGLBufferVC.h; sourceTree = "<group>"; };
-		948F16931799B1DE002AF657 /* RGLBufferVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGLBufferVC.m; sourceTree = "<group>"; };
+		948F16931799B1DE002AF657 /* RGLBufferVCHW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGLBufferVCHW.m; sourceTree = "<group>"; };
 		948F16941799B1DE002AF657 /* RGLBufferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGLBufferView.h; sourceTree = "<group>"; };
 		948F16951799B1DE002AF657 /* RGLBufferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGLBufferView.m; sourceTree = "<group>"; };
 		948F16981799B1DE002AF657 /* RMDataPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDataPacket.h; sourceTree = "<group>"; };
@@ -1277,6 +1275,7 @@
 		AFACD2D02616610400E8487D /* qt_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qt_parser.h; sourceTree = "<group>"; };
 		AFACD2D12616610400E8487D /* SMFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMFileUtil.h; sourceTree = "<group>"; };
 		AFCB9C6825437B9000CD4324 /* Romo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Romo.entitlements; sourceTree = "<group>"; };
+		AFCCAB2F26263EC400BADEE5 /* RGLBufferVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGLBufferVC.m; sourceTree = "<group>"; };
 		AFF55054214DA4EC0027500F /* RomoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RomoTests.m; sourceTree = "<group>"; };
 		AFF55056214DA4EC0027500F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD85DD56318A3A32C5F42B45 /* Pods-Romo X.debug simulated robot.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Romo X.debug simulated robot.xcconfig"; path = "Target Support Files/Pods-Romo X/Pods-Romo X.debug simulated robot.xcconfig"; sourceTree = "<group>"; };
@@ -2104,7 +2103,8 @@
 			isa = PBXGroup;
 			children = (
 				948F16921799B1DE002AF657 /* RGLBufferVC.h */,
-				948F16931799B1DE002AF657 /* RGLBufferVC.m */,
+				AFCCAB2F26263EC400BADEE5 /* RGLBufferVC.m */,
+				948F16931799B1DE002AF657 /* RGLBufferVCHW.m */,
 				948F16941799B1DE002AF657 /* RGLBufferView.h */,
 				948F16951799B1DE002AF657 /* RGLBufferView.m */,
 			);
@@ -3807,7 +3807,6 @@
 			files = (
 				947E66B518320584001992E5 /* RMSoundEffect.m in Sources */,
 				9440FFF418185813007E157F /* RMGradientLabel.m in Sources */,
-				AF605B5826224684000B8511 /* RGLBufferView.m in Sources */,
 				9407C585180DD63200FA2F4C /* RMAnalytics.m in Sources */,
 				7130FD7F17C42D960025B605 /* RMConnection.m in Sources */,
 				71EEBFB6184E5C9500108591 /* UIAlertView+RMDismissAll.m in Sources */,
@@ -3815,7 +3814,6 @@
 				AF605B5A26224792000B8511 /* AVCEncoder.m in Sources */,
 				945C598E17E7E0C0001C3CE8 /* RMRomoteDriveTopBar.m in Sources */,
 				711FB1BD1844076B00A12550 /* RMPeerRomoCell.m in Sources */,
-				AFACD1D62615EA1F00E8487D /* RAVVideoOutput.m in Sources */,
 				AF0D55C226166AFF00906F6C /* qt_parser.m in Sources */,
 				ACE687CC1851607F002D3436 /* RMSynthesizer.m in Sources */,
 				AC93EF8C1832E1EC00C4B3DB /* RMContact+Helper.m in Sources */,
@@ -3898,7 +3896,7 @@
 				7130FD8E17C42E5C0025B605 /* RAVHWVideoOutput.m in Sources */,
 				7130FD8417C42DA10025B605 /* RMSession.m in Sources */,
 				7130FDA617C42F5E0025B605 /* RMSpaceScene.m in Sources */,
-				7130FD9A17C42F200025B605 /* RGLBufferVC.m in Sources */,
+				7130FD9A17C42F200025B605 /* RGLBufferVCHW.m in Sources */,
 				713D7B6F17CD64EE00B56A13 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3999,6 +3997,7 @@
 				AF8EF2D021CD676D0025F16B /* UIImage+Save.m in Sources */,
 				AF8EF2D121CD676D0025F16B /* RMEventBrowserView.m in Sources */,
 				AF8EF2D221CD676D0025F16B /* RMInteractionScriptSelectorViewController.m in Sources */,
+				AFCCAB3026263EC400BADEE5 /* RGLBufferVC.m in Sources */,
 				AF8EF2D321CD676D0025F16B /* RMExploreActionIcon.m in Sources */,
 				AF8EF2D421CD676D0025F16B /* RMSocket.m in Sources */,
 				AF8EF2D521CD676D0025F16B /* RAVService.m in Sources */,
@@ -4064,7 +4063,6 @@
 				AF8EF31621CD676D0025F16B /* UIButton+RMButtons.m in Sources */,
 				AFACD2D22616610400E8487D /* AVCParameters.m in Sources */,
 				AF8EF31721CD676D0025F16B /* RMSquareActionIcon.m in Sources */,
-				AF8EF31821CD676D0025F16B /* RGLBufferVC.m in Sources */,
 				AF8EF31921CD676D0025F16B /* RAVSubscriber.m in Sources */,
 				AF8EF31A21CD676D0025F16B /* RMTextButtonCell.m in Sources */,
 				AF8EF31B21CD676D0025F16B /* UIFont+RMFont.m in Sources */,
@@ -4497,11 +4495,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 2.3.1;
+				CURRENT_PROJECT_VERSION = 2.3.4;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Romo Control/Supporting Files/RMControl-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"ROMO_CONTROL=1",
+				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -4510,6 +4512,7 @@
 					"\"$SRCROOT/lib/Drive/RomoAV/AVCEncoder\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Romo Control/Supporting Files/RMControl-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"$(inherited)",
@@ -4546,12 +4549,16 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 2.3.1;
+				CURRENT_PROJECT_VERSION = 2.3.4;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
-				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Romo Control/Supporting Files/RMControl-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"ROMO_CONTROL=1",
+				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -4560,6 +4567,7 @@
 					"\"$SRCROOT/lib/Drive/RomoAV/AVCEncoder\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Romo Control/Supporting Files/RMControl-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"$(inherited)",
@@ -4653,7 +4661,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.3.3;
+				CURRENT_PROJECT_VERSION = 2.3.4;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -4712,11 +4720,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 2.3.1;
+				CURRENT_PROJECT_VERSION = 2.3.4;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Romo Control/Supporting Files/RMControl-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"ROMO_CONTROL=1",
+				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -4725,6 +4737,7 @@
 					"\"$SRCROOT/lib/Drive/RomoAV/AVCEncoder\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Romo Control/Supporting Files/RMControl-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"$(inherited)",
@@ -4762,7 +4775,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = Romo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.3.3;
+				CURRENT_PROJECT_VERSION = 2.3.4;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -4824,7 +4837,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2.3.3;
+				CURRENT_PROJECT_VERSION = 2.3.4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 52RU2XXUH6;
 				ENABLE_NS_ASSERTIONS = NO;
