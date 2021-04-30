@@ -4,7 +4,7 @@
 //
 
 #import "UIButton+RMButtons.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIImage+Tint.h"
 
 static const CGFloat buttonHeight = 64.0;

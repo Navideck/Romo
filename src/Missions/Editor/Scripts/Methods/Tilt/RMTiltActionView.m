@@ -5,7 +5,7 @@
 
 #import "RMTiltActionView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 
 @interface RMTiltActionView ()
@@ -25,22 +25,22 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _angleBackground = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"tiltAngleBackground.png"]];
+        _angleBackground = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"tiltAngleBackground.png"]];
         
-        _robot = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"baseTiltBig.png"]];
+        _robot = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"baseTiltBig.png"]];
         [self.contentView addSubview:self.robot];
         
-        _phone = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"iPhoneTiltBig.png"]];
+        _phone = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"iPhoneTiltBig.png"]];
         self.phone.layer.anchorPoint = CGPointMake(0.5, 1.0);
         [self.contentView addSubview:self.phone];
         
-        _dashedLine = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"tiltDash.png"]];
+        _dashedLine = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"tiltDash.png"]];
         self.dashedLine.layer.anchorPoint = self.phone.layer.anchorPoint;
         self.dashedLine.alpha = 0.75;
         self.dashedLine.frame = (CGRect){(self.contentView.width - self.dashedLine.image.size.width) / 2, self.contentView.height - 138, self.dashedLine.image.size};
         [self.contentView insertSubview:self.dashedLine belowSubview:self.phone];
         
-        _angleBackground = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"tiltAngleBackground.png"]];
+        _angleBackground = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"tiltAngleBackground.png"]];
         
         [self layoutForEditing:NO];
     }

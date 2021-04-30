@@ -5,7 +5,7 @@
 
 #import "RMExploreActionIcon.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import <Romo/RMDispatchTimer.h>
 #import <Romo/RMMath.h>
 
@@ -23,7 +23,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _robot = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"romoDriveForward1.png"]];
+        _robot = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"romoDriveForward1.png"]];
         self.robot.contentMode = UIViewContentModeCenter;
         self.robot.frame = CGRectMake(0, 0, 200, 200);
         self.robot.transform = CGAffineTransformMakeScale(0.32, 0.32);
@@ -89,7 +89,7 @@
         float horizontalPosition = (int)(time * scurryHorizontalSpeed) % (int)(self.contentView.width + self.robot.width);
         int imageNumber = turnImageAssetBase + (int)(turnImageAssetVary * animationStep);
         
-        self.robot.image = [UIImage smartImageNamed:[NSString stringWithFormat:@"romoTurn%d.png",imageNumber]];
+        self.robot.image = [UIImage cacheableImageNamed:[NSString stringWithFormat:@"romoTurn%d.png",imageNumber]];
         self.robot.centerY = (self.contentView.height / 2.0) + oscillationStep * scurryVerticalAmount / 2.0;
         self.robot.right = horizontalPosition;
     }

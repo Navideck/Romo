@@ -6,7 +6,7 @@
 #import "RMSongTableViewCell.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <QuartzCore/QuartzCore.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 
 @interface RMSongTableViewCell ()

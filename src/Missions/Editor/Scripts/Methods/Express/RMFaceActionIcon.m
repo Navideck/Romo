@@ -5,7 +5,7 @@
 
 #import "RMFaceActionIcon.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMFaceActionIcon ()
 
@@ -21,7 +21,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _iPhone = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"iconFace.png"]];
+        _iPhone = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"iconFace.png"]];
         self.iPhone.centerX = self.contentView.width / 2;
         self.iPhone.bottom = self.contentView.height + 1;
         [self.contentView addSubview:self.iPhone];

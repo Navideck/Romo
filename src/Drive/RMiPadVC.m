@@ -4,7 +4,7 @@
 //
 
 #import "RMiPadVC.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 #import "UIImage+Tint.h"
 #import "RMGradientLabel.h"

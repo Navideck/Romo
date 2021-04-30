@@ -16,7 +16,7 @@
 #import "UIColor+RMColor.h"
 #import "UIFont+RMFont.h"
 #import "UITextField+Validator.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "RMGradientLabel.h"
 
 #import "RMProgressManager.h"

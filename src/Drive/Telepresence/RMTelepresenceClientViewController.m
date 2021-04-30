@@ -11,7 +11,7 @@
 #import "RMOpenTokManager.h"
 #import "RMDpad.h"
 #import "RMDriveTiltSlider.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import <Opentok/Opentok.h>
 #import <Romo/UIDevice+UDID.h>
 #import <Romo/UIApplication+Environment.h>

@@ -5,7 +5,7 @@
 
 #import "RMDoodleView.h"
 #import "RMDoodle.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 static const int maximumPathLength = 4096;
 static const int minimumPathLength = 128;

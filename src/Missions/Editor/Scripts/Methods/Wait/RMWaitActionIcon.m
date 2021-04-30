@@ -5,7 +5,7 @@
 
 #import "RMWaitActionIcon.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMWaitActionIcon ()
 
@@ -17,7 +17,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        UIImageView *timerImage = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"iconWait.png"]];
+        UIImageView *timerImage = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"iconWait.png"]];
         timerImage.center = CGPointMake(self.contentView.width / 2, self.contentView.height / 2 + 2);
         [self.contentView addSubview:timerImage];
     }

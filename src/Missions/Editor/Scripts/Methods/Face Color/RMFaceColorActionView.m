@@ -5,7 +5,7 @@
 
 #import "RMFaceColorActionView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 #import "RMProgressManager.h"
 #import <Romo/RMMath.h>
@@ -30,12 +30,12 @@
     if (self) {
         self.title = @"";
         
-        _iPhone = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"iphoneFull.png"]];
+        _iPhone = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"iphoneFull.png"]];
         self.iPhone.center = CGPointMake(self.contentView.width / 2, self.contentView.height / 2 + 20);
         self.iPhone.contentMode = UIViewContentModeScaleAspectFit;
         [self.contentView insertSubview:self.iPhone atIndex:0];
         
-        _screen = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"romoFaceColorBig.png"]];
+        _screen = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"romoFaceColorBig.png"]];
         self.screen.origin = CGPointMake(15, 44);
         self.screen.alpha = 1.0;
         self.screen.clipsToBounds = YES;

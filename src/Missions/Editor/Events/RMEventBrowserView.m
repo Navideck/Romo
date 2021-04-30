@@ -4,7 +4,7 @@
 //
 
 #import "RMEventBrowserView.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 #import "UIButton+SoundEffects.h"
 #import "UIImage+Tint.h"

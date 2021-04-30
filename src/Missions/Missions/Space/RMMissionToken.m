@@ -4,7 +4,7 @@
 //
 
 #import "RMMissionToken.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIImage+Tint.h"
 #import "UIFont+RMFont.h"
 

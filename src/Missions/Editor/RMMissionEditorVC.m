@@ -4,7 +4,7 @@
 //
 
 #import "RMMissionEditorVC.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 //#import <Analytics/Analytics.h>
 #import <Romo/RMShared.h>
 #import "RMMission.h"

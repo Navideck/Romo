@@ -4,7 +4,7 @@
 //
 
 #import "RMRomoteDrivePopoverController.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIColor+RMColor.h"
 
 @interface RMRomoteDrivePopoverController () {

@@ -5,7 +5,7 @@
 
 #import "RMDriveActionView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 #import "RMParameter.h"
 #import <Romo/RMMath.h>
@@ -271,7 +271,7 @@ static const float ghostCropPixels = 55.0;
     float width = (self.contentView.width - (2 * robotLeft) - robotWidth);
 
     int frame = (self.forward ? (1 + (int)(distance) % 4) : (4 - (int)(distance) % 4));
-    self.robot.image = [UIImage smartImageNamed:[NSString stringWithFormat:@"romoDriveForward%d.png",frame]];
+    self.robot.image = [UIImage cacheableImageNamed:[NSString stringWithFormat:@"romoDriveForward%d.png",frame]];
 
     if (distance <= maximumDriveSpeedBeforeScalingUI) {
         CGFloat left = robotLeft + width * (distance / robotDistancePixelScale);
@@ -305,18 +305,18 @@ static const float ghostCropPixels = 55.0;
     if (forward) {
         self.title = @"Drive Forward";
         self.robot.animationImages = @[
-                                       [UIImage smartImageNamed:@"romoDriveForward1.png"],
-                                       [UIImage smartImageNamed:@"romoDriveForward2.png"],
-                                       [UIImage smartImageNamed:@"romoDriveForward3.png"],
-                                       [UIImage smartImageNamed:@"romoDriveForward4.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward1.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward2.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward3.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward4.png"],
                                        ];
     } else {
         self.title = @"Drive Backward";
         self.robot.animationImages = @[
-                                       [UIImage smartImageNamed:@"romoDriveForward4.png"],
-                                       [UIImage smartImageNamed:@"romoDriveForward3.png"],
-                                       [UIImage smartImageNamed:@"romoDriveForward2.png"],
-                                       [UIImage smartImageNamed:@"romoDriveForward1.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward4.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward3.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward2.png"],
+                                       [UIImage cacheableImageNamed:@"romoDriveForward1.png"],
                                        ];
     }
 }
@@ -372,7 +372,7 @@ static const float ghostCropPixels = 55.0;
 
     if (!self.ghostRomos) {
         self.ghostRomos = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 115)];
-        self.ghostRomos.backgroundColor = [UIColor colorWithPatternImage:[UIImage smartImageNamed:@"romoDriveGhost.png"]];
+        self.ghostRomos.backgroundColor = [UIColor colorWithPatternImage:[UIImage cacheableImageNamed:@"romoDriveGhost.png"]];
         self.ghostRomos.alpha = 0.35;
 
         if (self.forward) {

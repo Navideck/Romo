@@ -100,7 +100,6 @@
     }
 }
 
-//- (void)capturedFrame:(const void *)frame length:(uint32_t)length pts:(CMTime)pts
 - (void)capturedFrame:(const void *)frame length:(uint32_t)length
 {
     @autoreleasepool {

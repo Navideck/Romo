@@ -18,7 +18,7 @@
 #import "RMJuvenileCreatureRobotController.h"
 #import "RMMatureCreatureRobotController.h"
 
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMProgressRobotController () <RMDockingRequiredVCDelegate>
 

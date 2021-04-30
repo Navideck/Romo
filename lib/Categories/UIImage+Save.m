@@ -5,6 +5,7 @@
 
 #import "UIImage+Save.h"
 #import "RMAlertView.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 #import <Photos/Photos.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
 
@@ -17,19 +18,45 @@ static RMAlertView *photosNotAllowed;
                      completionSelector:(SEL)completionSelector
                             contextInfo:(void *)contextInfo {
     
-    DDLogVerbose(@"%ld", (long)[PHPhotoLibrary authorizationStatus]);
+    if (@available(iOS 8, *)) {
+        DDLogVerbose(@"%ld", (long)[PHPhotoLibrary authorizationStatus]);
 
-    PHAuthorizationStatus authStatus = [PHPhotoLibrary authorizationStatus];
-    // There are 4 possible auth statuses. These are the two that prevent access to the library
-    if (authStatus == PHAuthorizationStatusDenied || authStatus == PHAuthorizationStatusRestricted) {
-        [UIImage presentPhotosPermissionError];
-    } else if (authStatus == PHAuthorizationStatusNotDetermined) {
-        [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status){
-            [UIImage writeToSavedPhotoAlbumWithImage:image completionTarget:completionTarget completionSelector:completionSelector contextInfo:contextInfo];
-        }];
-    } else {
-        UIImageWriteToSavedPhotosAlbum(image, completionTarget, completionSelector, contextInfo);
+        PHAuthorizationStatus authStatus = [PHPhotoLibrary authorizationStatus];
+        // There are 4 possible auth statuses. These are the two that prevent access to the library
+        if (authStatus == PHAuthorizationStatusDenied || authStatus == PHAuthorizationStatusRestricted) {
+            [UIImage presentPhotosPermissionError];
+        } else if (authStatus == PHAuthorizationStatusNotDetermined) {
+            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status){
+                if (status == PHAuthorizationStatusAuthorized) {
+                    [UIImage writeToSavedPhotoAlbumWithImage:image completionTarget:completionTarget completionSelector:completionSelector contextInfo:contextInfo];
+                } else {
+                    [UIImage presentPhotosPermissionError];
+                }
+            }];
+        } else {
+            UIImageWriteToSavedPhotosAlbum(image, completionTarget, completionSelector, contextInfo);
+        }
     }
+#if !TARGET_OS_MACCATALYST
+    else {
+        DDLogVerbose(@"%ld", (long)[ALAssetsLibrary authorizationStatus]);
+        ALAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
+        // There are 4 possible auth statuses. These are the two that prevent access to the library
+        if (authStatus == ALAuthorizationStatusDenied || authStatus == ALAuthorizationStatusRestricted) {
+            [UIImage presentPhotosPermissionError];
+        } else if (authStatus == ALAuthorizationStatusNotDetermined) {
+            ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
+            // Trigger photo library permission
+            [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+                [UIImage writeToSavedPhotoAlbumWithImage:image completionTarget:completionTarget completionSelector:completionSelector contextInfo:contextInfo];
+            } failureBlock:^(NSError *error) {
+                [UIImage presentPhotosPermissionError];
+            }];
+        } else {
+            UIImageWriteToSavedPhotosAlbum(image, completionTarget, completionSelector, contextInfo);
+        }
+    }
+#endif
 }
 
 +(void)presentPhotosPermissionError {

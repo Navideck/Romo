@@ -4,7 +4,7 @@
 //
 
 #import "RMAlarmActionView.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMAlarmActionView ()
 @property (nonatomic, strong) UIImageView *alarm;
@@ -17,7 +17,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _alarm = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"alarm.png"]];
+        _alarm = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"alarm.png"]];
         self.alarm.top = 0;
         self.alarm.centerX = self.contentView.width / 2.0;
         [self.contentView insertSubview:self.alarm atIndex:0];

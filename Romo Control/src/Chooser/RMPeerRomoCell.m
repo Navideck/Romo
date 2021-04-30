@@ -8,7 +8,7 @@
 
 #import "RMPeerRomoCell.h"
 #import "UIFont+RMFont.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UILabel+RomoStyles.h"
 
 static const UILabelRomoStyle kCenterShadowedMediumLabelStyle = UILabelRomoStyleAlignmentCenter

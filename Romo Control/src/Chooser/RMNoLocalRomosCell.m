@@ -8,7 +8,7 @@
 
 #import "RMNoLocalRomosCell.h"
 #import "UILabel+RomoStyles.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMNoLocalRomosCell ()
 

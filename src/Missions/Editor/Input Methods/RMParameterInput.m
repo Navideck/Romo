@@ -4,7 +4,7 @@
 //
 
 #import "RMParameterInput.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import <QuartzCore/QuartzCore.h>
 #import "RMListInput.h"
 #import "RMTimeInput.h"

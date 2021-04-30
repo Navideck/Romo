@@ -1,49 +1,52 @@
 PODS:
-  - AFNetworking (4.0.1):
-    - AFNetworking/NSURLSession (= 4.0.1)
-    - AFNetworking/Reachability (= 4.0.1)
-    - AFNetworking/Security (= 4.0.1)
-    - AFNetworking/Serialization (= 4.0.1)
-    - AFNetworking/UIKit (= 4.0.1)
-  - AFNetworking/NSURLSession (4.0.1):
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (4.0.1)
-  - AFNetworking/Security (4.0.1)
-  - AFNetworking/Serialization (4.0.1)
-  - AFNetworking/UIKit (4.0.1):
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - CocoaLumberjack (3.6.2):
-    - CocoaLumberjack/Core (= 3.6.2)
-  - CocoaLumberjack/Core (3.6.2)
+  - CocoaLumberjack (3.4.2):
+    - CocoaLumberjack/Default (= 3.4.2)
+    - CocoaLumberjack/Extensions (= 3.4.2)
+  - CocoaLumberjack/Default (3.4.2)
+  - CocoaLumberjack/Extensions (3.4.2):
+    - CocoaLumberjack/Default
+  - FFmpeg-static (3.4.2)
   - GPUImage (0.1.7)
   - OpenCV (2.4.13.6)
-  - Romo (0.5.2):
-    - Romo/RMCore (= 0.5.2)
-  - Romo/RMCharacter (0.5.2):
+  - Romo (0.5.3):
+    - Romo/RMCore (= 0.5.3)
+  - Romo/RMCharacter (0.5.3):
     - Romo/RMShared
-  - Romo/RMCore (0.5.2):
+  - Romo/RMCore (0.5.3):
     - Romo/RMShared
-  - Romo/RMShared (0.5.2):
+  - Romo/RMShared (0.5.3):
     - CocoaLumberjack
     - SocketRocket
-  - Romo/RMVision (0.5.2):
+  - Romo/RMVision (0.5.3):
     - CocoaLumberjack
     - GPUImage
     - OpenCV (~> 2.0)
     - Romo/RMShared
   - SocketRocket (0.5.1)
-  - UICKeyChainStore (2.2.1)
 
 DEPENDENCIES:
-  - AFNetworking (~> 4.0)
+  - AFNetworking (~> 3.0)
   - CocoaLumberjack
+  - FFmpeg-static (from `https://github.com/stephanecopin/FFmpeg-static.git`)
   - Romo
   - Romo/RMCharacter
   - Romo/RMVision
   - SocketRocket (from `https://github.com/Gkpsundar/SocketRocket.git`)
-  - UICKeyChainStore
 
 SPEC REPOS:
   trunk:
@@ -52,26 +55,30 @@ SPEC REPOS:
     - GPUImage
     - OpenCV
     - Romo
-    - UICKeyChainStore
 
 EXTERNAL SOURCES:
+  FFmpeg-static:
+    :git: https://github.com/stephanecopin/FFmpeg-static.git
   SocketRocket:
     :git: https://github.com/Gkpsundar/SocketRocket.git
 
 CHECKOUT OPTIONS:
+  FFmpeg-static:
+    :commit: 87f7af9e4e741327755b06c75b97dbfd65115300
+    :git: https://github.com/stephanecopin/FFmpeg-static.git
   SocketRocket:
     :commit: 064b2d2c83909832239a7d54aab046e32c4fed3e
     :git: https://github.com/Gkpsundar/SocketRocket.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
+  FFmpeg-static: f61924a6708db56927f6ed9e744848c1697301e3
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   OpenCV: cd36a3467c21572d658c2640488fe0d5a93ca192
-  Romo: 13876d9bde96773bfa9a6d800f73da75e21233f9
+  Romo: 4fccb6b3e8e1af1b50cae0e7d1ce22a3c50c91c4
   SocketRocket: dbb1554b8fc288ef8ef370d6285aeca7361be31e
-  UICKeyChainStore: ba3bff2c762b12db1e516f395c837dd25298b05e
 
-PODFILE CHECKSUM: 8e88bcb98eef742c3fcc538546d4261841679f7e
+PODFILE CHECKSUM: 9084698e027c323da80ab43463b4cf49bbc4486a
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

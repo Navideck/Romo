@@ -5,7 +5,7 @@
 
 #import "RMFavoriteColorRobotController.h"
 #import <Romo/RMVision.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIColor+RMColor.h"
 #import "UIFont+RMFont.h"
 #import "RMAppDelegate.h"

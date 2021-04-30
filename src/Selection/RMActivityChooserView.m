@@ -5,7 +5,7 @@
 
 #import "RMActivityChooserView.h"
 
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIButton+RMButtons.h"
 #import "UIFont+RMFont.h"
 #import "RMSpaceScene.h"

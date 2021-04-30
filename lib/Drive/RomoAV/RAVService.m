@@ -17,7 +17,10 @@
 
 @property (nonatomic, strong) RMDataSocket *socket;
 @property (nonatomic, strong) RMAddress *peerAddress;
+@property (nonatomic, strong) RAVHWVideoOutput *hwVideoOutput;
+#ifndef ROMO_CONTROL
 @property (nonatomic, strong) RAVVideoOutput *videoOutput;
+#endif
 
 - (void)prepareNetworking;
 - (void)prepareVideo;
@@ -48,7 +51,14 @@
 - (void)dealloc
 {
     [self stop];
-    [self.videoOutput stop];
+    if (@available(iOS 8.0, *)) {
+        [self.hwVideoOutput stop];
+    }
+#ifndef ROMO_CONTROL
+    else {
+        [self.videoOutput stop];
+    }
+#endif
 }
 
 - (void)prepareNetworking
@@ -59,7 +69,14 @@
 
 - (void)prepareVideo
 {
-    self.videoOutput = [[RAVVideoOutput alloc] init];
+    if (@available(iOS 8.0, *)) {
+        self.hwVideoOutput = [[RAVHWVideoOutput alloc] init];
+    }
+#ifndef ROMO_CONTROL
+    else {
+        self.videoOutput = [[RAVVideoOutput alloc] init];
+    }
+#endif
 }
 
 #pragma mark - Service --
@@ -93,7 +110,14 @@
         }
 
         case DATA_TYPE_VIDEO: {
-            [self.videoOutput playVideoFrame:[dataPacket extractData] length:dataPacket.dataSize];
+            if (@available(iOS 8.0, *)) {
+                [self.hwVideoOutput playVideoFrame:[dataPacket extractData] length:dataPacket.dataSize];
+            }
+#ifndef ROMO_CONTROL
+            else {
+                [self.videoOutput playVideoFrame:[dataPacket extractData] length:dataPacket.dataSize];
+            }
+#endif
             break;
         }
         default:
@@ -113,7 +137,14 @@
 
 - (UIView *)peerView
 {
-    return self.videoOutput.peerView;
+    if (@available(iOS 8.0, *)) {
+        return self.hwVideoOutput.peerView;
+    }
+#ifndef ROMO_CONTROL
+    else {
+        return self.videoOutput.peerView;
+    }
+#endif
 }
 
 - (void)sendDeviceInfo

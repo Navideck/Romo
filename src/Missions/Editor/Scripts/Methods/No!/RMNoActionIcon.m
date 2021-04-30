@@ -5,7 +5,7 @@
 
 #import "RMNoActionIcon.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMNoActionIcon ()
 
@@ -19,41 +19,41 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _robot = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"romoTurn29.png"]];
+        _robot = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"romoTurn29.png"]];
         self.robot.contentMode = UIViewContentModeCenter;
         self.robot.animationImages = @[
-                                       [UIImage smartImageNamed:@"romoTurn28.png"],
-                                       [UIImage smartImageNamed:@"romoTurn29.png"],
-                                       [UIImage smartImageNamed:@"romoTurn30.png"],
-                                       [UIImage smartImageNamed:@"romoTurn31.png"],
-                                       [UIImage smartImageNamed:@"romoTurn34.png"],
-                                       [UIImage smartImageNamed:@"romoTurn35.png"],
-                                       [UIImage smartImageNamed:@"romoTurn35.png"],
-                                       [UIImage smartImageNamed:@"romoTurn34.png"],
-                                       [UIImage smartImageNamed:@"romoTurn31.png"],
-                                       [UIImage smartImageNamed:@"romoTurn30.png"],
-                                       [UIImage smartImageNamed:@"romoTurn29.png"],
-                                       [UIImage smartImageNamed:@"romoTurn28.png"],
-                                       [UIImage smartImageNamed:@"romoTurn28.png"],
-                                       [UIImage smartImageNamed:@"romoTurn29.png"],
-                                       [UIImage smartImageNamed:@"romoTurn30.png"],
-                                       [UIImage smartImageNamed:@"romoTurn31.png"],
-                                       [UIImage smartImageNamed:@"romoTurn34.png"],
-                                       [UIImage smartImageNamed:@"romoTurn35.png"],
-                                       [UIImage smartImageNamed:@"romoTurn35.png"],
-                                       [UIImage smartImageNamed:@"romoTurn34.png"],
-                                       [UIImage smartImageNamed:@"romoTurn34.png"],
-                                       [UIImage smartImageNamed:@"romoTurn34.png"],
-                                       [UIImage smartImageNamed:@"romoTurn31.png"],
-                                       [UIImage smartImageNamed:@"romoTurn31.png"],
-                                       [UIImage smartImageNamed:@"romoTurn31.png"],
-                                       [UIImage smartImageNamed:@"romoTurn31.png"],
-                                       [UIImage smartImageNamed:@"romoTurn31.png"],
-                                       [UIImage smartImageNamed:@"romoTurn30.png"],
-                                       [UIImage smartImageNamed:@"romoTurn30.png"],
-                                       [UIImage smartImageNamed:@"romoTurn30.png"],
-                                       [UIImage smartImageNamed:@"romoTurn29.png"],
-                                       [UIImage smartImageNamed:@"romoTurn28.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn28.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn29.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn30.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn31.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn34.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn35.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn35.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn34.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn31.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn30.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn29.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn28.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn28.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn29.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn30.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn31.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn34.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn35.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn35.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn34.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn34.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn34.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn31.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn31.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn31.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn31.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn31.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn30.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn30.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn30.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn29.png"],
+                                       [UIImage cacheableImageNamed:@"romoTurn28.png"],
                                        ];
         self.robot.animationRepeatCount = 0;
         self.robot.animationDuration = self.robot.animationImages.count / 24.0;

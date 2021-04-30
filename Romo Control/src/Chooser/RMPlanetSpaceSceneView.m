@@ -9,7 +9,7 @@
 #import "RMPlanetSpaceSceneView.h"
 #import "RMSpaceScene.h"
 #import "RMSpaceStar.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMPlanetSpaceSceneView ()
 

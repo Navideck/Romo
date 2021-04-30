@@ -6,7 +6,7 @@
 #import "RMDoodleActionView.h"
 #import <QuartzCore/QuartzCore.h>
 #import <Romo/RMMath.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "RMDoodle.h"
 #import "RMDoodleView.h"
 

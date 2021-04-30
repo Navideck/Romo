@@ -10,7 +10,7 @@
 #import <Romo/RMCoreRobot_Internal.h>
 #import "RMAppDelegate.h"
 #import "RMRomo.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "UIFont+RMFont.h"
 #import "UIColor+RMColor.h"
 #import "AFNetworking.h"

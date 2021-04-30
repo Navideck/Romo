@@ -10,7 +10,7 @@
 #import <Romo/RMDispatchTimer.h>
 #import <Romo/UIDevice+Romo.h>
 #import "UIColor+RMColor.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "RMRomo.h"
 #import "RMDockingRequiredVC.h"
 #import "RMSoundEffect.h"

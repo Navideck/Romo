@@ -76,11 +76,13 @@
             {
                 NSLog(@"%@",[NSString stringWithUTF8String:temp_addr->ifa_name]);
                 // Check if interface is en0 which is the wifi connection on the iPhone
-                if(
-                   [[NSString stringWithUTF8String:temp_addr->ifa_name] containsString:@"tun"] ||
-                   [[NSString stringWithUTF8String:temp_addr->ifa_name] containsString:@"tap"] ||
-                   [[NSString stringWithUTF8String:temp_addr->ifa_name] containsString:@"ipsec"] ||
-                   [[NSString stringWithUTF8String:temp_addr->ifa_name] containsString:@"ppp"]){
+
+                NSString *ifa_name = [NSString stringWithUTF8String:temp_addr->ifa_name];
+                if (
+                    [ifa_name rangeOfString:@"tun"].location != NSNotFound ||
+                    [ifa_name rangeOfString:@"tap"].location != NSNotFound ||
+                    [ifa_name rangeOfString:@"ipsec"].location != NSNotFound ||
+                    [ifa_name rangeOfString:@"ppp"].location != NSNotFound) {
                     // Get NSString from C String
                     struct sockaddr_in *in = (struct sockaddr_in*) temp_addr->ifa_addr;
                     address = [NSString stringWithUTF8String:inet_ntoa((in)->sin_addr)];

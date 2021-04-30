@@ -8,7 +8,7 @@
 
 #import "RMControlDialPadCell.h"
 #import "RMRomoDialer.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 #import "RMSoundEffect.h"
 
 #define inputNumberIsLongEnough(inputNumber) (((NSString *)(inputNumber)).length >= 15)

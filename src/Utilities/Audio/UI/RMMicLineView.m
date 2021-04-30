@@ -10,7 +10,7 @@
 #import <Romo/RMMath.h>
 
 #import "UIColor+RMColor.h"
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 #define kDBOffset     74.0
 

@@ -5,7 +5,7 @@
 
 #import "RMDoodleActionIcon.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIView+Additions.h"
+#import <Romo/UIView+Additions.h>
 
 @interface RMDoodleActionIcon ()
 
@@ -17,7 +17,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        UIImageView *doodleIcon = [[UIImageView alloc] initWithImage:[UIImage smartImageNamed:@"doodleIcon.png"]];
+        UIImageView *doodleIcon = [[UIImageView alloc] initWithImage:[UIImage cacheableImageNamed:@"doodleIcon.png"]];
         doodleIcon.frame = self.contentView.bounds;
         doodleIcon.contentMode = UIViewContentModeCenter;
         [self.contentView addSubview:doodleIcon];

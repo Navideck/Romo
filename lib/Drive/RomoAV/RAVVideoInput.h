@@ -52,7 +52,6 @@ typedef void (^VideoInputBlock)(const void *frame, uint32_t length, CMTime pts);
 // Input of video frames
 @protocol RMVideoInputDelegate <NSObject>
 
-//- (void)capturedFrame:(const void *)frame length:(uint32_t)length pts:(CMTime)pts;
 - (void)capturedFrame:(const void *)frame length:(uint32_t)length;
 
 @end
