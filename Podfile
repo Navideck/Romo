@@ -6,9 +6,9 @@ target 'Romo' do
   # use_frameworks!
 
   # Pods for Romo
-  pod 'Romo', :path => '../Romo-iOS-SDK'
-  pod 'Romo/RMCharacter', :path => '../Romo-iOS-SDK'
-  pod 'Romo/RMVision', :path => '../Romo-iOS-SDK'
+  pod 'Romo'#, :path => '../Romo-iOS-SDK'
+  pod 'Romo/RMCharacter'#, :path => '../Romo-iOS-SDK'
+  pod 'Romo/RMVision'#, :path => '../Romo-iOS-SDK'
   pod 'CocoaLumberjack'
   pod 'AFNetworking', '~> 3.0'
   pod 'FFmpeg-static', :git => 'https://github.com/stephanecopin/FFmpeg-static.git'
@@ -20,7 +20,7 @@ target 'Romo Control' do
   # use_frameworks!
 
   # Pods for Romo Control
-  pod 'Romo/RMCharacter', :path => '../Romo-iOS-SDK'
+  pod 'Romo/RMCharacter'#, :path => '../Romo-iOS-SDK'
   pod 'CocoaLumberjack'
   pod 'SocketRocket', :git => 'https://github.com/Gkpsundar/SocketRocket.git'
 end

@@ -43,9 +43,9 @@ DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - CocoaLumberjack
   - FFmpeg-static (from `https://github.com/stephanecopin/FFmpeg-static.git`)
-  - Romo (from `../Romo-iOS-SDK`)
-  - Romo/RMCharacter (from `../Romo-iOS-SDK`)
-  - Romo/RMVision (from `../Romo-iOS-SDK`)
+  - Romo
+  - Romo/RMCharacter
+  - Romo/RMVision
   - SocketRocket (from `https://github.com/Gkpsundar/SocketRocket.git`)
 
 SPEC REPOS:
@@ -54,12 +54,11 @@ SPEC REPOS:
     - CocoaLumberjack
     - GPUImage
     - OpenCV
+    - Romo
 
 EXTERNAL SOURCES:
   FFmpeg-static:
     :git: https://github.com/stephanecopin/FFmpeg-static.git
-  Romo:
-    :path: "../Romo-iOS-SDK"
   SocketRocket:
     :git: https://github.com/Gkpsundar/SocketRocket.git
 
@@ -77,9 +76,9 @@ SPEC CHECKSUMS:
   FFmpeg-static: f61924a6708db56927f6ed9e744848c1697301e3
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   OpenCV: cd36a3467c21572d658c2640488fe0d5a93ca192
-  Romo: 9b22feea136128230c8bd222aa3079c94a90ef0f
+  Romo: 4fccb6b3e8e1af1b50cae0e7d1ce22a3c50c91c4
   SocketRocket: dbb1554b8fc288ef8ef370d6285aeca7361be31e
 
-PODFILE CHECKSUM: 877a46762d6a500bd14213930afdb9ff7deb6abc
+PODFILE CHECKSUM: 9084698e027c323da80ab43463b4cf49bbc4486a
 
 COCOAPODS: 1.10.1
