@@ -6,7 +6,7 @@
 </p>
 
 <p align="center" >
-<img src="https://img.shields.io/badge/platform-iOS%206,%207,%208,%209,%2010,%2011,%2012,%2013,%2014-blue.svg" alt="Platform: iOS 6, 7, 8, 9, 10, 11, 12, 13, 14" /></p>
+<img src="https://img.shields.io/badge/platform-iOS%206,%207,%208,%209,%2010,%2011,%2012,%2013,%2014-blue.svg" alt="Platform: iOS 6, 7, 8, 9, 10, 11, 12, 13, 14, 15" /></p>
 
 This project is a continuation of the *Romo* app, an attempt to breathe life into the lovable but sadly discontinued, iPhone robot, **Romo**.
 
