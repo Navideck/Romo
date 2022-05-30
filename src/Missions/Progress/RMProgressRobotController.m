@@ -105,8 +105,6 @@
         self.cutscene.robot = self.Romo.robot;
         [self.cutscene playCutscene:chapter inView:self.view
                          completion:^(BOOL finished) {
-                             weakSelf.cutscene = nil;
-                             
                              [weakSelf.Romo.character addToSuperview:weakSelf.characterView];
                              [weakSelf.progressManager setStatus:RMChapterStatusSeenCutscene forChapter:chapter];
                              if (chapter == RMChapterOne || chapter == RMChapterThree) {
