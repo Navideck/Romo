@@ -12,6 +12,7 @@ target 'Romo' do
   pod 'CocoaLumberjack'
   pod 'AFNetworking', '~> 3.0'
   pod 'FFmpeg-static', :git => 'https://github.com/stephanecopin/FFmpeg-static.git'
+  pod 'WebRTC-lib'
 end
 
 target 'Romo Control' do

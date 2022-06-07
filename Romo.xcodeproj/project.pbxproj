@@ -3396,6 +3396,7 @@
 				AF8EF18421CD649D0025F16B /* Frameworks */,
 				AF8EF18521CD649D0025F16B /* Resources */,
 				BD715F0CFFA2EAD8AD823097 /* [CP] Copy Pods Resources */,
+				667C8D3141998FBE29E432B1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -3724,6 +3725,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		667C8D3141998FBE29E432B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Romo/Pods-Romo-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WebRTC-lib/WebRTC.framework/WebRTC",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Romo/Pods-Romo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9DAEEFE5DC3A641C38FE8393 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

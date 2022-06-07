@@ -38,6 +38,7 @@ PODS:
     - OpenCV (~> 2.0)
     - Romo/RMShared
   - SocketRocket (0.5.1)
+  - WebRTC-lib (94.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -47,6 +48,7 @@ DEPENDENCIES:
   - Romo/RMCharacter
   - Romo/RMVision
   - SocketRocket (from `https://github.com/Gkpsundar/SocketRocket.git`)
+  - WebRTC-lib
 
 SPEC REPOS:
   trunk:
@@ -55,6 +57,7 @@ SPEC REPOS:
     - GPUImage
     - OpenCV
     - Romo
+    - WebRTC-lib
 
 EXTERNAL SOURCES:
   FFmpeg-static:
@@ -78,7 +81,8 @@ SPEC CHECKSUMS:
   OpenCV: cd36a3467c21572d658c2640488fe0d5a93ca192
   Romo: 4fccb6b3e8e1af1b50cae0e7d1ce22a3c50c91c4
   SocketRocket: dbb1554b8fc288ef8ef370d6285aeca7361be31e
+  WebRTC-lib: f76423cdaedf25145b59a1f691e0f371e9c262a5
 
-PODFILE CHECKSUM: dae751e0da5fc6282d858b88258c4a1dd421d705
+PODFILE CHECKSUM: 6646abc824b0c40cdfc4b13ed240f9a3b3debe11
 
 COCOAPODS: 1.11.3
