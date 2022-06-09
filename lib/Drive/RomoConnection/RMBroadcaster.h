@@ -7,7 +7,9 @@
 #pragma mark - Constants --
 
 #define ROMO_DOMAIN @"local."
+//#define ROMO_RTC_DOMAIN @"romowebrtc.navideck.com"
 #define ROMO_TYPE @"_romo._tcp"
+#define ROMO_RTC_TYPE @"_romortc._tcp"
 
 @class RMPeer;
 

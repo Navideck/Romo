@@ -39,6 +39,7 @@
 	<key>NSBonjourServices</key>
 	<array>
 		<string>_romo._tcp</string>
+		<string>_romortc._tcp</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Allow Romo to see the world</string>
