@@ -6,7 +6,7 @@
 </p>
 
 <p align="center" >
-<img src="https://img.shields.io/badge/platform-iOS%206,%207,%208,%209,%2010,%2011,%2012,%2013,%2014-blue.svg" alt="Platform: iOS 6, 7, 8, 9, 10, 11, 12, 13, 14, 15" /></p>
+<img src="https://img.shields.io/badge/platform-iOS%206,%207,%208,%209,%2010,%2011,%2012,%2013,%2014,%2015,%2016,%2017-blue.svg" alt="Platform: iOS 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17" /></p>
 
 This project is a continuation of the *Romo* app, an attempt to breathe life into the lovable but sadly discontinued, iPhone robot, **Romo**.
 
@@ -31,7 +31,7 @@ Any Romo with either 30pin or lightning port. This includes Romo models 3A, 3B, 
 iPhone 3GS and above. iPhone SE fits like a glove. iPhone 6, 7 and 8 need some squeezing but fit just fine. iPhone X is too big.
 
 ### Which iOS versions are compatible with Romo?
-The *Romo* app works from **iOS 6.0** up to **iOS 15**! Yes, iOS 15!
+The *Romo* app works from **iOS 6.0** up to **iOS 17**!
 
 ### How did this come to be?
 Romotive, the company behind Romo, after shutting down were kind enough to open source their code stating:
