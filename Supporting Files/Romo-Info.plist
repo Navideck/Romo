@@ -46,6 +46,8 @@
 	<string>Make your Romo discoverable on your network</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>For two-way communication between Romo and the Romo Control App</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Allow saving photos to your library</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow saving photos to your library</string>
 	<key>UIAppFonts</key>

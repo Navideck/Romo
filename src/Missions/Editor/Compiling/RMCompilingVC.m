@@ -16,7 +16,7 @@
 #import "RMParameter.h"
 #import "RMSoundEffect.h"
 #import "RMAlertView.h"
-#import <Photos/Photos.h>
+//#import <Photos/Photos.h>
 
 #define compileStepCount 3
 #define kNumCompilingSounds 8
@@ -94,15 +94,6 @@
             case 1: {
                 self.progress = 0.55 + (float)(arc4random() % 15)/100.0;
                 self.titleLabel.text = NSLocalizedString(@"Compile-Stage-2", @"Compiling...");
-                
-                if (self.missionNeedsToSavePhotos) {
-                    if (!self.hasPermissionToSavePhotos) {
-                        [[[RMAlertView alloc] initWithTitle:NSLocalizedString(@"Compile-PhotoPerms-Alert-Title", @"Photo Permission Needed")
-                                                    message:NSLocalizedString(@"Compile-PhotoPerms-Alert-Message", @"For Romo to take photos and videos, allow access to your Photo Library.\n\nOpen the Settings app > Privacy > Photos.\n\nThen enable access for Romo.")
-                                                   delegate:self] show];
-                        return;
-                    }
-                }
                 break;
             }
                 
@@ -148,22 +139,22 @@
     [self.delegate compilingVCDidFailToCompile:self];
 }
 
-#pragma mark - Private Properties
+//#pragma mark - Private Properties
 
-- (BOOL)missionNeedsToSavePhotos
-{
-    __block BOOL hasCameraAction = NO;
-    [self.mission.inputScripts enumerateObjectsUsingBlock:^(NSArray *script, NSUInteger idx, BOOL *stop) {
-        [script enumerateObjectsUsingBlock:^(RMAction *action, NSUInteger idx, BOOL *scriptStop) {
-            if ([action.library isEqualToString:@"Camera"]) {
-                hasCameraAction = YES;
-                *stop = YES;
-                *scriptStop = YES;
-            }
-        }];
-    }];
-    return hasCameraAction;
-}
+//- (BOOL)missionNeedsToSavePhotos
+//{
+//    __block BOOL hasCameraAction = NO;
+//    [self.mission.inputScripts enumerateObjectsUsingBlock:^(NSArray *script, NSUInteger idx, BOOL *stop) {
+//        [script enumerateObjectsUsingBlock:^(RMAction *action, NSUInteger idx, BOOL *scriptStop) {
+//            if ([action.library isEqualToString:@"Camera"]) {
+//                hasCameraAction = YES;
+//                *stop = YES;
+//                *scriptStop = YES;
+//            }
+//        }];
+//    }];
+//    return hasCameraAction;
+//}
 
 - (BOOL)missionNeedsMicrophone
 {
@@ -175,16 +166,6 @@
         }
     }];
     return hasLoudSoundEvent;
-}
-
-- (BOOL)hasPermissionToSavePhotos
-{
-    if (@available(iOS 8, *)) {
-        return [PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusAuthorized;
-    } else {
-        return [ALAssetsLibrary authorizationStatus] == ALAuthorizationStatusAuthorized;
-    }
-
 }
 
 - (BOOL)hasMicrophonePermission

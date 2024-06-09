@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -3416,7 +3416,6 @@
 				ORGANIZATIONNAME = Romotive;
 				TargetAttributes = {
 					7130FD2517C42BAD0025B605 = {
-						DevelopmentTeam = 52RU2XXUH6;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
@@ -3426,7 +3425,6 @@
 					};
 					AF8EF18621CD649D0025F16B = {
 						CreatedOnToolsVersion = 10.1;
-						DevelopmentTeam = 52RU2XXUH6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -4495,8 +4493,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 2.3.4;
-				DEVELOPMENT_TEAM = 52RU2XXUH6;
+				CURRENT_PROJECT_VERSION = 2.3.11;
+				DEVELOPMENT_TEAM = QQAZR43YM7;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Romo Control/Supporting Files/RMControl-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4512,7 +4510,7 @@
 					"\"$SRCROOT/lib/Drive/RomoAV/AVCEncoder\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Romo Control/Supporting Files/RMControl-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"$(inherited)",
@@ -4522,6 +4520,7 @@
 					"$(PROJECT_DIR)/lib/ext/libav",
 					"$(PROJECT_DIR)/lib/ext/mobile-ffmpeg/lib",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 2.3;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoXControl;
@@ -4549,8 +4548,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 2.3.4;
-				DEVELOPMENT_TEAM = 52RU2XXUH6;
+				CURRENT_PROJECT_VERSION = 2.3.11;
+				DEVELOPMENT_TEAM = QQAZR43YM7;
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Romo Control/Supporting Files/RMControl-Prefix.pch";
@@ -4567,7 +4566,7 @@
 					"\"$SRCROOT/lib/Drive/RomoAV/AVCEncoder\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Romo Control/Supporting Files/RMControl-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"$(inherited)",
@@ -4577,6 +4576,7 @@
 					"$(PROJECT_DIR)/lib/ext/libav",
 					"$(PROJECT_DIR)/lib/ext/mobile-ffmpeg/lib",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 2.3;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoXControl;
@@ -4661,9 +4661,9 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.3.4;
+				CURRENT_PROJECT_VERSION = 2.5.1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 52RU2XXUH6;
+				DEVELOPMENT_TEAM = QQAZR43YM7;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Supporting Files/Romo-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4687,6 +4687,7 @@
 					"\"$(SRCROOT)/lib/ext/h264bitstream\"",
 				);
 				INFOPLIST_FILE = "Supporting Files/Romo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4696,7 +4697,7 @@
 					"$(PROJECT_DIR)/lib/ext/libav",
 					"$(PROJECT_DIR)/lib/ext/mobile-ffmpeg/lib",
 				);
-				MARKETING_VERSION = 2.3;
+				MARKETING_VERSION = 2.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.romoSimulated;
@@ -4720,8 +4721,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 2.3.4;
-				DEVELOPMENT_TEAM = 52RU2XXUH6;
+				CURRENT_PROJECT_VERSION = 2.3.11;
+				DEVELOPMENT_TEAM = QQAZR43YM7;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Romo Control/Supporting Files/RMControl-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4737,7 +4738,7 @@
 					"\"$SRCROOT/lib/Drive/RomoAV/AVCEncoder\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Romo Control/Supporting Files/RMControl-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"$(inherited)",
@@ -4747,6 +4748,7 @@
 					"$(PROJECT_DIR)/lib/ext/libav",
 					"$(PROJECT_DIR)/lib/ext/mobile-ffmpeg/lib",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 2.3;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoXControl;
@@ -4775,9 +4777,9 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = Romo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.3.4;
+				CURRENT_PROJECT_VERSION = 2.5.1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 52RU2XXUH6;
+				DEVELOPMENT_TEAM = QQAZR43YM7;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Supporting Files/Romo-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4801,6 +4803,7 @@
 					"\"$(SRCROOT)/lib/ext/h264bitstream\"",
 				);
 				INFOPLIST_FILE = "Supporting Files/Romo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4810,7 +4813,7 @@
 					"$(PROJECT_DIR)/lib/ext/libav",
 					"$(PROJECT_DIR)/lib/ext/mobile-ffmpeg/lib",
 				);
-				MARKETING_VERSION = 2.3;
+				MARKETING_VERSION = 2.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.romotive.romo;
@@ -4837,9 +4840,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2.3.4;
+				CURRENT_PROJECT_VERSION = 2.5.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 52RU2XXUH6;
+				DEVELOPMENT_TEAM = QQAZR43YM7;
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Supporting Files/Romo-Prefix.pch";
@@ -4860,6 +4863,7 @@
 					"\"$(SRCROOT)/lib/ext/h264bitstream\"",
 				);
 				INFOPLIST_FILE = "Supporting Files/Romo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4869,7 +4873,7 @@
 					"$(PROJECT_DIR)/lib/ext/libav",
 					"$(PROJECT_DIR)/lib/ext/mobile-ffmpeg/lib",
 				);
-				MARKETING_VERSION = 2.3;
+				MARKETING_VERSION = 2.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.navideck.RomoX;

@@ -26,6 +26,7 @@
 #import "RMControlInputMenu.h"
 #import <Romo/UIView+Additions.h>
 #import "RMGameController.h"
+#import <Photos/Photos.h>
 
 @interface RMWiFiDriveRemoteVC () <RMRomoteDriveExpressionsPopoverDelegate, RMJoystickDelegate, RMDpadDelegate, RMTiltControllerDelegate, RMSessionDelegate,
 RMRemoteControlServiceDelegate, RMTankSliderDelegate, RMGameControllerDelegate> {
@@ -351,12 +352,33 @@ RMRemoteControlServiceDelegate, RMTankSliderDelegate, RMGameControllerDelegate> 
 - (void)didTouchPhotosButton:(id)sender
 {
     [self dismissPopovers];
+  
+  [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+    [self handlePhotoAuthorizationStatus:status];
+  }];
 
     RMRemotePhotoVC *photoVC = [[RMRemotePhotoVC alloc] init];
     photoVC.photos = self.capturedPhotos;
     [photoVC.dismissButton addTarget:self action:@selector(handlePhotoVCDismissButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
     photoVC.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:photoVC animated:YES completion:nil];
+}
+
+- (void)handlePhotoAuthorizationStatus:(PHAuthorizationStatus)status {
+  switch (status) {
+    case PHAuthorizationStatusAuthorized:
+      // Access has been granted.
+      break;
+    case PHAuthorizationStatusDenied:
+    case PHAuthorizationStatusRestricted:
+      // Access has been denied or restricted.
+      break;
+    case PHAuthorizationStatusNotDetermined:
+      // The user hasn't decided yet; we could prompt again.
+      break;
+    default:
+      break;
+  }
 }
 
 - (void)handlePhotoVCDismissButtonTouch:(UIButton *)button

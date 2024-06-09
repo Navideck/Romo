@@ -71,7 +71,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/Gkpsundar/SocketRocket.git
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
   CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   FFmpeg-static: f61924a6708db56927f6ed9e744848c1697301e3
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
@@ -79,6 +79,6 @@ SPEC CHECKSUMS:
   Romo: 4fccb6b3e8e1af1b50cae0e7d1ce22a3c50c91c4
   SocketRocket: dbb1554b8fc288ef8ef370d6285aeca7361be31e
 
-PODFILE CHECKSUM: dae751e0da5fc6282d858b88258c4a1dd421d705
+PODFILE CHECKSUM: 46d3e6fb245193dcbc67c2c80e4899133c984234
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.15.2
