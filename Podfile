@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 
 target 'Romo' do
-  platform :ios, '10.0'
+  platform :ios, '12.0'
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
@@ -15,7 +15,7 @@ target 'Romo' do
 end
 
 target 'Romo Control' do
-  platform :ios, '8.0'
+  platform :ios, '12.0'
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
